@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#Vim学习笔记
+技巧字符操作基础
+i  进入Insert模式
+o  进入Insert模式并换行
+s  允许使用多个字符替换一个单个的字符（以插入方式替换）。
+r  replace 替换
+R  替换多个字符（以覆盖方式替换）
+a  append 追加
+p  黏贴于光标后
+P  黏贴于光标前
+C  允许替换从当前光标位置到本行末尾的所有字符。
+visual 模式下面的字符串选择
+
+进阶
+]p 自動i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2014/01/01/vim使用笔记/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#Vim学习笔记
+技巧字符操作基础
+i  进入Insert模式
+o  进入Insert模式并换行
+s  允许使用多个字符替换一个单个的字符（以插入方式替换）。
+r  replace 替换
+R  替换多个字符（以覆盖方式替换）
+a  append 追加
+p  黏贴于光标后
+P  黏贴于光标前
+C  允许替换从当前光标位置到本行末尾的所有字符。
+visual 模式下面的字符串选择
+
+进阶
+]p 自動i">
+<meta property="og:updated_time" content="2015-09-18T06:46:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="#Vim学习笔记
+技巧字符操作基础
+i  进入Insert模式
+o  进入Insert模式并换行
+s  允许使用多个字符替换一个单个的字符（以插入方式替换）。
+r  replace 替换
+R  替换多个字符（以覆盖方式替换）
+a  append 追加
+p  黏贴于光标后
+P  黏贴于光标前
+C  允许替换从当前光标位置到本行末尾的所有字符。
+visual 模式下面的字符串选择
+
+进阶
+]p 自動i">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vim使用笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/01/01/vim使用笔记/" class="article-date">
+  <time datetime="2013-12-31T16:00:00.000Z" itemprop="datePublished">2014-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Vim学习笔记</p>
+<h2 id="技巧">技巧</h2><h3 id="字符操作">字符操作</h3><h4 id="基础">基础</h4><ul>
+<li>i  进入Insert模式</li>
+<li>o  进入Insert模式并换行</li>
+<li>s  允许使用多个字符替换一个单个的字符（以插入方式替换）。</li>
+<li>r  replace 替换</li>
+<li>R  替换多个字符（以覆盖方式替换）</li>
+<li>a  append 追加</li>
+<li>p  黏贴于光标后</li>
+<li>P  黏贴于光标前</li>
+<li>C  允许替换从当前光标位置到本行末尾的所有字符。</li>
+<li>visual 模式下面的字符串选择</li>
+</ul>
+<h4 id="进阶">进阶</h4><ul>
+<li><code>]p</code> 自動indent的黏貼</li>
+<li><code>:n1,n2 m n3</code>     移动n1-n2行(包括n1,n2)到n3行之下；</li>
+<li><code>:n1,n2 co n3</code>    复制n1-n2行(包括n1,n2)到n3行之下；</li>
+<li><code>:n1,n2 d</code>        删除n1-n2行(包括n1,n2)行</li>
+</ul>
+<h3 id="光标移动">光标移动</h3><h4 id="基础-1">基础</h4><ul>
+<li>gg 首行</li>
+<li>G  尾行</li>
+<li>80% 文件80%处</li>
+<li>^ 行首</li>
+<li>$ 行尾</li>
+<li>gi 回到最后一次编辑的位置</li>
+<li>% 在括号的头尾来回切换</li>
+<li>e 单词尾部</li>
+<li>w 下一个单词</li>
+<li>b 上一个单词</li>
+<li>fx/Fx 向前/向后 移动到任意字符x处</li>
+<li>nG 跳到第n行</li>
+<li><code>Ctrl-f</code>  前进一页</li>
+<li><code>Ctrl-b</code>  后退一页</li>
+<li><code>*</code> 移動到下一個與當前單詞一樣的單詞</li>
+<li><code>#</code> 移動到下一個與當前單詞一樣的單詞</li>
+</ul>
+<h4 id="进阶-1">进阶</h4><ul>
+<li>H 跳到窗口顶部</li>
+<li>M 跳到窗口中央</li>
+<li>L 跳到窗口底部</li>
+<li>zz - move current line to the middle of the screen</li>
+<li>zt - move current line to the top of the screen</li>
+<li>zb - move current line to the bottom of the screen</li>
+<li>ma 标记当前行</li>
+<li>‘a 跳到标记a的行</li>
+<li>‘’ (两个单引号)  回到上一次跳转位置</li>
+<li>visual 模式下  &lt; &gt; 是缩进的控制</li>
+<li>大小写改变<ul>
+<li>~ 单个字符大小写切换</li>
+<li>g~ (大小写切换) ，gu (变小写), gU (变大写)  通过movement（即上下左右）来控制 例如：g~上, 可以把当前行和上一行变为大(小)写</li>
+<li>gUU(当前行变大写) g~~(当前行大小写切换) guu （当前行变小写）</li>
+<li>可以跟上w, b,$, ^等来自由发挥， 例如  gu3w  将前面3个单词变小写  同理的还有 gu3b  gU3w  g~$   g~^等等</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件操作">文件操作</h3><h4 id="基础-2">基础</h4><ul>
+<li>vim -o file….  水平分割打开几个文件</li>
+<li>vim -O file…  垂直分割打开几个文件</li>
+<li><code>:new filename</code> 在新窗口打开查看文件</li>
+<li><code>:vert new filename</code> 水平分割打开新窗口</li>
+<li><code>:tab new</code> 在新tab创建文件</li>
+</ul>
+<h3 id="buffer的操作">buffer的操作</h3><p>####基础</p>
+<ul>
+<li><code>:ls</code> 或者 <code>:buffers</code> 查看buffer列表</li>
+<li><code>:vert sb N</code>   在垂直窗口打开列表</li>
+<li><code>:bfirst</code> 去到第一个buffer</li>
+<li><code>:bn</code>  next buffer</li>
+<li><code>:bp</code>  prev buffer</li>
+<li><code>:e &lt;filename&gt;</code> will just open into a new buffer. </li>
+</ul>
+<h2 id="窗口管理"><a href="http://vimdoc.sourceforge.net/htmldoc/windows.html" target="_blank" rel="external">窗口管理</a></h2><p>概念：</p>
+<ul>
+<li>A buffer is the in-memory text of a file.</li>
+<li>A window is a viewport on a buffer.</li>
+<li>A tab page is a collection of windows.</li>
+</ul>
+<h3 id="window">window</h3><h4 id="基础-3">基础</h4><ul>
+<li><code>Ctrl-W n</code> 创建一个水平新窗口，新建文件  等同于 <code>:new</code>   而<code>:vne</code>则是建立一个垂直分割的窗口</li>
+<li><code>Ctrl-W s</code> 创建水平分割窗口，编辑当前Buffer   <code>:sp</code></li>
+<li><code>Ctrl-W v</code>  创建垂直分割窗口，编辑当前Buffer</li>
+<li><code>Ctrl-W q</code>  关闭一个分割窗口</li>
+<li><code>Ctrl-W r</code>  向右移动窗口</li>
+<li><code>Ctrl-W T</code>  移动窗口到新Tab</li>
+<li><code>Ctrl-W</code></li>
+</ul>
+<h4 id="进阶-2">进阶</h4><ul>
+<li><code>Ctrl-W r</code>  向下/向右移动窗口</li>
+<li><code>Ctrl-W R</code> 向上/向左移动窗口</li>
+<li><code>Ctrl-W K</code> 移动到最顶端，宽度满屏</li>
+<li><code>Ctrl-W J</code> 移动到最低，宽度满屏   Ctrl-W H 和 Ctrl-W L 与之同理，分别移动到最左最右 </li>
+<li><code>Ctrl-W =</code> 均分窗口</li>
+<li><code>Ctrl-W t Ctrl-W K</code>    将两个垂直分割变为水平分割 </li>
+<li><code>Ctrl-W t Ctrl-W H</code>    将两个水平分割变为垂直分割</li>
+<li><code>Ctrl-W Shift-T</code>    将窗口移动到tab中 </li>
+<li><code>Ctrl-W t</code> makes the first (topleft) window current Ctrl-W K moves the current window to full-width at the very top </li>
+<li><code>Ctrl-W H</code> moves the current window to full-height at far left</li>
+<li><code>Ctrl - W R</code>  向右移动</li>
+</ul>
+<h3 id="tab">tab</h3><h4 id="基础-4">基础</h4><ul>
+<li><code>gt</code> 向左移动</li>
+<li><code>gT</code> 向右移动</li>
+<li><code>ngt</code>  移动到第n个</li>
+</ul>
+<h4 id="进阶-3">进阶</h4><ul>
+<li><code>:tabm n</code> 移动当前tab的位置，如果要将tab的位置移动到最后，可以输一个足够大的值 tabm 99 就可以移动到最后了 tabm 0移动到最前</li>
+<li><code>:tabonly</code> 关闭其他窗口</li>
+</ul>
+<h2 id="内容查找替换"><a href="http://vim.wikia.com/wiki/Searching%20" target="_blank" rel="external">内容查找替换</a></h2><h3 id="文件内查找替换">文件内查找替换</h3><p>[addr]s/源字符串/目的字符串/[option]</p>
+<p>[addr] 表示检索范围，省略时表示当前行。如：“1，20” ：表示从第1行到20行；“%” ：表示整个文件，同“1,$”；“. ,$” ：从当前行到文件尾；<br>[option] : 表示操作类型   如：g 表示全局替换; c 表示进行确认 p 表示替代结果逐行显示（Ctrl + L恢复屏幕）； </p>
+<pre><code>`<span class="symbol">:%s/foo/bar/g`</span> 将整个文件中的foo替换为bar，不需要确认
+`<span class="symbol">:%s/</span>\s\+<span class="variable">$/</span>/` 删除每一行后面多余的空格
+</code></pre><p>###跨文件文件查找</p>
+<p>使用：<code>vimgrep  /{pattern}/[g][j]   files</code></p>
+<p>例如:查找目录pulibc/js下的文件中是否有 function1<br><code>vimgrep  /function1/  ./public/js/**/*.js</code></p>
+<p><code>:copen</code> 打开quickfix</p>
+<h4 id="快捷键">快捷键</h4><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:cprev[ious]:</span> [q</span><br><span class="line"><span class="attribute">:cnext:</span>       ]q</span><br><span class="line"><span class="attribute">:cfirst:</span>      [Q</span><br><span class="line"><span class="attribute">:clast:</span>       ]Q</span><br></pre></td></tr></table></figure>
+<p>参考</p>
+<ol>
+<li><a href="http://vim.wikia.com/wiki/Quick_tips_for_using_tab_pages" target="_blank" rel="external">tab使用秘籍</a></li>
+</ol>
+<h2 id="参见问题">参见问题</h2><h3 id="如何批量生产字符串?">如何批量生产字符串?</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:put =<span class="function"><span class="title">range</span><span class="params">(<span class="number">11</span>,<span class="number">15</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>生成</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="number">14</span></span><br><span class="line"><span class="number">15</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="function"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="title">range</span>(<span class="params"><span class="number">1</span>,<span class="number">10</span></span>) | put </span>=<span class="string">'192.168.0.'</span>.i | endfor</span><br></pre></td></tr></table></figure>
+<p>生成</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.2</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.3</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.4</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.5</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.6</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.7</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.8</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.9</span></span><br><span class="line"><span class="number">192.168</span><span class="number">.0</span><span class="number">.10</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://vim.wikia.com/wiki/Making_a_list_of_numbers" target="_blank" rel="external">参考</a></p>
+<p>###如何定义快捷键</p>
+<figure class="highlight"><figcaption><span><f5> i&#123;e<esc>a&#125;<esc>```</esc></esc></f5></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;`i&#123;` &#23558;&#25554;&#20837;&#23383;&#31526;`&#123;`&#65292;&#28982;&#21518;&#20351;&#29992;Esc&#36864;&#22238;&#21040;&#21629;&#20196;&#29366;&#24577;&#65307;&#25509;&#30528;&#29992;e&#31227;&#21040;&#21333;&#35789;&#32467;&#23614;&#65292;a&#125;&#22686;&#21152;&#23383;&#31526;&#125;&#65292;&#26368;&#21518;&#36864;&#33267;&#21629;&#20196;&#29366;&#24577;&#12290;&#22312;&#25191;&#34892;&#20197;&#19978;&#21629;&#20196;&#20043;&#21518;&#65292;&#20809;&#26631;&#23450;&#20301;&#22312;&#19968;&#20010;&#21333;&#35789;&#19978;&#65288;&#20363;&#22914;amount&#65289;&#65292;&#25353;&#19979;F5&#38190;&#65292;&#36825;&#26102;&#23383;&#31526;&#23601;&#20250;&#21464;&#25104;&#123;amount&#125;&#30340;&#24418;&#24335;&#12290;&#10;&#10;&#20351;&#29992;&#20197;&#19979;&#21629;&#20196;&#65292;&#21487;&#20197;&#22312;Normal Mode&#21644;Visual/Select Mode&#19979;&#65292;&#21033;&#29992;Tab&#38190;&#21644;Shift-Tab&#38190;&#26469;&#32553;&#36827;&#25991;&#26412;&#65306;</span><br></pre></td></tr></table></figure>
+<p>nmap <tab> V&gt;<br>nmap <s-tab> V&lt;<br>vmap <tab> &gt;gv<br>vmap <s-tab> <gv <figure="" class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用以下命令，指定F10键来新建标签页：</span><br></pre></td></tr></table></gv></s-tab></tab></s-tab></tab></p>
+<p>:map <f10> <esc>:tabnew<cr><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></cr></esc></f10></p>
+<ul>
+<li>:nmap - Display normal mode maps</li>
+<li>:imap - Display insert mode maps</li>
+<li>:vmap - Display visual and select mode maps</li>
+<li>:smap - Display select mode maps</li>
+<li>:xmap - Display visual mode maps</li>
+<li>:cmap - Display command-line mode maps</li>
+<li><p>:omap - Display operator pending mode maps</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">参考: (给vim自定义快捷键)[http://www.pythonclub.org/linux/vim/map]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">###如何重新reload .vimrc文件?</span></span><br><span class="line"></span><br><span class="line">如果当前编辑的就是.vimrc文件  <span class="code">`:so %`</span></span><br><span class="line"></span><br><span class="line">如果不是 <span class="code">`:so `</span></span><br><span class="line"></span><br><span class="line"><span class="header">###什么是filetype</span></span><br><span class="line"><span class="code">     </span></span><br><span class="line">[<span class="link_label">refer</span>](<span class="link_url">http://vimdoc.sourceforge.net/htmldoc/filetype.html</span>)</span><br><span class="line"></span><br><span class="line"><span class="header">###如何在split window打开buffer列表中的buffer</span></span><br><span class="line"></span><br><span class="line"><span class="code">`:vert sb N`</span> (N是buffer序号)</span><br><span class="line"><span class="code">`:vert belowright sb N`</span>  在右边split打开，默认是左边 </span><br><span class="line"></span><br><span class="line"><span class="header">###如何设置 tab 和 space的展现形式</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">###黏贴的时候不要自动indent</span></span><br><span class="line"></span><br><span class="line">黏贴前运行 command <span class="code">`:set pastell`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">###如何设置tab</span></span><br><span class="line"></span><br><span class="line">http://tedlogan.com/techblog3.html</span><br><span class="line"></span><br><span class="line"><span class="header">### 神马是Compatible mode</span></span><br><span class="line">http://superuser.com/questions/543317/what-is-compatible-mode-in-vim</span><br><span class="line"></span><br><span class="line"><span class="header">### 如何控制縮進</span></span><br></pre></td></tr></table></figure>
+<p>n&gt;&gt;  將n行同時縮進  n&lt;&lt;同理</p>
+<blockquote>
+<p>% 縮進curly braces{}包裹的區域 &lt;％ton</p>
+<ng 235839="" 縮進當前行到第n行的內容="" i{="" 縮進inner="" block="" <i{="" 同理="" http:="" stackoverflow.com="" questions="" how-do-i-indent-multiple-lines-quickly-in-vi="" <figure="" class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">### 如何在Vim使用鼠标？</span></span><br></pre></td></tr></table>
+
+</ng></blockquote>
+<p> set mouse=a<br> 参考：<a href="http://usevim.com/2012/05/16/mouse/" target="_blank" rel="external">http://usevim.com/2012/05/16/mouse/</a>  </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">### 如何显示多余的空格</span></span><br><span class="line"></span><br><span class="line">那么可以在vimrc 中使用下面这段代码</span><br><span class="line">[<span class="link_label">参考</span>](<span class="link_url">http://vim.wikia.com/wiki/Highlight_unwanted_spaces</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">### 如何维护函数不超过 80行</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>let &amp;colorcolumn=join(range(81,999),”,”)<br>let &amp;colorcolumn=”80,”.join(range(120,999),”,”)<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[<span class="link_label">参考</span>](<span class="link_url">http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">## 組合技</span></span><br><span class="line"></span><br><span class="line"><span class="header">### 常用</span></span><br><span class="line"><span class="bullet">* </span>xp 字符互换</span><br><span class="line"><span class="bullet">* </span>ddp 上下行换行</span><br><span class="line"><span class="bullet">* </span><span class="code">`$ a`</span> <span class="code">`$`</span> 跳到行尾，<span class="code">`a`</span> 在最后位置开始输入</span><br><span class="line"><span class="bullet">* </span><span class="code">`gg“+yG`</span>    将文件内容复制到剪贴版  <span class="code">`gg`</span>跳到第一行  <span class="code">`“+`</span> 选择存放的寄存器  <span class="code">`yG`</span>复制所有行数</span><br><span class="line"><span class="bullet">* </span>visual模式下</span><br><span class="line"><span class="code">    * `a(   a)   ab`  选择括号和括号里面的内容   ( content )</span></span><br><span class="line"><span class="code">    * `i(   i)   ib` 选择括号里面的内容       ( content ) </span></span><br><span class="line"><span class="code">    * `‘  “  [`  这些都可以与上同理 例如  `i’` 选择单引号里面的内容，`a[` 选择中括号和中括号里面的内容</span></span><br><span class="line"><span class="bullet">* </span>ciw 改变单词</span><br><span class="line"><span class="bullet">* </span>caw 改变光标所在的完整一个单词</span><br><span class="line"></span><br><span class="line"><span class="header">## 插件列表</span></span><br><span class="line"></span><br><span class="line"><span class="header">### my bundle list</span></span><br></pre></td></tr></table></figure></p>
+<p>Bundle ‘gmarik/vundle’<br>Bundle ‘tpope/vim-fugitive’<br>Bundle ‘Lokaltog/vim-easymotion’<br>Bundle ‘tpope/vim-rails.git’<br>Bundle ‘rstacruz/sparkup’, {‘rtp’: ‘vim/‘}<br>Bundle ‘L9’<br>Bundle ‘FuzzyFinder’<br>Bundle ‘scrooloose/nerdtree’<br>Bundle ‘Lokaltog/vim-powerline’<br>Bundle ‘scrooloose/syntastic’<br>Bundle ‘kien/ctrlp.vim’<br>Bundle ‘kchmck/vim-coffee-script’<br>Bundle ‘tpope/vim-unimpaired’<br>Bundle ‘SirVer/ultisnips’<br>Bundle ‘honza/vim-snippets’<br>Bundle ‘majutsushi/tagbar’<br>Bundle ‘ervandew/supertab’<br>Bundle ‘Shougo/neocomplcache.vim’<br>Bundle ‘terryma/vim-multiple-cursors’<br>Bundle ‘Raimondi/delimitMate’<br>Bundle ‘tpope/vim-surround’<br>Bundle ‘EasyGrep’<br>Bundle ‘mileszs/ack.vim’<br>Bundle ‘tyok/nerdtree-ack’<br>```</p>
+<h3 id="相关介绍">相关介绍</h3><ul>
+<li>vim-scripts/Visual-Mark  <a href="https://github.com/vim-scripts/Visual-Mark/" target="_blank" rel="external">https://github.com/vim-scripts/Visual-Mark/</a>      </li>
+<li>kien/ctrlp.vim   <a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="external">https://github.com/kien/ctrlp.vim</a>  轻量级的文件切换工具 </li>
+<li>SirVer/ultisnips  <a href="https://github.com/SirVer/ultisnips" target="_blank" rel="external">https://github.com/SirVer/ultisnips</a>    神级插件 <a href="http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/" target="_blank" rel="external">http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/</a>  </li>
+<li>terryma/vim-multiple-cursors   实现Sublime的Ctrl-D功能 多行同时编辑</li>
+<li>tpope/vim-unimpaired   可以方便的执行<code>:lprev ( [l ), :lne( ]l )</code>的命令，还有可以实现移动行  [e ]e 类似于Sublime的 移动行 </li>
+<li>tpope/commentary.vim  注释插件</li>
+<li>tabular 方便文本对齐 <a href="https://github.com/godlygeek/tabular" target="_blank" rel="external">https://github.com/godlygeek/tabular</a></li>
+<li>Ack 搜索关键词 <a href="https://github.com/mileszs/ack.vim" target="_blank" rel="external">https://github.com/mileszs/ack.vim</a> </li>
+<li>mru <a href="https://github.com/yegappan/mru" target="_blank" rel="external">https://github.com/yegappan/mru</a> 最近打开的文件</li>
+<li>heavenshell/vim-jsdoc <a href="https://github.com/heavenshell/vim-jsdoc" target="_blank" rel="external">github</a></li>
+<li>tyok/nerdtree-ack  将nerdTree和ack结合起来，实现文件夹搜索</li>
+</ul>
+<h2 id="资料">资料</h2><ol>
+<li><a href="http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118220118" target="_blank" rel="external">What is your most productive shortcut with Vim?</a></li>
+<li><a href="http://bytefluent.com/vivify/" target="_blank" rel="external">Vim代码高亮主题</a></li>
+<li><a href="http://vim.wikia.com/wiki/Best_Vim_Tips" target="_blank" rel="external">Best Vim Tips</a></li>
+<li><a href="https://github.com/joyent/node/wiki/Vim-Plugins" target="_blank" rel="external">Vim Plugins</a></li>
+<li><a href="http://vim.wikia.com/wiki/Use_Vim_like_an_IDE" target="_blank" rel="external">Use Vim like an IDE</a></li>
+<li><a href="http://overapi.com/vim/" target="_blank" rel="external">VIM的各种助记图，可以作为桌面</a></li>
+<li><a href="http://wdicc.com/search-in-vim/" target="_blank" rel="external">VIM查找替换归纳总结</a></li>
+<li><a href="http://blog.hugeaim.com/2012/05/11/find-in-folder-in-vim-with-nerdtree-and-ack/" target="_blank" rel="external">文件夹查找插件</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/01/01/vim使用笔记/" data-id="ciepa8jib0022z9w138o6tkil" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/01/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/12/20/有关前端路由Roter的思考/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life-Style/">Life Style</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UI界面/">UI界面</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unix/">Unix</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/node-webkit/">node-webkit</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端开发/">前端开发</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习研究/">学习研究</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心理学/">心理学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能监控/">性能监控</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模塊化/">模塊化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AMD/">AMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMD/">CMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Com/">Com</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Day-Study/">Day Study</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/W3C/">W3C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/haskell/">haskell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http协议/">http协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/restful/">restful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端开发/">前端开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端性能优化/">前端性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端组件化/">前端组件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/复杂系统/">复杂系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发/">工具开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间管理/">时间管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模塊化/">模塊化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活优化/">生活优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用戶交互/">用戶交互</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目文档/">项目文档</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AMD/" style="font-size: 10px;">AMD</a> <a href="/tags/CMD/" style="font-size: 10px;">CMD</a> <a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/Day-Study/" style="font-size: 16.67px;">Day Study</a> <a href="/tags/W3C/" style="font-size: 10px;">W3C</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/dom/" style="font-size: 13.33px;">dom</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/前端开发/" style="font-size: 13.33px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 16.67px;">前端性能优化</a> <a href="/tags/前端组件化/" style="font-size: 10px;">前端组件化</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/性能优化/" style="font-size: 16.67px;">性能优化</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/时间管理/" style="font-size: 10px;">时间管理</a> <a href="/tags/模塊化/" style="font-size: 10px;">模塊化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/用戶交互/" style="font-size: 10px;">用戶交互</a> <a href="/tags/编程语言/" style="font-size: 16.67px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/读书笔记/" style="font-size: 16.67px;">读书笔记</a> <a href="/tags/项目文档/" style="font-size: 10px;">项目文档</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/09/18/2014-9-12-Restful-API/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/18/2014-2-10-如何测试后端API性能？/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/04/Haskell入门笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/12/Life-time-tracker表达的理念/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
