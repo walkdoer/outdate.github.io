@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Code Me</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="Code Me">
+<meta property="og:url" content="http://zhangmhao.github.io/index.html">
+<meta property="og:site_name" content="Code Me">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Code Me">
 <meta name="twitter:description">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,7 +33,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Code Me</a>
       </h1>
       
     </div>
@@ -53,118 +53,13 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhangmhao.github.io"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-2014-9-12-Restful-API" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/18/2014-9-12-Restful-API/" class="article-date">
-  <time datetime="2015-09-18T06:46:39.000Z" itemprop="datePublished">2015-09-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端开发/">前端开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="RESTFul_API">RESTFul API</h1><p>###什么是RESTful架构：</p>
-<p>Fielding将他对互联网软件的架构原则，定名为REST，即Representational State Transfer的缩写。我对这个词组的翻译是”表现层状态转化”。要理解RESTful架构，最好的方法就是去理解Representational State Transfer这个词组到底是什么意思，它的每一个词代表了什么涵义。</p>
-<p>####资源（Resources）</p>
-<p>网络上的一个实体，它可以是一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实在。你可以用一个URI（统一资源定位符）指向它，每种资源对应一个特定的URI。</p>
-<p>####表现层（Representation）</p>
-<p>我们把”资源”具体呈现出来的形式，叫做它的”表现层”（Representation）。”资源”是一种信息实体，它可以有多种外在表现形式。比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现。URI只代表资源的实体，不代表它的形式。严格地说，有些网址最后的”.html”后缀名是不必要的，因为这个后缀名表示格式，属于”表现层”范畴，而URI应该只代表”资源”的位置。它的具体表现形式，应该在HTTP请求的头信息中用Accept和Content-Type字段指定，这两个字段才是对”表现层”的描述。</p>
-<p>####状态转化（State Transfer）</p>
-<p>客户端想要操作服务器，必须通过某种手段，让服务器端发生”状态转化”（State Transfer）。而这种转化是建立在表现层之上的，所以就是”表现层状态转化”。 </p>
-<p>这里引用阮一峰的总结：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 每一个URI代表一种资源；</span><br><span class="line"><span class="number">2.</span> 客户端和服务器之间，传递这种资源的某种表现层；</span><br><span class="line"><span class="number">3.</span> 客户端通过四个HTTP动词，对服务器端资源进行操作，实现<span class="string">"表现层状态转化"</span></span><br></pre></td></tr></table></figure>
-<p>###实例</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /zoos：列出所有动物园</span><br><span class="line">POST /zoos：新建一个动物园</span><br><span class="line">GET <span class="regexp">/zoos/</span>ID：获取某个指定动物园的信息</span><br><span class="line">PUT <span class="regexp">/zoos/</span>ID：更新某个指定动物园的信息（提供该动物园的全部信息）</span><br><span class="line">PATCH <span class="regexp">/zoos/</span>ID：更新某个指定动物园的信息（提供该动物园的部分信息）</span><br><span class="line">DELETE <span class="regexp">/zoos/</span>ID：删除某个动物园</span><br><span class="line">GET <span class="regexp">/zoos/</span>ID/animals：列出某个指定动物园的所有动物</span><br><span class="line">DELETE <span class="regexp">/zoos/</span>ID<span class="regexp">/animals/</span>ID：删除某个指定动物园的指定动物</span><br></pre></td></tr></table></figure>
-<h3 id="RESTful架构有一些典型的设计误区">RESTful架构有一些典型的设计误区</h3><p>最常见的一种设计错误，就是URI包含动词。因为”资源”表示一种实体，所以应该是名词，URI不应该有动词，动词应该放在HTTP协议中。<br>另一个设计误区，就是在URI中加入版本号：</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　<span class="symbol">http:</span>/<span class="regexp">/www.example.com/app</span><span class="regexp">/1.0/foo</span></span><br><span class="line">　<span class="symbol">http:</span>/<span class="regexp">/www.example.com/app</span><span class="regexp">/1.1/foo</span></span><br><span class="line">　<span class="symbol">http:</span>/<span class="regexp">/www.example.com/app</span><span class="regexp">/2.0/foo</span></span><br></pre></td></tr></table></figure>
-<p>因为不同的版本，可以理解成同一种资源的不同表现形式，所以应该采用同一个URI。版本号可以在HTTP请求头信息的Accept字段中进行区分（参见Versioning REST Services）：</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Accep<span class="variable">t:</span> vnd.example-<span class="keyword">com</span>.foo+json; <span class="keyword">version</span>=<span class="number">1.0</span></span><br><span class="line">Accep<span class="variable">t:</span> vnd.example-<span class="keyword">com</span>.foo+json; <span class="keyword">version</span>=<span class="number">1.1</span></span><br><span class="line">Accep<span class="variable">t:</span> vnd.example-<span class="keyword">com</span>.foo+json; <span class="keyword">version</span>=<span class="number">2.0</span></span><br></pre></td></tr></table></figure>
-<h3 id="RESTful_API最好做到Hypermedia">RESTful API最好做到Hypermedia</h3><p>例子:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">link</span>": <span class="value">&#123;</span><br><span class="line">        "<span class="attribute">rel</span>":   <span class="value"><span class="string">"collection https://www.example.com/zoos"</span></span>,</span><br><span class="line">        "<span class="attribute">href</span>":  <span class="value"><span class="string">"https://api.example.com/zoos"</span></span>,</span><br><span class="line">        "<span class="attribute">title</span>": <span class="value"><span class="string">"List of zoos"</span></span>,</span><br><span class="line">        "<span class="attribute">type</span>":  <span class="value"><span class="string">"application/vnd.yourformat+json"</span></span><br><span class="line">    </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
-<p>上面代码表示，文档中有一个link属性，用户读取这个属性就知道下一步该调用什么API了。rel表示这个API与当前网址的关系（collection关系，并给出该collection的网址），href表示API的路径，title表示API的标题，type表示返回类型。</p>
-<p>实际例子可以看<a href="https://api.github.com/" target="_blank" rel="external">Github API</a></p>
-<h2 id="参考">参考</h2><ol>
-<li><a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2011/09/restful.html</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="external">RESTful API 设计指南</a></li>
-<li><a href="http://codeplanet.io/principles-good-restful-api-design/" target="_blank" rel="external">Principles of good RESTful API Design</a></li>
-<li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1" target="_blank" rel="external">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1</a></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/18/2014-9-12-Restful-API/" data-id="ciepa9loz003pz9w1ykkeyyg1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/restful/">restful</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2014-2-10-如何测试后端API性能？" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/09/18/2014-2-10-如何测试后端API性能？/" class="article-date">
-  <time datetime="2015-09-18T06:46:39.000Z" itemprop="datePublished">2015-09-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端开发/">前端开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目前流行的Web APP，数据一般都是异步加载的，后端提供API给前端，假如这个APP的HTML，JS，CSS，Image等静态资源都已经进行了足够的优化，那么剩下会影响加载速度的就是后端API了，后端API加载时间长，用户可交互的时间点就会越靠后。</p>
-<p>那么什么样的API才算是性能良好的API呢？</p>
-<p>站在用户的角度，等待的时间必定是越短越好，在PC端 200-1000ms内数据就返回，对于用户来讲是一个比较好的用户体验，但是对于移动端网络来讲，用户如果处于2G/3G网络，这个时间有点过于苛刻。</p>
-<p>那么，移动端的性能要求怎样才算是合理呢？这个可能需要一个用户调研，但是目前暂时没有资源做这一块。所以，暂时只能做好所有的优化，将一些可能存在的优化点进行解决。然后再进行多一次测试，对比优化前和优化后的数据，差距多大。</p>
-<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">加载总时间 </span>=<span class="string"> DNS解析 + 连接时间 + 首字节返回时间 + 下载时间</span></span><br></pre></td></tr></table></figure>
-<p><code>首字节时间</code>(发起连接到服务器返回首字节的时间)<code>T1 = 网络来回传输时间 +  服务器处理时间</code>；所以其相关因素有：网络传输速度，服务器性能</p>
-<p>而<strong><code>下载时间</code></strong>的相关因素：网络传输速度，返回内容大小；</p>
-<p>所以从加载总时间可以看出：返回内容大小，服务器性能，DNS解析时间。这个是可以优化的点。</p>
-<p>优化有那么方面可以着手呢？</p>
-<ul>
-<li>如果全集群部署依旧出现解析时间较长的，就需要使用CDN了</li>
-<li>服务器性能</li>
-<li>检查API返回结果是否进行压缩，如果已经有压缩，是否还有优化方法能够减少返回结果的大小</li>
-</ul>
-<h3 id="参考">参考</h3><p><a href="http://www.oschina.net/translate/testing-the-api-backend-of-your-mobile-solution" target="_blank" rel="external">http://www.oschina.net/translate/testing-the-api-backend-of-your-mobile-solution</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/18/2014-2-10-如何测试后端API性能？/" data-id="ciepa8jgp0009z9w19ihgvsxj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/">api</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-Haskell入门笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -318,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/06/04/Haskell入门笔记/" data-id="ciepa9lnv002xz9w1xui8h569" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/06/04/Haskell入门笔记/" data-id="ciepbvnz3000c1bw1xo6faz7z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/haskell/">haskell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程语言/">编程语言</a></li></ul>
@@ -475,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/" data-id="ciepa9lnz0030z9w1klj77nrw" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/" data-id="ciepbvnz9000h1bw161zrkmje" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程语言/">编程语言</a></li></ul>
@@ -538,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/12/Life-time-tracker表达的理念/" data-id="ciepa9lo30034z9w1fmpj3mpn" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/04/12/Life-time-tracker表达的理念/" data-id="ciepbvnzg000m1bw1mfyp0c3j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具开发/">工具开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/时间管理/">时间管理</a></li></ul>
@@ -588,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/31/关于Javascript以前忽略的性能问题/" data-id="ciepa9lo80038z9w14gfv3kn7" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/03/31/关于Javascript以前忽略的性能问题/" data-id="ciepbvnzl000s1bw163f2tfub" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
@@ -631,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/24/Min-和-Max方法的实现和用法/" data-id="ciepa9lod003bz9w1gco4wx7n" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/03/24/Min-和-Max方法的实现和用法/" data-id="ciepbvnzv00101bw1wz529per" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -800,7 +695,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/10/You-don't-know-js--this-&-Object-Prototypes-读书笔记/" data-id="ciepa9loi003ez9w181wddmpl" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/03/10/You-don't-know-js--this-&-Object-Prototypes-读书笔记/" data-id="ciepbvnzq000w1bw1vq4i74tf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程语言/">编程语言</a></li></ul>
@@ -871,7 +766,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/26/node-webkit开发过程总结/" data-id="ciepa9lon003iz9w1vkh4swsq" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/01/26/node-webkit开发过程总结/" data-id="ciepbvo0000131bw17t0233y2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端开发/">前端开发</a></li></ul>
@@ -934,11 +829,135 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/07/如何成为Idea-Machine/" data-id="ciepa9los003mz9w1t7pdizf4" class="article-share-link">Share</a>
+      <a data-url="http://zhangmhao.github.io/2015/01/07/如何成为Idea-Machine/" data-id="ciepbvo0b00191bw10x9r8nge" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活优化/">生活优化</a></li></ul>
 
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-self-efficacy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/02/self-efficacy/" class="article-date">
+  <time datetime="2014-12-01T16:00:00.000Z" itemprop="datePublished">2014-12-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/心理学/">心理学</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="self-efficacy">self-efficacy</h3><p>Psychologist Albert Bandura has defined self-efficacy as one’s belief in one’s ability to succeed in specific situations. </p>
+<p>According to Bandura’s theory, people with high self-efficacy—that is, those who believe they can perform well—are more likely to view difficult tasks as something to be mastered rather than something to be avoided.</p>
+<h3 id="自我效能对思考模式的影响：">自我效能对思考模式的影响：</h3><ul>
+<li><p>Self-efficacy has several effects on thought patterns and responses:<br>Low self-efficacy can lead people to believe tasks to be harder than they actually are. This often results in poor task planning, as well as increased stress.</p>
+</li>
+<li><p>People with high self-efficacy tend to take a wider view of a task in order to determine the best plan.</p>
+</li>
+<li>Obstacles often stimulate people with high self-efficacy to greater efforts, where someone with low self-efficacy will tend toward discouragement and giving up.</li>
+</ul>
+<h3 id="影响自我效能的因素(Factors_affecting_self-efficacy)">影响自我效能的因素(Factors affecting self-efficacy)</h3><p>Bandura identifies four factors affecting self-efficacy.</p>
+<ul>
+<li><strong>Experience</strong>  Success raises self-efficacy, while failure lowers it.</li>
+<li><strong>Modeling</strong> 榜样，如果和我相似的人能够做到，我也能够做到</li>
+<li><strong> Social Persuasion</strong> 别人的评价，好的评价和坏的评价对自我效能的影响</li>
+<li><strong>Physiological Factors</strong> 对生理反应的解读，高自我效能的人将自己在压力情况下的生理反应理解为人之常情，而低自我效能的人，则认为这是能力低下的表现，又继续降低了自我效能。</li>
+</ul>
+<h3 id="一些区别">一些区别</h3><h4 id="Self-efficacy_versus_efficacy">Self-efficacy versus efficacy</h4><p>Unlike efficacy, which is the power to produce an effect—in essence, competence—the term self-efficacy is used, by convention, to refer to the belief (accurate or not) that one has the power to produce that effect by completing a given task or activity related to that competency. Self-efficacy is the belief in one’s efficacy</p>
+<p>##参考</p>
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Self-efficacy" target="_blank" rel="external">http://en.wikipedia.org/wiki/Self-efficacy</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhangmhao.github.io/2014/12/02/self-efficacy/" data-id="ciepbvo0w001d1bw17kzzaml5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Day-Study/">Day Study</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Node错误处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/24/Node错误处理/" class="article-date">
+  <time datetime="2014-10-23T16:00:00.000Z" itemprop="datePublished">2014-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/24/Node错误处理/">Node错误处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在写一个个人项目，错误处理的代码写的比较混乱，读到一个博客的文章，按照这个方法进行处理，错误处理代码不至于乱成一窝粥。记录些阅读笔记:</p>
+<h3 id="Operational_errors_vs-_programmer_errors">Operational errors vs. programmer errors</h3><blockquote>
+<p>Learn to distinguish between operational errors, which are anticipatable, unavoidable errors, even in correct programs (e.g., failing to connect to a server), and programmer errors, which are bugs in the program.Operational errors can and should be handled. Programmer errors cannot be handled or reliably recovered from (nor should they be), and attempting to do so makes them harder to debug.</p>
+</blockquote>
+<h4 id="Operational_errors">Operational errors</h4><p>Operational errors represent run-time problems experienced by correctly-written programs. These are not bugs in the program. </p>
+<p>Examples:</p>
+<ul>
+<li>failed to connect to server</li>
+<li>failed to resolve hostname</li>
+<li>invalid user input</li>
+<li>request timeout</li>
+<li>server returned a 500 response</li>
+<li>socket hang-up</li>
+<li>system is out of memory</li>
+</ul>
+<h4 id="Programmer_errors">Programmer errors</h4><p>Programmer errors are bugs in the program. These are things that can always be avoided by changing the code</p>
+<p>Example:</p>
+<ul>
+<li>调用函数过程传递错误的参数</li>
+<li>tried to read property of “undefined”</li>
+<li>called an asynchronous function without a callback</li>
+</ul>
+<h4 id="Handling_operational_errors">Handling operational errors</h4><blockquote>
+<p>Nor can you centralize all error handling in one part of the program, the same way you can’t centralize “performance” in one part of the program. </p>
+</blockquote>
+<ul>
+<li><strong>Deal with the failure directly</strong> 例如<code>文件不存在</code>就创建该文件，<code>访问失败</code>则重试</li>
+<li><strong>Propagate the failure to your client</strong>. If you don’t know how to deal with the error, the simplest thing to do is to abort whatever operation you’re trying to do, clean up whatever you’ve started, and deliver an error back to your client.</li>
+<li><strong>Retry the operation</strong> If you’re several layers deep in the stack (e.g., you’re being called by a client, which was called by another client, which is being driven by a human), it’s usually better to fail fast and let the end client deal with retries. If every layer of the stack thinks it needs to retry on errors, the user can end up waiting much longer than they should because because each layer didn’t realize that the underlying layer was also retrying.</li>
+<li><strong>Log the error</strong> — and do nothing else</li>
+</ul>
+<p>##参考</p>
+<ol>
+<li><a href="https://www.joyent.com/developers/node/design/errors" target="_blank" rel="external">https://www.joyent.com/developers/node/design/errors</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhangmhao.github.io/2014/10/24/Node错误处理/" data-id="ciepbvo11001h1bw1ptrnfggw" class="article-share-link">Share</a>
+      
+      
     </footer>
   </div>
   
@@ -986,7 +1005,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -998,14 +1017,6 @@
       <ul>
         
           <li>
-            <a href="/2015/09/18/2014-9-12-Restful-API/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/09/18/2014-2-10-如何测试后端API性能？/">(no title)</a>
-          </li>
-        
-          <li>
             <a href="/2015/06/04/Haskell入门笔记/">(no title)</a>
           </li>
         
@@ -1015,6 +1026,14 @@
         
           <li>
             <a href="/2015/04/12/Life-time-tracker表达的理念/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/31/关于Javascript以前忽略的性能问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/24/Min-和-Max方法的实现和用法/">(no title)</a>
           </li>
         
       </ul>
@@ -1029,7 +1048,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 John Doe<br>
+      &copy; 2015 Andrew Zhang<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
