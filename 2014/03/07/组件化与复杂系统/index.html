@@ -1,270 +1,634 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="theme-next use-motion ">
 <head>
-  <meta charset="utf-8">
   
-  <title>Code Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一次接触复杂系统的概念是在一个TED讲座（复杂系统）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的">
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="Com,复杂系统,组件化," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="第一次接触复杂系统的概念是在一个TED讲座（复杂系统）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Code Me">
+<meta property="og:title" content="组件化与复杂系统">
 <meta property="og:url" content="http://zhangmhao.github.io/2014/03/07/组件化与复杂系统/index.html">
 <meta property="og:site_name" content="Code Me">
 <meta property="og:description" content="第一次接触复杂系统的概念是在一个TED讲座（复杂系统）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的">
-<meta property="og:updated_time" content="2015-09-18T06:46:39.000Z">
+<meta property="og:updated_time" content="2015-09-22T13:49:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code Me">
+<meta name="twitter:title" content="组件化与复杂系统">
 <meta name="twitter:description" content="第一次接触复杂系统的概念是在一个TED讲座（复杂系统）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的">
-  
-    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  
 
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> 组件化与复杂系统 | Code Me </title>
 </head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Code Me</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhangmhao.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-组件化与复杂系统" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03/07/组件化与复杂系统/" class="article-date">
-  <time datetime="2014-03-06T16:00:00.000Z" itemprop="datePublished">2014-03-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/学习研究/">学习研究</a>
-  </div>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
   </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Code Me</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
       
-        <p>第一次接触复杂系统的概念是在一个TED讲座（<a href="evernote:///view/3937825/s36/10cba1c3-4db0-45ec-a534-f87040364ba8/10cba1c3-4db0-45ec-a534-f87040364ba8/" target="_blank" rel="external">复杂系统</a>）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的简单交互，可以形成整体的复杂智能。观察数字世界，计算机是由一个个的晶体管构成的，​​单一个晶体管只有两种状态：低电平和高电平，对应于0和1。但是由数亿个晶体管组成的微处理器却具有了相当的智能。如果你看过「三体」，你此时定会想起小说中出现的人列计算机。事实证明，无论是现实物理世界，还是数字世界都存在一定智能的复杂系统。</p>
-<p>###什么是复杂系统？</p>
-<p>在<a href="http://www.swarmagents.cn/complex/intro/articles.htm" target="_blank" rel="external">这篇文章</a>中是这样定义复杂系统「复杂系统是具有中等数目基于局部信息做出行动的智能性、自适应性主体的系统，复杂系统分为无组织，有组织两种」文中列出了「复杂系统具有的三个特征」</p>
-<p>####1. 中等大小数目的主体</p>
-<p>####2. 智能性和自适应性<br>系统内的元素遵循一定的规则，根据环境和收集到的信息来调整自身的状态和行为。通过系统主体的相对简单的智能，系统在整体上显示更高层次，更加复杂，更加协调职能的有序性</p>
-<p>####3. 局部信息，没有中央控制<br>系统中的任意一个个体无法知道系统所有个体的信息（状态和行为），每个个体可以从系统中较小集合中获取信息，处理局部信息，并进行决策。系统的整体行为是通过个体的协作，竞争等局部相互作用</p>
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              组件化与复杂系统
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-03-07T00:00:00+08:00" content="2014-03-07">
+            2014-03-07
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/学习研究/" itemprop="url" rel="index">
+                  <span itemprop="name">学习研究</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>第一次接触复杂系统的概念是在一个TED讲座（<a href="evernote:///view/3937825/s36/10cba1c3-4db0-45ec-a534-f87040364ba8/10cba1c3-4db0-45ec-a534-f87040364ba8/" target="_blank" rel="external">复杂系统</a>）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的简单交互，可以形成整体的复杂智能。观察数字世界，计算机是由一个个的晶体管构成的，​​单一个晶体管只有两种状态：低电平和高电平，对应于0和1。但是由数亿个晶体管组成的微处理器却具有了相当的智能。如果你看过「三体」，你此时定会想起小说中出现的人列计算机。事实证明，无论是现实物理世界，还是数字世界都存在一定智能的复杂系统。</p>
+<h3 id="什么是复杂系统？">什么是复杂系统？</h3><p>在<a href="http://www.swarmagents.cn/complex/intro/articles.htm" target="_blank" rel="external">这篇文章</a>中是这样定义复杂系统「复杂系统是具有中等数目基于局部信息做出行动的智能性、自适应性主体的系统，复杂系统分为无组织，有组织两种」文中列出了「复杂系统具有的三个特征」</p>
+<h4 id="1-_中等大小数目的主体">1. 中等大小数目的主体</h4><h4 id="2-_智能性和自适应性">2. 智能性和自适应性</h4><p>系统内的元素遵循一定的规则，根据环境和收集到的信息来调整自身的状态和行为。通过系统主体的相对简单的智能，系统在整体上显示更高层次，更加复杂，更加协调职能的有序性</p>
+<h4 id="3-_局部信息，没有中央控制">3. 局部信息，没有中央控制</h4><p>系统中的任意一个个体无法知道系统所有个体的信息（状态和行为），每个个体可以从系统中较小集合中获取信息，处理局部信息，并进行决策。系统的整体行为是通过个体的协作，竞争等局部相互作用</p>
 <p>而在<code>汤伟君</code>和<code>邱美虹</code>的这篇论文中介绍了另外几个特性</p>
-<p>####多层次<br>例如生物体的组成和运作,可以从器官、组织、细胞、基因等不同层次的面相来讨论</p>
-<p>####上向因果关系<br>上向因果关系指的是低层次性质对高层次性质的因果作用(范冬萍,2005)。高层次由低层次组合而产生,他不能脱离低层次事物而独立存在。系统由组件（component）构成，组件由子组件构成，子组件由子子组件构成等等，这就意味着每一个组件可能就是一个独立的系统。</p>
-<p>####突现,不可预测、不可化约、 非线性<br>突现就是突然出现,不被预期的出现,无法有「先见之明」的预测,引用作者原文中的一段话</p>
+<h4 id="多层次">多层次</h4><p>例如生物体的组成和运作,可以从器官、组织、细胞、基因等不同层次的面相来讨论</p>
+<h4 id="上向因果关系">上向因果关系</h4><p>上向因果关系指的是低层次性质对高层次性质的因果作用(范冬萍,2005)。高层次由低层次组合而产生,他不能脱离低层次事物而独立存在。系统由组件（component）构成，组件由子组件构成，子组件由子子组件构成等等，这就意味着每一个组件可能就是一个独立的系统。</p>
+<h4 id="突现,不可预测、不可化约、_非线性">突现,不可预测、不可化约、 非线性</h4><p>突现就是突然出现,不被预期的出现,无法有「先见之明」的预测,引用作者原文中的一段话</p>
 <blockquote>
 <p>整体论最通俗的表达为:「整体不等于部分之和」、「整体的行为并非个别组成分子所具有」(范冬萍&amp;张华夏,2005)。凡是复杂系统必具备此一特性,也就是「只有在整体(system-as-a-whole)运作的情境下才有意义」的特性(Lesh,2006)。也就是「高层次的事物整体所具有,而其组成成分所不具有,且事先不能由此加以预测的特性。」 例如生命之于生命的物理化学特性,心灵之于神经细胞的生理活动,就是一种突现(谢爱华, 2003)。<br>化约论的观点是,所有的现象都可由其个别组成份子的行为来解释,因此生命可以化约到基因,基因可以化约到DNA,DNA 可用物理化学来解释。<br>非线性指的是两个量之间不成正比关系</p>
 </blockquote>
-<p>####多重因果</p>
-<blockquote>
+<h4 id="多重因果">多重因果</h4><blockquote>
 <p>在一个复杂系统里,层级和成分都很多,因此系统的行为,受到诸多因子的影响,而且主要是受到成分交互作用的影响。随着涉及面的增加,其计算量将以失控方式递增,造成非线性、难以预测的变化(Bosomaier &amp; Green, 1998)。</p>
 </blockquote>
-<p>####成分（系统主体）互动(关系)的重要性大于成分本身</p>
-<blockquote>
+<h4 id="成分（系统主体）互动(关系)的重要性大于成分本身">成分（系统主体）互动(关系)的重要性大于成分本身</h4><blockquote>
 <p>Waldrop(1992) 指出「生命的本质在于分子的组织和互动,不在于分子」</p>
 </blockquote>
-<p>####动态的,不停止的</p>
-<blockquote>
+<h4 id="动态的,不停止的">动态的,不停止的</h4><blockquote>
 <p>又譬如股市的升降,是来自各散客大户各自的互通暗盘消息、阅读金融资讯后,买或卖股票而造成股市市场的波动(上向因果),而市场的降或跌也会影响作用体(股民)们的买卖行为(下向因果)。下向因果的存在,阐明了复杂系统内的交互作用,不仅限于同一阶层内成分的互动,实际上也有跨阶层的互动</p>
 </blockquote>
-<p>####下向因果关系</p>
-<blockquote>
+<h4 id="下向因果关系">下向因果关系</h4><blockquote>
 <p>这也是复杂系统的重要特性,但并非所有突现现象都有此一特性。所谓下向因果,指的是高层次具有低层次所不具有的性质,并对其组成部分(低层次)有支配作用</p>
 </blockquote>
-<p>####自我组织</p>
-<blockquote>
+<h4 id="自我组织">自我组织</h4><blockquote>
 <p>自组织是部份复杂系统才具有的特性，成分会自动组织成一个体系,如劳力需求、商品、服务自动组织成市场结构, 而这个体系的存在强化了每一成分的连结和存续。</p>
 </blockquote>
 <p>正如作者所言，自组织起到了自我强化的作用，使得整体的能力强过于个体，而这个自我强化能力之一,便是正回馈</p>
-<p>####正回馈或报酬递增</p>
-<blockquote>
+<h4 id="正回馈或报酬递增">正回馈或报酬递增</h4><blockquote>
 <p>正回馈的例子在自然界可能造成两大结果,一个是形成自我强化组,例如前面提到的化学反应连锁催化组。另一个效应则是搭配系统内各成分的互动,使得初始状况的小变动,可以导致之后系统的巨大改变,即众所周知的蝴蝶效应(Gleick,1987)。在一个自组织系统里,有可能会受到不起眼的关键分子的影响,而大幅改变了原有的组织型态。例如汽车取代马车之后,所引起的人类经济体系转变,包括行业的兴衰、能源需求、运输能力等都发生了重大改变(Waldrop, 1992)。</p>
 </blockquote>
 <p>看完了这篇文章的介绍，有几个问题</p>
 <ul>
-<li><p>系统主体的智能对复杂系统有何影响？<br>一个复杂系统中的主体如果是人类等有高智能生物，复杂系统会因为个体的不稳定，不确定而变得更加复杂，而相对简单的智能，例如系统主体为晶体管的微处理器，蚂蚁等，则没有那样复杂。所以系统主体的智能水平可以决定一个复杂系统的复杂层次。</p>
-</li>
-<li><p>为何竞争和协作可以形成更高层次，更加复杂的智能？<br>根据上面的介绍，原因就是「突现（涌现）」，突现使得系统整体具有个体所不具有的特性</p>
-</li>
-<li><p>复杂系统和非复杂系统（简单系统）的差别？</p>
-</li>
+<li>系统主体的智能对复杂系统有何影响？<br>一个复杂系统中的主体如果是人类等有高智能生物，复杂系统会因为个体的不稳定，不确定而变得更加复杂，而相对简单的智能，例如系统主体为晶体管的微处理器，蚂蚁等，则没有那样复杂。所以系统主体的智能水平可以决定一个复杂系统的复杂层次。</li>
+<li>为何竞争和协作可以形成更高层次，更加复杂的智能？<br>根据上面的介绍，原因就是「突现（涌现）」，突现使得系统整体具有个体所不具有的特性</li>
+<li>复杂系统和非复杂系统（简单系统）的差别？</li>
 </ul>
-<h2 id="参考文献">参考文献</h2><ol>
+<h3 id="参考文献">参考文献</h3><ol>
 <li><a href="http://zh.wikipedia.org/wiki/%E6%99%B6%E4%BD%93%E7%AE%A1" target="_blank" rel="external">晶体管维基百科</a></li>
 <li><a href="http://zh.wikipedia.org/wiki/%E6%99%BA%E8%83%BD" target="_blank" rel="external">智能维基百科</a></li>
 <li>汤伟君* 邱美虹复杂系统、突现及其对科学教育的启示(2007)</li>
 </ol>
-
+</span>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/03/07/组件化与复杂系统/" data-id="ciepbvo2t00301bw1yfvpyqxk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Com/">Com</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端组件化/">前端组件化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/复杂系统/">复杂系统</a></li></ul>
 
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Com/" rel="tag">#Com</a>
+          
+            <a href="/tags/复杂系统/" rel="tag">#复杂系统</a>
+          
+            <a href="/tags/组件化/" rel="tag">#组件化</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/03/24/javascript内存优化/" rel="prev">javascript内存优化</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/03/06/Performance-Timing/" rel="next">如何使用Performance-Timing进行性能统计？</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2014/03/24/javascript内存优化/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+
+ </div>
+
         
-          (no title)
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
         
       </div>
-    </a>
-  
-  
-    <a href="/2014/03/06/Performance-Timing/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
-    </a>
-  
-</nav>
 
+      
   
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life-Style/">Life Style</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UI界面/">UI界面</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unix/">Unix</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/node-webkit/">node-webkit</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端开发/">前端开发</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习研究/">学习研究</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心理学/">心理学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能监控/">性能监控</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模塊化/">模塊化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><span class="category-list-count">2</span></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AMD/">AMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMD/">CMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Com/">Com</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Day-Study/">Day Study</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/W3C/">W3C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/haskell/">haskell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http协议/">http协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/restful/">restful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端开发/">前端开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端性能优化/">前端性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端组件化/">前端组件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/复杂系统/">复杂系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发/">工具开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间管理/">时间管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模塊化/">模塊化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活优化/">生活优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用戶交互/">用戶交互</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目文档/">项目文档</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AMD/" style="font-size: 10px;">AMD</a> <a href="/tags/CMD/" style="font-size: 10px;">CMD</a> <a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/Day-Study/" style="font-size: 16.67px;">Day Study</a> <a href="/tags/W3C/" style="font-size: 10px;">W3C</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/dom/" style="font-size: 13.33px;">dom</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/前端开发/" style="font-size: 13.33px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 16.67px;">前端性能优化</a> <a href="/tags/前端组件化/" style="font-size: 10px;">前端组件化</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/性能优化/" style="font-size: 16.67px;">性能优化</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/时间管理/" style="font-size: 10px;">时间管理</a> <a href="/tags/模塊化/" style="font-size: 10px;">模塊化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/用戶交互/" style="font-size: 10px;">用戶交互</a> <a href="/tags/编程语言/" style="font-size: 16.67px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/读书笔记/" style="font-size: 16.67px;">读书笔记</a> <a href="/tags/项目文档/" style="font-size: 10px;">项目文档</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2015/06/04/Haskell入门笔记/">(no title)</a>
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
           </li>
-        
-          <li>
-            <a href="/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/">(no title)</a>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
           </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Andrew Zhang" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Andrew Zhang</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
         
-          <li>
-            <a href="/2015/04/12/Life-time-tracker表达的理念/">(no title)</a>
-          </li>
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
         
-          <li>
-            <a href="/2015/03/31/关于Javascript以前忽略的性能问题/">(no title)</a>
-          </li>
         
-          <li>
-            <a href="/2015/03/24/Min-和-Max方法的实现和用法/">(no title)</a>
-          </li>
-        
-      </ul>
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是复杂系统？"><span class="nav-number">1.</span> <span class="nav-text">什么是复杂系统？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-_中等大小数目的主体"><span class="nav-number">1.1.</span> <span class="nav-text">1. 中等大小数目的主体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-_智能性和自适应性"><span class="nav-number">1.2.</span> <span class="nav-text">2. 智能性和自适应性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-_局部信息，没有中央控制"><span class="nav-number">1.3.</span> <span class="nav-text">3. 局部信息，没有中央控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多层次"><span class="nav-number">1.4.</span> <span class="nav-text">多层次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上向因果关系"><span class="nav-number">1.5.</span> <span class="nav-text">上向因果关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#突现,不可预测、不可化约、_非线性"><span class="nav-number">1.6.</span> <span class="nav-text">突现,不可预测、不可化约、 非线性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多重因果"><span class="nav-number">1.7.</span> <span class="nav-text">多重因果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成分（系统主体）互动(关系)的重要性大于成分本身"><span class="nav-number">1.8.</span> <span class="nav-text">成分（系统主体）互动(关系)的重要性大于成分本身</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态的,不停止的"><span class="nav-number">1.9.</span> <span class="nav-text">动态的,不停止的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下向因果关系"><span class="nav-number">1.10.</span> <span class="nav-text">下向因果关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自我组织"><span class="nav-number">1.11.</span> <span class="nav-text">自我组织</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正回馈或报酬递增"><span class="nav-number">1.12.</span> <span class="nav-text">正回馈或报酬递增</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">2.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
     </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Zhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
   </div>
 
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
   
-</aside>
-        
-      </div>
-      <footer id="footer">
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 Andrew Zhang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
 
-  </div>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
 </body>
 </html>

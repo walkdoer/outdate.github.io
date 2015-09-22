@@ -1,11 +1,43 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="theme-next use-motion ">
 <head>
-  <meta charset="utf-8">
   
-  <title>Code Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Code Me">
 <meta property="og:url" content="http://zhangmhao.github.io/page/2/index.html">
@@ -14,81 +46,169 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Code Me">
 <meta name="twitter:description">
-  
-    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  
 
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Code Me </title>
 </head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Code Me</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhangmhao.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Restful-API" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/09/12/Restful-API/" class="article-date">
-  <time datetime="2014-09-11T16:00:00.000Z" itemprop="datePublished">2014-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端开发/">前端开发</a>
-  </div>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
   </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
+<![endif]-->
+  
+
+
+
+  <div class="container one-column 
+   page-home 
+">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Code Me</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
       
-        <h1 id="RESTFul_API">RESTFul API</h1><p>###什么是RESTful架构：</p>
-<p>Fielding将他对互联网软件的架构原则，定名为REST，即Representational State Transfer的缩写。我对这个词组的翻译是”表现层状态转化”。要理解RESTful架构，最好的方法就是去理解Representational State Transfer这个词组到底是什么意思，它的每一个词代表了什么涵义。</p>
-<p>####资源（Resources）</p>
-<p>网络上的一个实体，它可以是一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实在。你可以用一个URI（统一资源定位符）指向它，每种资源对应一个特定的URI。</p>
-<p>####表现层（Representation）</p>
-<p>我们把”资源”具体呈现出来的形式，叫做它的”表现层”（Representation）。”资源”是一种信息实体，它可以有多种外在表现形式。比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现。URI只代表资源的实体，不代表它的形式。严格地说，有些网址最后的”.html”后缀名是不必要的，因为这个后缀名表示格式，属于”表现层”范畴，而URI应该只代表”资源”的位置。它的具体表现形式，应该在HTTP请求的头信息中用Accept和Content-Type字段指定，这两个字段才是对”表现层”的描述。</p>
-<p>####状态转化（State Transfer）</p>
-<p>客户端想要操作服务器，必须通过某种手段，让服务器端发生”状态转化”（State Transfer）。而这种转化是建立在表现层之上的，所以就是”表现层状态转化”。 </p>
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+  <section id="posts" class="posts-expand">
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/09/12/Restful-API/" itemprop="url">
+                RESTful学习笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-09-12T00:00:00+08:00" content="2014-09-12">
+            2014-09-12
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/前端开发/" itemprop="url" rel="index">
+                  <span itemprop="name">前端开发</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="什么是RESTful架构：">什么是RESTful架构：</h3><p>Fielding将他对互联网软件的架构原则，定名为REST，即Representational State Transfer的缩写。我对这个词组的翻译是”表现层状态转化”。要理解RESTful架构，最好的方法就是去理解Representational State Transfer这个词组到底是什么意思，它的每一个词代表了什么涵义。</p>
+<h4 id="资源（Resources）">资源（Resources）</h4><p>网络上的一个实体，它可以是一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实在。你可以用一个URI（统一资源定位符）指向它，每种资源对应一个特定的URI。</p>
+<h4 id="表现层（Representation）">表现层（Representation）</h4><p>我们把”资源”具体呈现出来的形式，叫做它的”表现层”（Representation）。”资源”是一种信息实体，它可以有多种外在表现形式。比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现。URI只代表资源的实体，不代表它的形式。严格地说，有些网址最后的”.html”后缀名是不必要的，因为这个后缀名表示格式，属于”表现层”范畴，而URI应该只代表”资源”的位置。它的具体表现形式，应该在HTTP请求的头信息中用Accept和Content-Type字段指定，这两个字段才是对”表现层”的描述。</p>
+<h4 id="状态转化（State_Transfer）">状态转化（State Transfer）</h4><p>客户端想要操作服务器，必须通过某种手段，让服务器端发生”状态转化”（State Transfer）。而这种转化是建立在表现层之上的，所以就是”表现层状态转化”。 </p>
 <p>这里引用阮一峰的总结：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 每一个URI代表一种资源；</span><br><span class="line"><span class="number">2.</span> 客户端和服务器之间，传递这种资源的某种表现层；</span><br><span class="line"><span class="number">3.</span> 客户端通过四个HTTP动词，对服务器端资源进行操作，实现<span class="string">"表现层状态转化"</span></span><br></pre></td></tr></table></figure>
-<p>###实例</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /zoos：列出所有动物园</span><br><span class="line">POST /zoos：新建一个动物园</span><br><span class="line">GET <span class="regexp">/zoos/</span>ID：获取某个指定动物园的信息</span><br><span class="line">PUT <span class="regexp">/zoos/</span>ID：更新某个指定动物园的信息（提供该动物园的全部信息）</span><br><span class="line">PATCH <span class="regexp">/zoos/</span>ID：更新某个指定动物园的信息（提供该动物园的部分信息）</span><br><span class="line">DELETE <span class="regexp">/zoos/</span>ID：删除某个动物园</span><br><span class="line">GET <span class="regexp">/zoos/</span>ID/animals：列出某个指定动物园的所有动物</span><br><span class="line">DELETE <span class="regexp">/zoos/</span>ID<span class="regexp">/animals/</span>ID：删除某个指定动物园的指定动物</span><br></pre></td></tr></table></figure>
+<h3 id="实例">实例</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /zoos：列出所有动物园</span><br><span class="line">POST /zoos：新建一个动物园</span><br><span class="line">GET <span class="regexp">/zoos/</span>ID：获取某个指定动物园的信息</span><br><span class="line">PUT <span class="regexp">/zoos/</span>ID：更新某个指定动物园的信息（提供该动物园的全部信息）</span><br><span class="line">PATCH <span class="regexp">/zoos/</span>ID：更新某个指定动物园的信息（提供该动物园的部分信息）</span><br><span class="line">DELETE <span class="regexp">/zoos/</span>ID：删除某个动物园</span><br><span class="line">GET <span class="regexp">/zoos/</span>ID/animals：列出某个指定动物园的所有动物</span><br><span class="line">DELETE <span class="regexp">/zoos/</span>ID<span class="regexp">/animals/</span>ID：删除某个指定动物园的指定动物</span><br></pre></td></tr></table></figure>
 <h3 id="RESTful架构有一些典型的设计误区">RESTful架构有一些典型的设计误区</h3><p>最常见的一种设计错误，就是URI包含动词。因为”资源”表示一种实体，所以应该是名词，URI不应该有动词，动词应该放在HTTP协议中。<br>另一个设计误区，就是在URI中加入版本号：</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　<span class="symbol">http:</span>/<span class="regexp">/www.example.com/app</span><span class="regexp">/1.0/foo</span></span><br><span class="line">　<span class="symbol">http:</span>/<span class="regexp">/www.example.com/app</span><span class="regexp">/1.1/foo</span></span><br><span class="line">　<span class="symbol">http:</span>/<span class="regexp">/www.example.com/app</span><span class="regexp">/2.0/foo</span></span><br></pre></td></tr></table></figure>
 <p>因为不同的版本，可以理解成同一种资源的不同表现形式，所以应该采用同一个URI。版本号可以在HTTP请求头信息的Accept字段中进行区分（参见Versioning REST Services）：</p>
@@ -103,69 +223,109 @@
 <li><a href="http://codeplanet.io/principles-good-restful-api-design/" target="_blank" rel="external">Principles of good RESTful API Design</a></li>
 <li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1" target="_blank" rel="external">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1</a></li>
 </ol>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/09/12/Restful-API/" data-id="ciepbvnxy00041bw1ag08ja6t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/restful/">restful</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-探索如何管理API" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/07/12/探索如何管理API/" class="article-date">
-  <time datetime="2014-07-11T16:00:00.000Z" itemprop="datePublished">2014-07-12</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/开发/">开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="为什么要管理接口？">为什么要管理接口？</h3><p>开发过程中，前端和后端耦合的部分就在于接口的联调，如果没有一份详细并且清晰准确的文档，沟通成本往往会大大的增加，再加上沟通流畅度的影响（开发人员不在同一个办公地点），还有，很重要的一点是：到要保证准确就必须保证文档和实际接口代码的同步，对于繁（懒）忙（惰）的程序员来讲，这个是无法100%保证的。而对于这一点，仅仅建立一份文档是远远不够的，因为这里涉及到人的因数，而人往往是系统当中最不靠谱的，稳定性最差的模块。如果你不想成为这种机械工作中的一个模块，就必须想出更好的办法来管理接口。</p>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/07/12/探索如何管理API/" itemprop="url">
+                探索API管理的可行方案
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-07-12T00:00:00+08:00" content="2014-07-12">
+            2014-07-12
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/开发/" itemprop="url" rel="index">
+                  <span itemprop="name">开发</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="为什么要管理接口？">为什么要管理接口？</h3><p>开发过程中，前端和后端耦合的部分就在于接口的联调，如果没有一份详细并且清晰准确的文档，沟通成本往往会大大的增加，再加上沟通流畅度的影响（开发人员不在同一个办公地点），还有，很重要的一点是：到要保证准确就必须保证文档和实际接口代码的同步，对于繁（懒）忙（惰）的程序员来讲，这个是无法100%保证的。而对于这一点，仅仅建立一份文档是远远不够的，因为这里涉及到人的因数，而人往往是系统当中最不靠谱的，稳定性最差的模块。如果你不想成为这种机械工作中的一个模块，就必须想出更好的办法来管理接口。</p>
 <p>这里先总结一下，如果缺少有效的接口管理，会有以下坏处：</p>
 <ul>
 <li>沟通成本高</li>
 <li>容易出错</li>
 </ul>
 <p>而以上两点导致一个终极的问题：<strong>生命的浪费</strong>，没有人愿意将时间花在无谓的事情之上。目前在接口管理上又那些痛点呢？</p>
-<h3 id="痛点">痛点</h3><p>####1. 编写接口文档较为繁琐</p>
-<ul>
+<h3 id="痛点">痛点</h3><h4 id="1-_编写接口文档较为繁琐">1. 编写接口文档较为繁琐</h4><ul>
 <li>文档格式不统一<br>各个团队没有一份统一的文档格式，不方便不同团队之间的合作和交流。</li>
 <li>静态文本的编辑成本高<br>文本的格式化，代码的高亮等等</li>
 </ul>
-<p>####2. 维护文档更难</p>
-<p>维护文档的主要工作就是保持接口文档和代码的一致性，如果代码发生改变而文档没有更新，那么依旧是有一定的沟通成本。</p>
-<p>####3. 接口文档的难以管理<br>有了文档之后，要查阅，要修改，要归类，要分版本。这些都是需要一个平台来进行支撑，而不仅仅是用一份静态文本就可以解决的</p>
-<p>####4. 接口测试难</p>
-<p>在平时的开发中，前端和后端定好了接口协议之后就并行进行开发，有的是前端自己模拟数据，有的是使用后端的模拟数据。等到后端接口开发完成之后，就将真实接口来替换模拟数据的接口。在这里有两种情形：</p>
+<h4 id="2-_维护文档更难">2. 维护文档更难</h4><p>维护文档的主要工作就是保持接口文档和代码的一致性，如果代码发生改变而文档没有更新，那么依旧是有一定的沟通成本。</p>
+<h4 id="3-_接口文档的难以管理">3. 接口文档的难以管理</h4><p>有了文档之后，要查阅，要修改，要归类，要分版本。这些都是需要一个平台来进行支撑，而不仅仅是用一份静态文本就可以解决的</p>
+<h4 id="4-_接口测试难">4. 接口测试难</h4><p>在平时的开发中，前端和后端定好了接口协议之后就并行进行开发，有的是前端自己模拟数据，有的是使用后端的模拟数据。等到后端接口开发完成之后，就将真实接口来替换模拟数据的接口。在这里有两种情形：</p>
 <ol>
 <li>使用后端提供的模拟数据，工作量在后端</li>
 <li>前端自己模拟数据，工作量在前端，需要将访问接口切换为真实数据</li>
 </ol>
 <p>自己对情形1不熟悉，这里先谈情形2，后端接口完成之后，前端进行接口替换，验证方式类似冒烟测试，如果时间充裕，就会验证的仔细，时间不充裕，则有可能会忽略掉实际接口和接口文档中的部分细微差别。这里依靠人工的验证方式，不仅效率低下，而且容易出错。解决的办法就是提供接口的单元测试和回归测试。每一个接口的定义就是一个测试用例，接口完成之后可以借助单元测试正确高效的验证接口的正确性。而每一次对接口的修改，都可以进行回归测试，验证接口的修改是否会引起系统的错误。</p>
-<p>####5. 对接口文档的重视度不足<br>我见过部分团队接口文档都给省了，直接口头交流。当然会沟通成本过高。但是问其为何不用接口文档，他们就是觉得写接口文档太麻烦了，维护也麻烦。也就是说，接口文档编写维护成本高，这已经是一个门槛了，再加上看不到接口文档带来的效益，所以他们宁愿采取低效的口头交流。<br>而有的团队还是会编写接口文档，但是随着项目的迭代，很多的接口文档都无法跟上代码的脚步。</p>
+<h4 id="5-_对接口文档的重视度不足">5. 对接口文档的重视度不足</h4><p>我见过部分团队接口文档都给省了，直接口头交流。当然会沟通成本过高。但是问其为何不用接口文档，他们就是觉得写接口文档太麻烦了，维护也麻烦。也就是说，接口文档编写维护成本高，这已经是一个门槛了，再加上看不到接口文档带来的效益，所以他们宁愿采取低效的口头交流。<br>而有的团队还是会编写接口文档，但是随着项目的迭代，很多的接口文档都无法跟上代码的脚步。</p>
 <p>好，现在针对这些痛点来进行平台的设计</p>
 <ul>
 <li>编写难</li>
 <li>维护难</li>
 <li>测试难</li>
 </ul>
-<h3 id="系统设计">系统设计</h3><h4 id="1-_接口管理">1. 接口管理</h4><p>#####1.1 可视化编辑</p>
-<p>降低编写成本，写接口就像写对象图。</p>
+<h3 id="系统设计">系统设计</h3><h4 id="1-_接口管理">1. 接口管理</h4><h5 id="1-1_可视化编辑">1.1 可视化编辑</h5><p>降低编写成本，写接口就像写对象图。</p>
 <p>一般接口文档是如何描述接口的呢？</p>
 <p>非RestFul风格：</p>
 <figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">URL: /getTodoList</span><br><span class="line"><span class="function"><span class="keyword">method</span>:</span> GET</span><br><span class="line"><span class="keyword">desc</span>: 获取Todo列表，<span class="keyword">type</span>参数进行过滤，已有类型</span><br><span class="line">    已完成: done</span><br><span class="line">    已删除: delete</span><br><span class="line">    代办: todo</span><br><span class="line">如果不传表示不过滤</span><br><span class="line"><span class="keyword">params</span>:</span><br><span class="line">    <span class="keyword">type</span> <span class="comment">&#123;required&#125;</span><span class="comment">&#123;string&#125;</span> done/todo/delete</span><br><span class="line">example:</span><br><span class="line">    /getTodo?id=<span class="number">23</span>ef</span><br><span class="line"></span><br><span class="line">-----------------------------------------------</span><br><span class="line"></span><br><span class="line">URL: /getTodo</span><br><span class="line"><span class="function"><span class="keyword">method</span>:</span> GET</span><br><span class="line"><span class="keyword">desc</span>: 获取todo的详情</span><br><span class="line"><span class="keyword">params</span>:</span><br><span class="line">    id <span class="comment">&#123;required&#125;</span><span class="comment">&#123;string&#125;</span> Todo项目的ID</span><br><span class="line"></span><br><span class="line">example:</span><br><span class="line">    /getTodo?id=<span class="number">23</span>ef</span><br><span class="line"></span><br><span class="line">-----------------------------------------------</span><br><span class="line"></span><br><span class="line">URL: /saveTodo</span><br><span class="line"><span class="function"><span class="keyword">method</span>:</span> POST</span><br><span class="line"><span class="keyword">desc</span>: 保存Todo</span><br><span class="line"><span class="keyword">params</span>:</span><br><span class="line">    id  <span class="comment">&#123;string&#125;</span><span class="comment">&#123;required&#125;</span> ID</span><br><span class="line">    title  <span class="comment">&#123;string&#125;</span><span class="comment">&#123;required&#125;</span> 标题</span><br><span class="line">    note <span class="comment">&#123;string&#125;</span> 备注</span><br><span class="line">    </span><br><span class="line">-----------------------------------------------</span><br><span class="line"></span><br><span class="line">URL: /createTodo</span><br><span class="line"><span class="function"><span class="keyword">method</span>:</span> POST</span><br><span class="line"><span class="keyword">desc</span>: 创建Todo</span><br><span class="line"><span class="keyword">params</span>:</span><br><span class="line">    title  <span class="comment">&#123;string&#125;</span><span class="comment">&#123;required&#125;</span> 标题</span><br><span class="line">    note <span class="comment">&#123;string&#125;</span> 备注</span><br></pre></td></tr></table></figure>
@@ -179,15 +339,12 @@
 </li>
 </ul>
 <p>而可视化编辑和更友好的管理界面(解决搜索过滤问题)就是要解决这种问题</p>
-<p>#####1.2 接口实现进度</p>
-<p>可是查看接口实现进度</p>
+<h5 id="1-2_接口实现进度">1.2 接口实现进度</h5><p>可是查看接口实现进度</p>
 <p>一旦接口可以访问，且数据正确，则表示该接口以完成。</p>
-<p>#####1.3 接口版本管理</p>
-<p>每一次对接口的修改都可以有一个对应的版本号。接口使用方可以指定对应的版本访问不同版本的数据，例如:</p>
+<h5 id="1-3_接口版本管理">1.3 接口版本管理</h5><p>每一次对接口的修改都可以有一个对应的版本号。接口使用方可以指定对应的版本访问不同版本的数据，例如:</p>
 <pre><code>`/<span class="number">1.1</span><span class="number">.0</span>/todo/<span class="number">23</span>ef`  返回<span class="number">1.1</span><span class="number">.0</span>版本的数据
 `/<span class="number">1.2</span><span class="number">.0</span>/todo/<span class="number">23</span>ef`  返回<span class="number">1.2</span><span class="number">.0</span>版本的数据
-</code></pre><p>####2. Mock数据</p>
-<p>设计好接口之后，为了前后端可以并行开发，就需要先提供模拟数据。一般来讲，不是后端提供，就是前端自己模拟数据，无论使用哪一种方式，都得自己去造数据。这也是一个耗时的地方。那么，该如何改进呢？</p>
+</code></pre><h4 id="2-_Mock数据">2. Mock数据</h4><p>设计好接口之后，为了前后端可以并行开发，就需要先提供模拟数据。一般来讲，不是后端提供，就是前端自己模拟数据，无论使用哪一种方式，都得自己去造数据。这也是一个耗时的地方。那么，该如何改进呢？</p>
 <p>一旦使用APIE系统添加完接口之后，就可以根据接口描述来自动造数据<br>例如一个todo系统的接口描述为</p>
 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">todo: &#123;</span><br><span class="line">    <span class="keyword">desc</span>: <span class="string">'todo项目'</span>,</span><br><span class="line">    apis: [&#123;</span><br><span class="line">        name: <span class="string">'todos'</span>,</span><br><span class="line">        <span class="keyword">desc</span>: <span class="string">'获取todo列表'</span>,</span><br><span class="line">        uri: <span class="string">'todos'</span>,</span><br><span class="line">        method: <span class="string">'GET'</span>,</span><br><span class="line">        parameters: [],</span><br><span class="line">        model: &#123;</span><br><span class="line">            id: &#123;</span><br><span class="line">                type: <span class="string">'number'</span>,</span><br><span class="line">                <span class="keyword">desc</span>: <span class="string">'id'</span>,</span><br><span class="line">                required: <span class="keyword">true</span></span><br><span class="line">            &#125;</span><br><span class="line">            title: &#123;</span><br><span class="line">                type: <span class="string">'string'</span>,</span><br><span class="line">                <span class="keyword">desc</span>: <span class="string">'标题'</span>,</span><br><span class="line">                required: <span class="keyword">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            note: &#123;</span><br><span class="line">                type: <span class="string">'string'</span>,</span><br><span class="line">                <span class="keyword">desc</span>: <span class="string">'备注'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            done: &#123;</span><br><span class="line">                type: <span class="string">'boolean'</span>,</span><br><span class="line">                <span class="keyword">desc</span>: <span class="string">'已完成'</span>,</span><br><span class="line">                <span class="keyword">default</span>: <span class="keyword">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以自动造数据, 接口<code>/todos</code>返回:</p>
@@ -195,16 +352,10 @@
 <p>接口<code>/todos/23ef</code></p>
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    success: <span class="literal">true</span>,</span><br><span class="line">    <span class="built_in">data</span> <span class="built_in">data</span>: <span class="preprocessor">[</span>&#123;</span><br><span class="line">        id: <span class="string">'23ef'</span>,</span><br><span class="line">        title: <span class="string">'this is a title 1'</span>,</span><br><span class="line">        note: <span class="string">'this is a note 1'</span>,</span><br><span class="line">        done: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意到，上面的数据是一种不包含业务细节的数据模拟<code>this is a title 1</code>之类的数据不够真实。那么该如何让系统更加真实呢？前期暂时没有一个太好的规划，目前的想法是通过用户自己录入数据，或者系统自身先<strong>预置一部分数据</strong>。例如email,address,url之类是可以模拟出来的。业务方面也可以<strong>通过学习用户自定义的数据</strong>来增加系统的经验，例如如果有系统定义了浏览器平台，且添加了一些自定义模拟数据。则将这些模拟数据添加到模拟数据的数据库中。</p>
-<p>####3. 接口测试</p>
-<p>#####3.1 单元测试</p>
-<p>#####3.2 回归测试</p>
-<p>####4. 网络环境的模拟</p>
-<p>#####4.1 常用环境(2G,3G,wifi,4G)</p>
-<p>通过收集运行商网速数据来进行模拟<br>返回数据的时间:</p>
+<h4 id="3-_接口测试">3. 接口测试</h4><h5 id="3-1_单元测试">3.1 单元测试</h5><h5 id="3-2_回归测试">3.2 回归测试</h5><h4 id="4-_网络环境的模拟">4. 网络环境的模拟</h4><h5 id="4-1_常用环境(2G,3G,wifi,4G)">4.1 常用环境(2G,3G,wifi,4G)</h5><p>通过收集运行商网速数据来进行模拟<br>返回数据的时间:</p>
 <p>$$ rtt = \dfrac{dataSize}{speed} $$</p>
 <p>rtt: roadtrip time</p>
-<p>#####4.2 自定义网速</p>
-<p>不同时间段可以有不同的速度</p>
+<h5 id="4-2_自定义网速">4.2 自定义网速</h5><p>不同时间段可以有不同的速度</p>
 <hr>
 <h3 id="代码的双向同步">代码的双向同步</h3><p>来模拟一下这一个过程：</p>
 <p>现在平台上进行编辑,</p>
@@ -213,39 +364,83 @@
 <p>代码中只要添加对应的标识符</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * <span class="doctag">@apie</span> [messages/&#123;id&#125; GET]</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMessage</span><span class="params">(id)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello world"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后如果有代码库权限，则平台可以进行代码分析。找出文档和代码的差异，进而进行同步，如果文档发生改变，而代码没有发生改变，则平台进行提醒，用户自行修改，如果代码发生改变，而文档没有变，则进行提示，代码发生改变，是否进行代码同步。</p>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/07/12/探索如何管理API/" data-id="ciepbvo18001m1bw1012g9wpi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目文档/">项目文档</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-代码整洁之道(读书笔记)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/06/26/代码整洁之道(读书笔记)/" class="article-date">
-  <time datetime="2014-06-25T16:00:00.000Z" itemprop="datePublished">2014-06-26</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/设计/">设计</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-_整洁代码">1. 整洁代码</h2><h4 id="什么样的代码算是整洁？">什么样的代码算是整洁？</h4><ul>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/06/26/代码整洁之道(读书笔记)/" itemprop="url">
+                代码整洁之道(读书笔记)
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-06-26T00:00:00+08:00" content="2014-06-26">
+            2014-06-26
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                  <span itemprop="name">读书笔记</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="1-_整洁代码">1. 整洁代码</h2><h4 id="什么样的代码算是整洁？">什么样的代码算是整洁？</h4><ul>
 <li>只做好一件事情</li>
 <li>没有重复代码</li>
 <li>代码逻辑直接了当，只包含必须的代码</li>
@@ -335,39 +530,83 @@
 </li>
 <li>类的方法应该细粒度（甚至是原子操作）</li>
 </ul>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/06/26/代码整洁之道(读书笔记)/" data-id="ciepbvo13001i1bw10vnj8kas" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-暗时间(读书笔记)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/06/17/暗时间(读书笔记)/" class="article-date">
-  <time datetime="2014-06-16T16:00:00.000Z" itemprop="datePublished">2014-06-17</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/设计/">设计</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/06/17/暗时间(读书笔记)/" itemprop="url">
+                暗时间 (读书笔记)
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-06-17T00:00:00+08:00" content="2014-06-17">
+            2014-06-17
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                  <span itemprop="name">读书笔记</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><blockquote>
 <p>多思考的人心理年龄较大</p>
 </blockquote>
 <p><strong>思维时间</strong>：推理的过程，或称之为暗时间，吃饭，上厕所，买菜，逛街，都可以变成暗时间</p>
@@ -402,42 +641,84 @@
 <blockquote>
 <p>All Life is Problem-Solving</p>
 </blockquote>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/06/17/暗时间(读书笔记)/" data-id="ciepbvo1i001t1bw14p418jll" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-设计中的设计(读书笔记)" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/06/08/设计中的设计(读书笔记)/" class="article-date">
-  <time datetime="2014-06-07T16:00:00.000Z" itemprop="datePublished">2014-06-08</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/设计/">设计</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="设计到底是什么？">设计到底是什么？</h2><p>####设计源于生活，应用于生活</p>
-<p>机械化生产速度惊人，粗糙的产品大量出现，，那些热爱生活的人们对旧日审美的流逝倍感痛心。机械对传统美感的践踏，是人们不能忍受的。<strong>人们的审美意识对工业机制产生的反弹，现代设计的概念由此诞生</strong>。</p>
-<p>####设计的整合：包豪斯设计运动</p>
-<p>经济发展水平导致了生活意识的成熟，开始对设计的关注</p>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/06/08/设计中的设计(读书笔记)/" itemprop="url">
+                设计中的设计(读书笔记)
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-06-08T00:00:00+08:00" content="2014-06-08">
+            2014-06-08
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                  <span itemprop="name">读书笔记</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="设计到底是什么？">设计到底是什么？</h2><h4 id="设计源于生活，应用于生活">设计源于生活，应用于生活</h4><p>机械化生产速度惊人，粗糙的产品大量出现，，那些热爱生活的人们对旧日审美的流逝倍感痛心。机械对传统美感的践踏，是人们不能忍受的。<strong>人们的审美意识对工业机制产生的反弹，现代设计的概念由此诞生</strong>。</p>
+<h4 id="设计的整合：包豪斯设计运动">设计的整合：包豪斯设计运动</h4><p>经济发展水平导致了生活意识的成熟，开始对设计的关注</p>
 <p>美国的经济给与其设计的思想，将设计当做一种经营资源来使用，利用消费者喜新厌旧的心里，通过外观的更新换代来促使消费动机的产生</p>
 <p>第二次世界大战之后日本成为世界工厂（规格化，量化的产品），经济虽得以高速发展，却也导致产业设计与文化的分裂。</p>
 <p>二十世纪后半叶，美国，欧洲，日本，由于历史背景的不同，经济发展轨迹不同，设计在社会中产生的机能也不一样。但有一点是相同的，主要动力来源都是“经济”。</p>
@@ -485,39 +766,83 @@
 <p>书籍作为一种信息的载体，确实有点过时了…<br>但是信息不仅仅需要被大量的保存和高速的移动。我们需要冷静的观察，思考信息和个人之间的关系，以此来研究信息。以这个标准来评价书籍，用有着合适的重量和厚度，并且手感良好的材料来做信息的载体，显然要比储存在一块记忆卡的信息表现方式更能给人带来良好的使用感和满足感</p>
 </blockquote>
 <p>以物质的形式来传递信息给自己留下了思考的空间.</p>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/06/08/设计中的设计(读书笔记)/" data-id="ciepbvo1c001q1bw1m2jfqywt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-由橡皮鸭到Code-Review" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/06/02/由橡皮鸭到Code-Review/" class="article-date">
-  <time datetime="2014-06-01T16:00:00.000Z" itemprop="datePublished">2014-06-02</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/开发/">开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="小黄鸭测试法（Rubber_Duck_Debugging）">小黄鸭测试法（Rubber Duck Debugging）</h3><blockquote>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/06/02/由橡皮鸭到Code-Review/" itemprop="url">
+                由橡皮鸭到Code-Review
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-06-02T00:00:00+08:00" content="2014-06-02">
+            2014-06-02
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/测试/" itemprop="url" rel="index">
+                  <span itemprop="name">测试</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="小黄鸭测试法（Rubber_Duck_Debugging）">小黄鸭测试法（Rubber Duck Debugging）</h3><blockquote>
 <p>小黄鸭调试法，又称橡皮鸭调试法，黄鸭除虫法（Rubber Duck Debugging）是软件工程中使用的调试代码方法之一。就是在程序的调试、纠错或测试过程中，耐心地向小黄鸭解释每一行程序的作用，以此来激发灵感。– wikipedia</p>
 </blockquote>
 <p>感觉这是一种又可爱又稍微有点精神分裂感的方法！宅们又扩展出：初音调试法等</p>
@@ -555,39 +880,83 @@
 <li><a href="http://coolshell.cn/articles/1302.html" target="_blank" rel="external">Code Review中的几个提示</a></li>
 <li><a href="http://blog.csdn.net/haoel/article/details/4914403" target="_blank" rel="external">橡皮鸭程序调试法</a></li>
 </ol>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/06/02/由橡皮鸭到Code-Review/" data-id="ciepbvo1p00201bw1j8wustdy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-浏览器关键时间点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/05/20/浏览器关键时间点/" class="article-date">
-  <time datetime="2014-05-19T16:00:00.000Z" itemprop="datePublished">2014-05-20</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端开发/">前端开发</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://www.w3.org/TR/navigation-timing/timing-overview.png" alt="enter image description here"></p>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/05/20/浏览器关键时间点/" itemprop="url">
+                什么是浏览器关键时间点？
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-05-20T00:00:00+08:00" content="2014-05-20">
+            2014-05-20
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/前端开发/" itemprop="url" rel="index">
+                  <span itemprop="name">前端开发</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><img src="http://www.w3.org/TR/navigation-timing/timing-overview.png" alt="enter image description here"></p>
 <p>注明: 图片引用自 <a href="http://www.w3.org/TR/navigation-timing/" target="_blank" rel="external">W3C</a></p>
 <h3 id="TTFB(Time_to_First_Byte)">TTFB(Time to First Byte)</h3><p>指从客户端开始和服务端交互到服务端开始向客户端浏览器传输数据的时间（包括DNS、socket连接和请求响应时间），是能够反映服务端响应速度的重要指标 </p>
 <p>优化：优化DNS查询，使用CDN，提早Flush，添加周期头等</p>
@@ -659,39 +1028,83 @@
 <li><a href="http://www.w3.org/TR/navigation-timing/" target="_blank" rel="external">http://www.w3.org/TR/navigation-timing/</a></li>
 <li><a href="https://developer.chrome.com/devtools/docs/network" target="_blank" rel="external">https://developer.chrome.com/devtools/docs/network</a></li>
 </ol>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/05/20/浏览器关键时间点/" data-id="ciepbvo1l001w1bw1i2yn7ae4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能优化/">前端性能优化</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-命令空間與模塊加載器的異同" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/05/07/命令空間與模塊加載器的異同/" class="article-date">
-  <time datetime="2014-05-06T16:00:00.000Z" itemprop="datePublished">2014-05-07</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/模塊化/">模塊化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前言">前言</h3><p>近期接手了一個項目，前端這一塊沒有採用模塊加載器（Seajs或者Requirejs）來進行模塊化，而是僅僅採用命名空間這種形式。由於一開始做前端開發就已經習慣了使用模塊化加載器這種工具來進行模塊化開發，一時間覺得命令空間這種組織代碼的形式就像一條打了很多補丁的褲子，可以穿，但是很丑。所以具體找一找到底丑在哪裡，已經模塊加載器的優勢。</p>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/05/07/命令空間與模塊加載器的異同/" itemprop="url">
+                命令空间与模块加载器的异同
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-05-07T00:00:00+08:00" content="2014-05-07">
+            2014-05-07
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/前端开发/" itemprop="url" rel="index">
+                  <span itemprop="name">前端开发</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="前言">前言</h3><p>近期接手了一個項目，前端這一塊沒有採用模塊加載器（Seajs或者Requirejs）來進行模塊化，而是僅僅採用命名空間這種形式。由於一開始做前端開發就已經習慣了使用模塊化加載器這種工具來進行模塊化開發，一時間覺得命令空間這種組織代碼的形式就像一條打了很多補丁的褲子，可以穿，但是很丑。所以具體找一找到底丑在哪裡，已經模塊加載器的優勢。</p>
 <p>首先找出lifesinger的一篇舊文<a href="https://github.com/seajs/seajs/issues/547" target="_blank" rel="external">「前端模塊化開發的價值」</a>， 其中介紹過這兩種方式的優劣</p>
 <blockquote>
 <ol>
@@ -701,43 +1114,88 @@
 <li>跨环境共享模块。CMD 模块定义规范与 Node.js 的模块规范非常相近。通过 Sea.js 的 Node.js 版本，可以很方便实现模块的跨服务器和浏览器共享。</li>
 </ol>
 </blockquote>
+<p>//Todo</p>
 <h3 id="參考">參考</h3><ol>
 <li><a href="http://chaoskeh.com/blog/why-seajs.html" target="_blank" rel="external">Why Seajs</a></li>
 <li><a href="https://github.com/seajs/seajs/issues/547" target="_blank" rel="external">前端模塊化開發的價值</a></li>
 </ol>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/05/07/命令空間與模塊加載器的異同/" data-id="ciepbvo1u00241bw1gsogljhm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AMD/">AMD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CMD/">CMD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模塊化/">模塊化</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-html5-Drag-and-drop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/05/06/html5-Drag-and-drop/" class="article-date">
-  <time datetime="2014-05-05T16:00:00.000Z" itemprop="datePublished">2014-05-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/html/">html</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Draggable_Attribute">Draggable Attribute</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">draggable</span>=<span class="value">"true"</span> <span class="attribute">ondragstart</span>=<span class="value">"event.dataTransfer.setData('text/plain', 'This text may be dragged')"</span>&gt;</span></span><br><span class="line">  This text <span class="tag">&lt;<span class="title">strong</span>&gt;</span>may<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> be dragged.</span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/05/06/html5-Drag-and-drop/" itemprop="url">
+                Drag 和 Drop接口的使用
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-05-06T00:00:00+08:00" content="2014-05-06">
+            2014-05-06
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/html/" itemprop="url" rel="index">
+                  <span itemprop="name">html</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="Draggable_Attribute">Draggable Attribute</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">draggable</span>=<span class="value">"true"</span> <span class="attribute">ondragstart</span>=<span class="value">"event.dataTransfer.setData('text/plain', 'This text may be dragged')"</span>&gt;</span></span><br><span class="line">  This text <span class="tag">&lt;<span class="title">strong</span>&gt;</span>may<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> be dragged.</span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>The draggable attribute is set to true, so this element becomes draggable. If this attribute was omitted or set to false, the element would not be dragged and instead the text would be selected. </p>
 <h3 id="ondragstart">ondragstart</h3><h3 id="Setting_the_drag_feedback_image">Setting the drag feedback image</h3><h3 id="dragEffect">dragEffect</h3><p>dropEffect的取值</p>
 <ul>
@@ -772,163 +1230,272 @@
 <li><a href="https://developer.mozilla.org/en-US/docs/DragDrop/Drag_and_Drop" target="_blank" rel="external">Drag and drop basics</a></li>
 <li><a href="http://www.html5rocks.com/en/tutorials/dnd/basics/" target="_blank" rel="external">09.2010 Native HTML5 Drag and Drop By Eric Bidelman</a></li>
 </ol>
-
+</span>
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/05/06/html5-Drag-and-drop/" data-id="ciepbvo1y002c1bw1xjwerh8t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
 
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
-  </div>
-  
-</article>
+  </article>
 
 
-  
-    <article id="post-统计词频的一段shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/05/05/统计词频的一段shell脚本/" class="article-date">
-  <time datetime="2014-05-04T16:00:00.000Z" itemprop="datePublished">2014-05-05</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Unix/">Unix</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> test.txt | <span class="built_in">tr</span> <span class="string">' '</span> <span class="string">'\n'</span> | <span class="built_in">tr</span> -<span class="keyword">d</span> <span class="string">'[:punct:]'</span>   \</span><br><span class="line">| <span class="built_in">tr</span> <span class="string">'[:upper:]'</span> <span class="string">'[:lower:]'</span> | <span class="built_in">sort</span> | uniq -<span class="keyword">c</span>    \</span><br><span class="line">| <span class="built_in">sort</span> -nr | tail -<span class="keyword">n</span>+<span class="number">10</span> | head -<span class="number">30</span>               \</span><br><span class="line">| column -<span class="keyword">c</span> <span class="number">60</span></span><br></pre></td></tr></table></figure>
-<p>来自于 <a href="https://medium.com/message/705b87339971" target="_blank" rel="external">The Great Works of Software</a>的一段小代码，刚刚开始学习shell，对个人有启发性.</p>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2014/05/05/统计词频的一段shell脚本/" data-id="ciepbvo22002g1bw1hn66tblr" class="article-share-link">Share</a>
       
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2014/05/05/统计词频的一段shell脚本/" itemprop="url">
+                通过shell来统计词频
+              </a>
+            
+          
+        </h1>
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2014-05-05T00:00:00+08:00" content="2014-05-05">
+            2014-05-05
+          </time>
+        </span>
 
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
-</section>
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life-Style/">Life Style</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UI界面/">UI界面</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unix/">Unix</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/node-webkit/">node-webkit</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端开发/">前端开发</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习研究/">学习研究</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心理学/">心理学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能监控/">性能监控</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模塊化/">模塊化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><span class="category-list-count">2</span></li></ul>
-    </div>
-  </div>
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Unix/" itemprop="url" rel="index">
+                  <span itemprop="name">Unix</span>
+                </a>
+              </span>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AMD/">AMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMD/">CMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Com/">Com</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Day-Study/">Day Study</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/W3C/">W3C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/haskell/">haskell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http协议/">http协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/restful/">restful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端开发/">前端开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端性能优化/">前端性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端组件化/">前端组件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/复杂系统/">复杂系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发/">工具开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间管理/">时间管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模塊化/">模塊化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活优化/">生活优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用戶交互/">用戶交互</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目文档/">项目文档</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+              
+              
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AMD/" style="font-size: 10px;">AMD</a> <a href="/tags/CMD/" style="font-size: 10px;">CMD</a> <a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/Day-Study/" style="font-size: 16.67px;">Day Study</a> <a href="/tags/W3C/" style="font-size: 10px;">W3C</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/dom/" style="font-size: 13.33px;">dom</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/前端开发/" style="font-size: 13.33px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 16.67px;">前端性能优化</a> <a href="/tags/前端组件化/" style="font-size: 10px;">前端组件化</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/性能优化/" style="font-size: 16.67px;">性能优化</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/时间管理/" style="font-size: 10px;">时间管理</a> <a href="/tags/模塊化/" style="font-size: 10px;">模塊化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/用戶交互/" style="font-size: 10px;">用戶交互</a> <a href="/tags/编程语言/" style="font-size: 16.67px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/读书笔记/" style="font-size: 16.67px;">读书笔记</a> <a href="/tags/项目文档/" style="font-size: 10px;">项目文档</a>
-    </div>
-  </div>
+            
+          </span>
+        
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
         
-          <li>
-            <a href="/2015/06/04/Haskell入门笔记/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/12/Life-time-tracker表达的理念/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/31/关于Javascript以前忽略的性能问题/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/24/Min-和-Max方法的实现和用法/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+          
         
       </div>
-      <footer id="footer">
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> test.txt | <span class="built_in">tr</span> <span class="string">' '</span> <span class="string">'\n'</span> | <span class="built_in">tr</span> -<span class="keyword">d</span> <span class="string">'[:punct:]'</span>   \</span><br><span class="line">| <span class="built_in">tr</span> <span class="string">'[:upper:]'</span> <span class="string">'[:lower:]'</span> | <span class="built_in">sort</span> | uniq -<span class="keyword">c</span>    \</span><br><span class="line">| <span class="built_in">sort</span> -nr | tail -<span class="keyword">n</span>+<span class="number">10</span> | head -<span class="number">30</span>               \</span><br><span class="line">| column -<span class="keyword">c</span> <span class="number">60</span></span><br></pre></td></tr></table></figure>
+<p>来自于 <a href="https://medium.com/message/705b87339971" target="_blank" rel="external">The Great Works of Software</a>的一段小代码，刚刚开始学习shell，对个人有启发性.</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 Andrew Zhang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
+  </nav>
+
+ </div>
+
+        
+
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Andrew Zhang" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Andrew Zhang</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
     </div>
-    <nav id="mobile-nav">
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
   
-    <a href="/" class="mobile-nav-link">Home</a>
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Zhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-</nav>
+  
+    
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
 
-  </div>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
 </body>
 </html>

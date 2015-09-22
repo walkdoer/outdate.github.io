@@ -1,84 +1,195 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="theme-next use-motion ">
 <head>
-  <meta charset="utf-8">
   
-  <title>Code Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在学习haskell，想要要深入的了解一下函数式编程(functional programming)，朋友建议可以通过学习这一门语言来加深理解。所以就尝试一下。learnyouahaskell.com是一个非常不错的入门教程，适合有一定的编程基础的人阅读。电子版可以免费在线阅读
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+
+
+  <meta name="keywords" content="haskell,编程语言," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="最近在学习haskell，想要要深入的了解一下函数式编程(functional programming)，朋友建议可以通过学习这一门语言来加深理解。所以就尝试一下。learnyouahaskell.com是一个非常不错的入门教程，适合有一定的编程基础的人阅读。电子版可以免费在线阅读
 String&amp;#39;&amp;#39; 和 &amp;quot;的区别
 List字符串也是List，List的拼接可以使用 ++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Code Me">
+<meta property="og:title" content="Haskell入门笔记">
 <meta property="og:url" content="http://zhangmhao.github.io/2015/06/04/Haskell入门笔记/index.html">
 <meta property="og:site_name" content="Code Me">
 <meta property="og:description" content="最近在学习haskell，想要要深入的了解一下函数式编程(functional programming)，朋友建议可以通过学习这一门语言来加深理解。所以就尝试一下。learnyouahaskell.com是一个非常不错的入门教程，适合有一定的编程基础的人阅读。电子版可以免费在线阅读
 String&amp;#39;&amp;#39; 和 &amp;quot;的区别
 List字符串也是List，List的拼接可以使用 ++">
-<meta property="og:updated_time" content="2015-09-18T06:46:39.000Z">
+<meta property="og:updated_time" content="2015-09-22T14:10:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code Me">
+<meta name="twitter:title" content="Haskell入门笔记">
 <meta name="twitter:description" content="最近在学习haskell，想要要深入的了解一下函数式编程(functional programming)，朋友建议可以通过学习这一门语言来加深理解。所以就尝试一下。learnyouahaskell.com是一个非常不错的入门教程，适合有一定的编程基础的人阅读。电子版可以免费在线阅读
 String&amp;#39;&amp;#39; 和 &amp;quot;的区别
 List字符串也是List，List的拼接可以使用 ++">
-  
-    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> Haskell入门笔记 | Code Me </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
   
 
-</head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Code Me</a>
-      </h1>
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Code Me</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
         
-      </nav>
-      <nav id="sub-nav">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Haskell入门笔记
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-06-04T00:00:00+08:00" content="2015-06-04">
+            2015-06-04
+          </time>
+        </span>
+
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhangmhao.github.io"></form>
+          
+        
       </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Haskell入门笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/04/Haskell入门笔记/" class="article-date">
-  <time datetime="2015-06-03T16:00:00.000Z" itemprop="datePublished">2015-06-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
+    </header>
+
+    <div class="post-body">
+
       
-        <p>最近在学习haskell，想要要深入的了解一下函数式编程(functional programming)，朋友建议可以通过学习这一门语言来加深理解。所以就尝试一下。<br><a href="http://learnyouahaskell.com/" target="_blank" rel="external">learnyouahaskell.com</a>是一个非常不错的入门教程，适合有一定的编程基础的人阅读。电子版可以免费在线阅读</p>
+      
+
+      
+        <span itemprop="articleBody"><p>最近在学习haskell，想要要深入的了解一下函数式编程(functional programming)，朋友建议可以通过学习这一门语言来加深理解。所以就尝试一下。<br><a href="http://learnyouahaskell.com/" target="_blank" rel="external">learnyouahaskell.com</a>是一个非常不错的入门教程，适合有一定的编程基础的人阅读。电子版可以免费在线阅读</p>
 <h3 id="String">String</h3><p><code>&#39;&#39;</code> 和 <code>&quot;</code>的区别</p>
 <h3 id="List">List</h3><p>字符串也是List，List的拼接可以使用 <code>++</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>] ++ [<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]  </span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]  </span><br><span class="line">ghci&gt; <span class="string">"hello"</span> ++ <span class="string">" "</span> ++ <span class="string">"world"</span>  </span><br><span class="line"><span class="string">"hello world"</span>  </span><br><span class="line">ghci&gt; [<span class="string">'w'</span>,<span class="string">'o'</span>] ++ [<span class="string">'o'</span>,<span class="string">'t'</span>]  </span><br><span class="line"><span class="string">"woot"</span></span><br></pre></td></tr></table></figure>
@@ -103,51 +214,77 @@ List字符串也是List，List的拼接可以使用 ++">
 <li><code>minimum</code> 最小值</li>
 <li><code>maximum</code> 最大值</li>
 <li><code>sum</code></li>
-<li><code>elem</code> 检查一个元素是否在List中 <figure class="highlight"><figcaption><span>`elem` [3,4,5,6] == True```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#10;**&#27880;&#24847;&#65306;&#36825;&#20960;&#20010;&#20989;&#25968;&#29992;&#20110;&#31354;List&#30340;&#26102;&#20505;&#20250;&#25253;&#38169;**</span><br></pre></td></tr></table></figure></li>
+<li><code>elem</code> 检查一个元素是否在List中 4 <code>elem</code> [3,4,5,6] == True</li>
 </ul>
-<p>ghci&gt; tail []<br><em>*</em> Exception: Prelude.tail: empty list<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">#### 集合的方式来理解List</span></span><br></pre></td></tr></table></figure></p>
-<p>ghci &gt; [x*2 | x &lt;- [1..10]]<br>[2,4,6,8,10,12,14,16,18,20]</p>
-<p>ghci&gt; [x<em>2 | x &lt;- [1..10], x</em>2 &gt;= 12]<br>[12,14,16,18,20]</p>
-<p>ghci&gt; [x*2+1 | x &lt;- [0..10]]<br>[1,3,5,7,9,11,13,15,17,19,21]</p>
-<p>ghci&gt; [ x*y | x &lt;- [2,5,10], y &lt;- [8,10,11]]<br>[16,20,22,40,50,55,80,100,110]</p>
-<p>//排除 3， 4<br>ghci&gt;  [ x | x &lt;- [1..5], x /= 3, x /= 4]<br>[1,2,5]</p>
-<p>//嵌套的处理<br>ghci&gt; let xxs = [[1,3,5,2,3,1,2,4,5],[1,2,3,4,5,6,7,8,9],[1,2,4,2,1,6,3,1,3,2,3,6]]<br>ghci&gt; [ [ x | x &lt;- xs, even x ] | xs &lt;- xxs]<br>[[2,2,4],[2,4,6,8],[2,4,2,6,2,6]]<br><figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">### 元组 Tuples</span></span><br><span class="line"></span><br><span class="line">元组的元素类型可以不一致， 而<span class="built_in">List</span>是要求元素是同类型的。 例如</span><br></pre></td></tr></table></figure></p>
-<p>(‘Name’, 50)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">稍微负责一点的元组</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; [ (a,b,c) | c &lt;- [1..10], b &lt;- [1..c], a &lt;- [1..b], a^2 + b^2 == c^2]<br>[(3,4,5),(6,8,10)]<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">元组同样有一系列的函数，常用的有</span><br><span class="line"></span><br><span class="line"><span class="escape">`f</span>st<span class="escape">`,</span>  取出元组首个元素</span><br><span class="line"></span><br><span class="line"><span class="escape">`s</span>nd<span class="escape">` </span> 取出元组第二个元素</span><br><span class="line"></span><br><span class="line"><span class="escape">`z</span>ip<span class="escape">` </span>一个非常有用的函数，将两个List的对应元素合并为元组，并构成一个List</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; zip [1 .. 5] [“one”, “two”, “three”, “four”, “five”]<br>[(1,”one”),(2,”two”),(3,”three”),(4,”four”),(5,”five”)]<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="autohotkey">###Type <span class="literal">And</span> TypeClasses</span><br><span class="line"></span><br><span class="line">#### Type</span><br><span class="line">Haskell是一个强类型的语言，有<span class="escape">`C</span>har<span class="escape">`,</span> <span class="escape">`I</span>nteger<span class="escape">`,</span> <span class="escape">`I</span>nt<span class="escape">`,</span> <span class="escape">`F</span>loat<span class="escape">`,</span><span class="escape">`D</span>ouble<span class="escape">`,</span><span class="escape">`B</span>ool<span class="escape">`等</span>基本类型</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### Typeclasses</span><br><span class="line"></span><br><span class="line">类限制 class constraint , <span class="escape">`=</span>&gt;<span class="escape">` </span>这个符号代表类限制</span></span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; :t (==)<br>(==) :: (Eq a) =&gt; a -&gt; a -&gt; Bool<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; the equality function takes any two values that are of the same type <span class="literal">and</span> returns <span class="literal">a</span> Bool. The type of those two values must be <span class="literal">a</span> member of the Eq class (this was the class constraint). 在标准的Haskell中，除了了io和function之外，其他类型都是属于Eq</span><br><span class="line"></span><br><span class="line">Haskell的typeclass有 <span class="escape">`E</span>q<span class="escape">`,</span> <span class="escape">`O</span>rd<span class="escape">`,</span> <span class="escape">`S</span>how<span class="escape">`,</span><span class="escape">`R</span>ead<span class="escape">`,</span><span class="escape">`E</span>num<span class="escape">`,</span> <span class="escape">`B</span>ounded<span class="escape">`</span><br><span class="line"></span></span><br><span class="line">#####<span class="escape">`E</span>q<span class="escape">`</span><br><span class="line"></span>#####<span class="escape">`O</span>rd<span class="escape">`</span><br><span class="line"></span>#####<span class="escape">`S</span>how<span class="escape">`</span><br><span class="line"></span>#####<span class="escape">`R</span>ead`</span><br></pre></td></tr></table></figure></p>
-<p>hci&gt; read 4</p>
-<p><interactive>:94:6:<br>    Could not deduce (Num String) arising from the literal ‘4’<br>    from the context (Read a)<br>      bound by the inferred type of it :: Read a =&gt; a<br>      at <interactive>:94:1-6<br>    In the first argument of ‘read’, namely ‘4’<br>    In the expression: read 4<br>    In an equation for ‘it’: it = read 4<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">需要使用类型声明 (<span class="typedef"><span class="keyword">type</span> annotations)，<span class="type">Haskell</span>才有办法正确的解析，或者是在表达式中，<span class="type">Haskell</span>自己进行推断</span></span><br></pre></td></tr></table></figure></interactive></interactive></p>
-<p>ghci&gt; read “4” :: Int<br>5</p>
-<p>ghci&gt; read “[1,2,3,4]” :: [Int]<br>[1,2,3,4]  </p>
-<p>ghci&gt; 10 + read “5”<br>15</p>
-<p>ghci&gt; read “[1,2]” ++ [4]<br>[1,2,4]</p>
-<p>ghci&gt; read “(1, ‘2’)” :: (Int, Char)<br>(1,’2’)</p>
-<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">### Syntax in Functions</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#### Pattern Matching</span></span><br></pre></td></tr></table></figure>
-<p>lucky :: (Integral a) =&gt; a -&gt; String<br>lucky 7 = “LUCKY NUMBER SEVEN!”<br>lucky x = “Sorry, you’re out of luck, pal!”<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果输入值是<span class="number">7</span>，match到第一个pattern，不是<span class="number">7</span>，那么就会match到第二个pattern。所以，在定义pattern的时候，次序是很重要的，先定义特例pattern，在定义普遍的pattern</span><br><span class="line"></span><br><span class="line">再看下面这个例子，</span><br></pre></td></tr></table></figure></p>
-<p>factorial :: (Integral a) =&gt; a -&gt; a<br>factorial 0 = 1<br>factorial n = n * factorial (n - 1)<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span>The x:xs pattern <span class="keyword">*</span><span class="keyword">*</span></span><br></pre></td></tr></table></figure></p>
-<p>head’ :: [a] -&gt; a<br>head’ [] = error “Can’t call head on an empty list, dummy!”<br>head’ (x:_) = x<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**xs@(<span class="string">x:</span><span class="string">y:</span>ys) ** `@`符号 表示 xs 代表的就是 (<span class="string">x:</span><span class="string">y:</span>ys), 这样可以写起来更加简单一些。</span><br></pre></td></tr></table></figure></p>
-<p>capital :: String -&gt; String<br>capital “” = “Empty string, whoops!”<br>capital all@(x:xs) = “The first letter of “ ++ all ++ “ is “ ++ [x]<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#### Gurard</span></span><br><span class="line">看完下面这个例子，基本就可以理解Guard是怎么工作的。不需要介绍太多。需要的注意的是 <span class="keyword">where</span>里面定义的变量只对于该函数有作用。</span><br></pre></td></tr></table></figure></p>
-<p>bmiTell :: (RealFloat a) =&gt; a -&gt; a -&gt; String<br>bmiTell weight height<br>    | bmi &lt;= skinny = “You’re underweight, you emo, you!”<br>    | bmi &lt;= normal = “You’re supposedly normal. Pffft, I bet you’re ugly!”<br>    | bmi &lt;= fat    = “You’re fat! Lose some weight, fatty!”<br>    | otherwise     = “You’re a whale, congratulations!”<br>    where bmi = weight / height ^ 2<br>          skinny = 18.5<br>          normal = 25.0<br>          fat = 30.0<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">还可以类似于下面用<span class="number">3</span>元组的方式</span><br></pre></td></tr></table></figure></p>
-<p>…<br>where bmi = weight / height ^ 2<br>      (skinny, normal, fat) = (18.5, 25.0, 30.0)<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">#### ` let <span class="title">&lt;bindings&gt;</span> in <span class="title">&lt;expression&gt;</span>`</span></span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; 4 * (let a = 9 in a + 1) + 2<br>42<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">introduce <span class="built_in">functions</span> <span class="keyword">in</span> a <span class="built_in">local</span> scope:</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; [let square x = x * x in (square 5, square 3, square 2)]<br>[(25,9,4)]<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">多个表达式用分号隔开</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; (let a = 100; b = 200; c = 300 in a<em>b</em>c, let foo=”Hey “; bar = “there!” in foo ++ bar)<br>(6000000,”Hey there!”)<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">使用<span class="keyword">let</span>和<span class="built_in">List</span> Comprehension来对bmi的例子进行改写, 注意，在<span class="built_in">List</span> Comprehension中使用时，<span class="string">`in`</span>是可以省略的，因为名字的可见性已经提前定义好了。</span><br></pre></td></tr></table></figure></p>
-<p>calcBmis :: (RealFloat a) =&gt; [(a, a)] -&gt; [a]<br>calcBmis xs = [bmi | (w, h) &lt;- xs, let bmi = w / h ^ 2]<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果不使用<span class="keyword">in</span>来限定范围，则是全局可见的</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; let zoot x y z = x <em> y + z<br>ghci&gt; zoot 3 9 2<br>29<br>ghci&gt; let boot x y z = x </em> y + z in boot 3 4 2<br>14<br>ghci&gt; boot  </p>
-<p><interactive>:1:0: Not in scope: `boot’<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">#### case</span></span><br></pre></td></tr></table></figure></interactive></p>
-<p>case expression of pattern -&gt; result<br>                   pattern -&gt; result<br>                   pattern -&gt; result<br>                   …<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这一段表达式其实是<span class="keyword">case</span>的一个语法糖</span><br></pre></td></tr></table></figure></p>
-<p>head’ :: [a] -&gt; a<br>head’ [] = error “No head for empty lists!”<br>head’ (x:_) = x<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果不使用语法糖，则是</span><br></pre></td></tr></table></figure></p>
-<p>head’ :: [a] -&gt; a<br>head’ xs = case xs of [] -&gt; error “No head for empty lists!”<br>                      (x:_) -&gt; x<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="vala"><span class="preprocessor">### Higher order functions</span></span><br><span class="line"></span><br><span class="line">haskell，函数可以作为参数，也可以作为返回值</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#### Curried functions</span></span><br><span class="line">之前在js中就比较熟悉这个用法，所以接受起来很简单，不过haskell比javascript的定义方式优雅太多了。以haskell中的`max`函数为例.</span></span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; max 4 5<br>5<br>ghci&gt; (max 4) 5<br>5<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="label">max函数的定义的定义是 `max ::</span> (Ord <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; <span class="literal">a</span> -&gt; <span class="literal">a</span><span class="escape">`</span><br><span class="line"></span></span><br><span class="line"><span class="label">&gt; That can also be written as `max ::</span> (Ord <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; (<span class="literal">a</span> -&gt; <span class="literal">a</span>)<span class="escape">`.</span> That could be read as: <span class="escape">`m</span>ax<span class="escape">` </span>takes an <span class="escape">`a</span><span class="escape">` </span><span class="literal">and</span> returns (that's the <span class="escape">`-</span>&gt;<span class="escape">`)</span> <span class="literal">a</span> function that takes an <span class="escape">`a</span><span class="escape">` </span><span class="literal">and</span> returns an <span class="escape">`a</span><span class="escape">`.</span> That's why the <span class="keyword">return</span> type <span class="literal">and</span> the parameters of functions are all simply separated with arrows.</span><br><span class="line"></span><br><span class="line">举一个例子来看看这种定义方式的强大之处</span><br></pre></td></tr></table></figure></p>
-<p>multThree :: (Num a) =&gt; a -&gt; a -&gt; a -&gt; a<br>multThree x y z = x <em> y </em> z<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行一下看看</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; let multTwoWith9 = multThree 9<br>ghci&gt; multTwoWith9 2 3<br>54<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在举一个例子：</span><br></pre></td></tr></table></figure></p>
-<p>compareWithHundred :: (Num a, Ord a) =&gt; a -&gt; Ordering<br>compareWithHundred = compare 100<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Compare has <span class="literal">a</span> type of <span class="escape">`(</span>Ord <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; (<span class="literal">a</span> -&gt; Ordering)<span class="escape">` </span><span class="literal">and</span> calling it with <span class="number">100</span> returns <span class="literal">a</span><span class="escape">` </span>(Num <span class="literal">a</span>, Ord <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; Ordering<span class="escape">`.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">一个我第一次看稍难理解的一个例子</span><br></pre></td></tr></table></figure></p>
-<p>applyTwice :: (a -&gt; a) -&gt; a -&gt; a<br>applyTwice f x = f (f x)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; applyTwice (+3) 10<br>16<br>ghci&gt; applyTwice (++ “ HAHA”) “HEY”<br>“HEY HAHA HAHA”<br>ghci&gt; applyTwice (“HAHA “ ++) “HEY”<br>“HAHA HAHA HEY”<br>ghci&gt; applyTwice (multThree 2 2) 9<br>144<br>ghci&gt; applyTwice (3:) [1]<br>[3,3,1]<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="escape">`z</span>ipwith`</span><br></pre></td></tr></table></figure></p>
-<p>zipWith’ :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]<br>zipWith’ <em> [] </em> = []<br>zipWith’ <em> </em> [] = []<br>zipWith’ f (x:xs) (y:ys) = f x y : zipWith’ f xs ys<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; zipWith’ (+) [4,2,5,6] [2,6,2,3]<br>[6,8,7,9]<br>ghci&gt; zipWith’ max [6,3,2,1] [7,3,1,5]<br>[7,3,2,5]<br>ghci&gt; zipWith’ (++) [“foo “, “bar “, “baz “] [“fighters”, “hoppers”, “aldrin”]<br>[“foo fighters”,”bar hoppers”,”baz aldrin”]<br>ghci&gt; zipWith’ (<em>) (replicate 5 2) [1..]<br>[2,4,6,8,10]<br>ghci&gt; zipWith’ (zipWith’ (</em>)) [[1,2,3],[3,5,6],[2,3,4]] [[3,2,2],[3,4,5],[5,4,3]]<br>[[3,4,6],[9,20,30],[10,12,12]]<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="autohotkey"><span class="escape">`f</span>ilter`</span></span><br></pre></td></tr></table></figure></p>
-<p>filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]<br>filter _ [] = []<br>filter p (x:xs)<br>    | p x       = x : filter p xs<br>    | otherwise = filter p xs<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">ghci&gt; filter (&gt;<span class="number">3</span>) [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br><span class="line">[<span class="number">5</span>,<span class="number">6</span>,<span class="number">4</span>]  </span><br><span class="line">ghci&gt; filter (==<span class="number">3</span>) [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]  </span><br><span class="line">[<span class="number">3</span>]  </span><br><span class="line">ghci&gt; filter even [<span class="number">1.</span><span class="number">.10</span>]  </span><br><span class="line">[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>]  </span><br><span class="line">ghci&gt; let notNull x = not (null x) in filter notNull [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">2</span>,<span class="number">2</span>],[],[],[]]  </span><br><span class="line">[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">2</span>,<span class="number">2</span>]]  </span><br><span class="line">ghci&gt; filter (`elem` [<span class="string">'a'</span>..<span class="string">'z'</span>]) <span class="string">"u LaUgH aT mE BeCaUsE I aM diFfeRent"</span>  </span><br><span class="line"><span class="string">"uagameasadifeent"</span>  </span><br><span class="line">ghci&gt; filter (`elem` [<span class="string">'A'</span>..<span class="string">'Z'</span>]) <span class="string">"i lauGh At You BecAuse u r aLL the Same"</span>  </span><br><span class="line"><span class="string">"GAYBALLS"</span></span><br></pre></td></tr></table></figure></p>
+<p><strong> 注意：这几个函数用于空List的时候会报错 </strong></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; tail []</span><br><span class="line"><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span> Exception: Prelude.tail: empty list</span><br></pre></td></tr></table></figure>
+<h4 id="集合的方式来理解List">集合的方式来理解List</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ghci &gt; [x*<span class="number">2</span> | x &lt;- [<span class="number">1.</span><span class="number">.10</span>]]</span><br><span class="line">[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">12</span>,<span class="number">14</span>,<span class="number">16</span>,<span class="number">18</span>,<span class="number">20</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt; [x*<span class="number">2</span> | x &lt;- [<span class="number">1.</span><span class="number">.10</span>], x*<span class="number">2</span> &gt;= <span class="number">12</span>]</span><br><span class="line">[<span class="number">12</span>,<span class="number">14</span>,<span class="number">16</span>,<span class="number">18</span>,<span class="number">20</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt; [x*<span class="number">2</span>+<span class="number">1</span> | x &lt;- [<span class="number">0.</span><span class="number">.10</span>]]</span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">15</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">21</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt; [ x*y | x &lt;- [<span class="number">2</span>,<span class="number">5</span>,<span class="number">10</span>], y &lt;- [<span class="number">8</span>,<span class="number">10</span>,<span class="number">11</span>]]</span><br><span class="line">[<span class="number">16</span>,<span class="number">20</span>,<span class="number">22</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">55</span>,<span class="number">80</span>,<span class="number">100</span>,<span class="number">110</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//排除 3， 4</span></span><br><span class="line">ghci&gt;  [ x | x &lt;- [<span class="number">1.</span><span class="number">.5</span>], x /= <span class="number">3</span>, x /= <span class="number">4</span>]</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//嵌套的处理</span></span><br><span class="line">ghci&gt; let xxs = [[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">6</span>]]  </span><br><span class="line">ghci&gt; [ [ x | x &lt;- xs, even x ] | xs &lt;- xxs]  </span><br><span class="line">[[<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>],[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>],[<span class="number">2</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">6</span>]]</span><br></pre></td></tr></table></figure>
+<h3 id="元组_Tuples">元组 Tuples</h3><p>元组的元素类型可以不一致， 而List是要求元素是同类型的。 例如<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">'Name'</span>, <span class="number">50</span>)</span></span><br></pre></td></tr></table></figure></p>
+<p>稍微负责一点的元组<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; [ (a,b,c) | c &lt;- [<span class="number">1.</span><span class="number">.10</span>], b &lt;- [<span class="number">1.</span>.c], a &lt;- [<span class="number">1.</span>.b], a^<span class="number">2</span> + b^<span class="number">2</span> == c^<span class="number">2</span>]</span><br><span class="line">[(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>),(<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>)]</span><br></pre></td></tr></table></figure></p>
+<p>元组同样有一系列的函数，常用的有</p>
+<p><code>fst</code>,  取出元组首个元素</p>
+<p><code>snd</code>  取出元组第二个元素</p>
+<p><code>zip</code> 一个非常有用的函数，将两个List的对应元素合并为元组，并构成一个List<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; zip [<span class="number">1</span> .. <span class="number">5</span>] [<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"four"</span>, <span class="string">"five"</span>]</span><br><span class="line">[(<span class="number">1</span>,<span class="string">"one"</span>),(<span class="number">2</span>,<span class="string">"two"</span>),(<span class="number">3</span>,<span class="string">"three"</span>),(<span class="number">4</span>,<span class="string">"four"</span>),(<span class="number">5</span>,<span class="string">"five"</span>)]</span><br></pre></td></tr></table></figure></p>
+<h3 id="Type_And_TypeClasses">Type And TypeClasses</h3><h4 id="Type">Type</h4><p>Haskell是一个强类型的语言，有<code>Char</code>, <code>Integer</code>, <code>Int</code>, <code>Float</code>,<code>Double</code>,<code>Bool</code>等基本类型</p>
+<h4 id="Typeclasses">Typeclasses</h4><p>类限制 class constraint , <code>=&gt;</code> 这个符号代表类限制<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">ghci&gt; :</span>t (==)  </span><br><span class="line"><span class="label">(==) ::</span> (Eq <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; <span class="literal">a</span> -&gt; Bool</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>the equality function takes any two values that are of the same type and returns a Bool. The type of those two values must be a member of the Eq class (this was the class constraint). 在标准的Haskell中，除了了io和function之外，其他类型都是属于Eq</p>
+</blockquote>
+<p>Haskell的typeclass有 <code>Eq</code>, <code>Ord</code>, <code>Show</code>,<code>Read</code>,<code>Enum</code>, <code>Bounded</code></p>
+<h5 id="Eq"><code>Eq</code></h5><h5 id="Ord"><code>Ord</code></h5><h5 id="Show"><code>Show</code></h5><h5 id="Read"><code>Read</code></h5><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">hci&gt; <span class="built_in">read</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line">&lt;interactive&gt;:<span class="number">94</span>:<span class="number">6</span>:</span><br><span class="line">    Could <span class="operator">not</span> deduce (Num String) arising <span class="built_in">from</span> <span class="operator">the</span> literal ‘<span class="number">4</span>’</span><br><span class="line">    <span class="built_in">from</span> <span class="operator">the</span> context (Read <span class="operator">a</span>)</span><br><span class="line">      bound <span class="keyword">by</span> <span class="operator">the</span> inferred type <span class="operator">of</span> <span class="keyword">it</span> :: Read <span class="operator">a</span> =&gt; <span class="operator">a</span></span><br><span class="line">      <span class="keyword">at</span> &lt;interactive&gt;:<span class="number">94</span>:<span class="number">1</span>-<span class="number">6</span></span><br><span class="line">    In <span class="operator">the</span> <span class="keyword">first</span> argument <span class="operator">of</span> ‘<span class="built_in">read</span>’, namely ‘<span class="number">4</span>’</span><br><span class="line">    In <span class="operator">the</span> expression: <span class="built_in">read</span> <span class="number">4</span></span><br><span class="line">    In <span class="operator">an</span> equation <span class="keyword">for</span> ‘<span class="keyword">it</span>’: <span class="keyword">it</span> = <span class="built_in">read</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>需要使用类型声明 (type annotations)，Haskell才有办法正确的解析，或者是在表达式中，Haskell自己进行推断</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; read <span class="string">"4"</span> :: Int</span><br><span class="line"><span class="number">5</span></span><br><span class="line"></span><br><span class="line">ghci&gt; read <span class="string">"[1,2,3,4]"</span> :: [Int]  </span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]  </span><br><span class="line"></span><br><span class="line">ghci&gt; <span class="number">10</span> + read <span class="string">"5"</span></span><br><span class="line"><span class="number">15</span></span><br><span class="line"></span><br><span class="line">ghci&gt; read <span class="string">"[1,2]"</span> ++ [<span class="number">4</span>]</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">ghci&gt; read <span class="string">"(1, '2')"</span> :: (Int, Char)</span><br><span class="line">(<span class="number">1</span>,<span class="string">'2'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Syntax_in_Functions">Syntax in Functions</h3><h4 id="Pattern_Matching">Pattern Matching</h4><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">lucky ::</span> (Integral <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; String  </span><br><span class="line">lucky <span class="number">7</span> = <span class="string">"LUCKY NUMBER SEVEN!"</span>  </span><br><span class="line">lucky x = <span class="string">"Sorry, you're out of luck, pal!"</span></span><br></pre></td></tr></table></figure>
+<p>如果输入值是7，match到第一个pattern，不是7，那么就会match到第二个pattern。所以，在定义pattern的时候，次序是很重要的，先定义特例pattern，在定义普遍的pattern</p>
+<p>再看下面这个例子，</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">factorial ::</span> (Integral <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; <span class="literal">a</span>  </span><br><span class="line">factorial <span class="number">0</span> = <span class="number">1</span>  </span><br><span class="line">factorial n = n * factorial (n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>The x:xs pattern </strong></p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head' :: [a] -&gt; a  </span><br><span class="line">head' <span class="literal">[]</span> = error <span class="string">"Can't call head on an empty list, dummy!"</span>  </span><br><span class="line">head' (x:_) = x</span><br></pre></td></tr></table></figure>
+<p><strong>xs@(x:y:ys) </strong> <code>@</code>符号 表示 xs 代表的就是 (x:y:ys), 这样可以写起来更加简单一些。</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">capital <span class="tag">:: String</span> <span class="subst">-&gt; </span><span class="built_in">String</span>  </span><br><span class="line">capital <span class="string">""</span> = <span class="string">"Empty string, whoops!"</span>  </span><br><span class="line">capital <span class="literal">all</span>@(x:xs) = <span class="string">"The first letter of "</span> ++ <span class="literal">all</span> ++ <span class="string">" is "</span> ++ <span class="preprocessor">[</span>x<span class="preprocessor">]</span><span class="markup"></span></span><br></pre></td></tr></table></figure>
+<h4 id="Gurard">Gurard</h4><p>看完下面这个例子，基本就可以理解Guard是怎么工作的。不需要介绍太多。需要的注意的是 where里面定义的变量只对于该函数有作用。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">bmiTell :: (RealFloat <span class="operator">a</span>) =&gt; <span class="operator">a</span> -&gt; <span class="operator">a</span> -&gt; String  </span><br><span class="line">bmiTell weight height  </span><br><span class="line">    | bmi &lt;= skinny = <span class="string">"You're underweight, you emo, you!"</span>  </span><br><span class="line">    | bmi &lt;= <span class="keyword">normal</span> = <span class="string">"You're supposedly normal. Pffft, I bet you're ugly!"</span>  </span><br><span class="line">    | bmi &lt;= fat    = <span class="string">"You're fat! Lose some weight, fatty!"</span>  </span><br><span class="line">    | otherwise     = <span class="string">"You're a whale, congratulations!"</span>  </span><br><span class="line">    where bmi = weight / height ^ <span class="number">2</span>  </span><br><span class="line">          skinny = <span class="number">18.5</span>  </span><br><span class="line">          <span class="keyword">normal</span> = <span class="number">25.0</span>  </span><br><span class="line">          fat = <span class="number">30.0</span></span><br></pre></td></tr></table></figure>
+<p>还可以类似于下面用3元组的方式</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...  </span><br><span class="line">where bmi = weight / height ^ <span class="number">2</span>  </span><br><span class="line">      (skinny, normal, fat) = (<span class="number">18.5</span>, <span class="number">25.0</span>, <span class="number">30.0</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="let_&lt;bindings&gt;_in_&lt;expression&gt;"><code>let &lt;bindings&gt; in &lt;expression&gt;</code></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; <span class="number">4</span> * (let a = <span class="number">9</span> in a + <span class="number">1</span>) + <span class="number">2</span>  </span><br><span class="line"><span class="number">42</span></span><br></pre></td></tr></table></figure>
+<p> introduce functions in a local scope:</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; [<span class="built_in">let</span> <span class="built_in">square</span> x = x <span class="built_in">*</span> x in (<span class="built_in">square</span> <span class="number">5</span>, <span class="built_in">square</span> <span class="number">3</span>, <span class="built_in">square</span> <span class="number">2</span>)]  </span><br><span class="line">[(<span class="number">25</span>,<span class="number">9</span>,<span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
+<p>多个表达式用分号隔开</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; (<span class="keyword">let</span> a = <span class="number">100</span>; b = <span class="number">200</span>; <span class="built_in">c</span> = <span class="number">300</span> <span class="keyword">in</span> a*b*<span class="built_in">c</span>, <span class="keyword">let</span> foo=<span class="string">"Hey "</span>; bar = <span class="string">"there!"</span> <span class="keyword">in</span> foo ++ bar)  </span><br><span class="line">(<span class="number">6000000</span>,<span class="string">"Hey there!"</span>)</span><br></pre></td></tr></table></figure>
+<p>使用let和List Comprehension来对bmi的例子进行改写, 注意，在List Comprehension中使用时，<code>in</code>是可以省略的，因为名字的可见性已经提前定义好了。</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">calcBmis :: <span class="comment">(RealFloat a)</span> =&gt; [<span class="comment">(a, a)</span>] -&gt; [a]  </span><br><span class="line">calcBmis xs = [bmi | <span class="comment">(w, h)</span> &lt;- xs, let bmi = w / h ^ <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<p>如果不使用in来限定范围，则是全局可见的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; let zoot x y z = x * y + z  </span><br><span class="line">ghci&gt; zoot <span class="number">3</span> <span class="number">9</span> <span class="number">2</span>  </span><br><span class="line"><span class="number">29</span>  </span><br><span class="line">ghci&gt; let boot x y z = x * y + z in boot <span class="number">3</span> <span class="number">4</span> <span class="number">2</span>  </span><br><span class="line"><span class="number">14</span>  </span><br><span class="line">ghci&gt; boot  </span><br><span class="line">&lt;interactive&gt;:<span class="number">1</span>:<span class="number">0</span>: Not in scope: `boot'</span><br></pre></td></tr></table></figure>
+<h4 id="case">case</h4><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> expression <span class="keyword">of</span> pattern -&gt; <span class="literal">result</span>  </span><br><span class="line">                   pattern -&gt; <span class="literal">result</span>  </span><br><span class="line">                   pattern -&gt; <span class="literal">result</span>  </span><br><span class="line">                   ...</span><br></pre></td></tr></table></figure>
+<p>这一段表达式其实是case的一个语法糖</p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head' :: [a] -&gt; a  </span><br><span class="line">head' <span class="literal">[]</span> = error <span class="string">"No head for empty lists!"</span>  </span><br><span class="line">head' (x:_) = x</span><br></pre></td></tr></table></figure>
+<p>如果不使用语法糖，则是</p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">head' :: [a] -&gt; a  </span><br><span class="line">head' xs = <span class="keyword">case</span> xs <span class="keyword">of</span> <span class="literal">[]</span> -&gt; error <span class="string">"No head for empty lists!"</span>  </span><br><span class="line">                      (x:_) -&gt; x</span><br></pre></td></tr></table></figure>
+<h3 id="Higher_order_functions">Higher order functions</h3><p>haskell，函数可以作为参数，也可以作为返回值</p>
+<h4 id="Curried_functions">Curried functions</h4><p>之前在js中就比较熟悉这个用法，所以接受起来很简单，不过haskell比javascript的定义方式优雅太多了。以haskell中的<code>max</code>函数为例.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; max <span class="number">4</span> <span class="number">5</span>  </span><br><span class="line"><span class="number">5</span>  </span><br><span class="line">ghci&gt; (max <span class="number">4</span>) <span class="number">5</span>  </span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<p>max函数的定义的定义是 <code>max :: (Ord a) =&gt; a -&gt; a -&gt; a</code></p>
+<blockquote>
+<p>That can also be written as <code>max :: (Ord a) =&gt; a -&gt; (a -&gt; a)</code>. That could be read as: <code>max</code> takes an <code>a</code> and returns (that’s the <code>-&gt;</code>) a function that takes an <code>a</code> and returns an <code>a</code>. That’s why the return type and the parameters of functions are all simply separated with arrows.</p>
+</blockquote>
+<p>举一个例子来看看这种定义方式的强大之处</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">multThree ::</span> (Num <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; <span class="literal">a</span> -&gt; <span class="literal">a</span> -&gt; <span class="literal">a</span>  </span><br><span class="line">multThree x y z = x * y * z</span><br></pre></td></tr></table></figure>
+<p>运行一下看看</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; let multTwoWith9 = multThree <span class="number">9</span></span><br><span class="line">ghci&gt; multTwoWith9 <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">54</span></span><br></pre></td></tr></table></figure>
+<p>在举一个例子：</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">compareWithHundred ::</span> (Num <span class="literal">a</span>, Ord <span class="literal">a</span>) =&gt; <span class="literal">a</span> -&gt; Ordering  </span><br><span class="line">compareWithHundred = compare <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Compare has a type of <code>(Ord a) =&gt; a -&gt; (a -&gt; Ordering)</code> and calling it with 100 returns a<code>(Num a, Ord a) =&gt; a -&gt; Ordering</code>.</p>
+</blockquote>
+<p>一个我第一次看稍难理解的一个例子</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">applyTwice :: (<span class="tag">a</span> -&gt; a) -&gt; <span class="tag">a</span> -&gt; <span class="tag">a</span>  </span><br><span class="line">applyTwice f x = f (f x)</span><br></pre></td></tr></table></figure>
+<p>运行</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; applyTwice (+<span class="number">3</span>) <span class="number">10</span>  </span><br><span class="line"><span class="number">16</span>  </span><br><span class="line">ghci&gt; applyTwice (++ <span class="string">" HAHA"</span>) <span class="string">"HEY"</span>  </span><br><span class="line"><span class="string">"HEY HAHA HAHA"</span>  </span><br><span class="line">ghci&gt; applyTwice (<span class="string">"HAHA "</span> ++) <span class="string">"HEY"</span>  </span><br><span class="line"><span class="string">"HAHA HAHA HEY"</span>  </span><br><span class="line">ghci&gt; applyTwice (multThree <span class="number">2</span> <span class="number">2</span>) <span class="number">9</span>  </span><br><span class="line"><span class="number">144</span>  </span><br><span class="line">ghci&gt; applyTwice (<span class="number">3</span>:) [<span class="number">1</span>]  </span><br><span class="line">[<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p><code>zipwith</code></p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zipWith' :: (a -&gt; b -&gt; c) -&gt; [a] -&gt; [b] -&gt; [c]  </span><br><span class="line">zipWith' _ <span class="literal">[]</span> _ = <span class="literal">[]</span>  </span><br><span class="line">zipWith' _ _ <span class="literal">[]</span> = <span class="literal">[]</span>  </span><br><span class="line">zipWith' f (x:xs) (y:ys) = f x y : zipWith' f xs ys</span><br></pre></td></tr></table></figure>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; zipWith' (+) <span class="comment">[4,2,5,6]</span> <span class="comment">[2,6,2,3]</span>  </span><br><span class="line"><span class="comment">[6,8,7,9]</span>  </span><br><span class="line">ghci&gt; zipWith' max <span class="comment">[6,3,2,1]</span> <span class="comment">[7,3,1,5]</span>  </span><br><span class="line"><span class="comment">[7,3,2,5]</span>  </span><br><span class="line">ghci&gt; zipWith' (++) <span class="comment">["foo ", "bar ", "baz "]</span> <span class="comment">["fighters", "hoppers", "aldrin"]</span>  </span><br><span class="line"><span class="comment">["foo fighters","bar hoppers","baz aldrin"]</span>  </span><br><span class="line">ghci&gt; zipWith' (*) (replicate 5 2) <span class="comment">[1..]</span>  </span><br><span class="line"><span class="comment">[2,4,6,8,10]</span>  </span><br><span class="line">ghci&gt; zipWith' (zipWith' (*)) <span class="comment">[<span class="comment">[1,2,3]</span>,<span class="comment">[3,5,6]</span>,<span class="comment">[2,3,4]</span>]</span> <span class="comment">[<span class="comment">[3,2,2]</span>,<span class="comment">[3,4,5]</span>,<span class="comment">[5,4,3]</span>]</span>  </span><br><span class="line"><span class="comment">[<span class="comment">[3,4,6]</span>,<span class="comment">[9,20,30]</span>,<span class="comment">[10,12,12]</span>]</span></span><br></pre></td></tr></table></figure>
+<p><code>filter</code></p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">filter</span> :: (<span class="operator">a</span> -&gt; Bool) -&gt; [<span class="operator">a</span>] -&gt; [<span class="operator">a</span>]  </span><br><span class="line"><span class="built_in">filter</span> _ [] = []  </span><br><span class="line"><span class="built_in">filter</span> p (x:xs)   </span><br><span class="line">    | p x       = x : <span class="built_in">filter</span> p xs  </span><br><span class="line">    | otherwise = <span class="built_in">filter</span> p xs</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; filter (&gt;<span class="number">3</span>) [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br><span class="line">[<span class="number">5</span>,<span class="number">6</span>,<span class="number">4</span>]  </span><br><span class="line">ghci&gt; filter (==<span class="number">3</span>) [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]  </span><br><span class="line">[<span class="number">3</span>]  </span><br><span class="line">ghci&gt; filter even [<span class="number">1.</span><span class="number">.10</span>]  </span><br><span class="line">[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>]  </span><br><span class="line">ghci&gt; let notNull x = not (null x) in filter notNull [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">2</span>,<span class="number">2</span>],[],[],[]]  </span><br><span class="line">[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">2</span>,<span class="number">2</span>]]  </span><br><span class="line">ghci&gt; filter (`elem` [<span class="string">'a'</span>..<span class="string">'z'</span>]) <span class="string">"u LaUgH aT mE BeCaUsE I aM diFfeRent"</span>  </span><br><span class="line"><span class="string">"uagameasadifeent"</span>  </span><br><span class="line">ghci&gt; filter (`elem` [<span class="string">'A'</span>..<span class="string">'Z'</span>]) <span class="string">"i lauGh At You BecAuse u r aLL the Same"</span>  </span><br><span class="line"><span class="string">"GAYBALLS"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; sum <span class="list">(<span class="keyword">takeWhile</span> <span class="list">(<span class="keyword">&lt;10000</span>)</span> <span class="list">(<span class="keyword">filter</span> odd <span class="list">(<span class="keyword">map</span> <span class="list">(^<span class="number">2</span>)</span> [<span class="number">1</span>..])</span>)</span>)</span></span><br></pre></td></tr></table></figure>
 <p>list comprehesion vs filter</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; [n | n &lt;- [<span class="number">1.</span><span class="number">.10</span>], odd n]</span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>]</span><br><span class="line">ghci&gt; filter odd [<span class="number">1.</span><span class="number">.10</span>]</span><br><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>]</span><br></pre></td></tr></table></figure>
@@ -160,24 +297,29 @@ List字符串也是List，List的拼接可以使用 ++">
 <p>下面我们看使用 partial 和 lambda的对比</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; <span class="built_in">map</span> (+<span class="number">3</span>) [<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line">[<span class="number">4</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">5</span>]</span><br><span class="line">ghci&gt; <span class="built_in">map</span> (\x -&gt; x +<span class="number">3</span>) [<span class="number">1</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line">[<span class="number">4</span>,<span class="number">9</span>,<span class="number">6</span>,<span class="number">5</span>]</span><br><span class="line">ghci&gt;</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，partial会是一个更好的选择。可读性更高</p>
-<p>更多例子<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; zipWith (\a b -&gt; (a * <span class="number">30</span> + <span class="number">3</span>) / b) [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>] [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">[<span class="number">153.0</span>,<span class="number">61.5</span>,<span class="number">31.0</span>,<span class="number">15.75</span>,<span class="number">6.6</span>]</span><br><span class="line">ghci&gt; <span class="built_in">map</span> (\(a,b)-&gt; a+b) [(<span class="number">1</span>,<span class="number">2</span>),(<span class="number">3</span>,<span class="number">4</span>)]</span><br><span class="line">[<span class="number">3</span>,<span class="number">7</span>]</span><br></pre></td></tr></table></figure></p>
+<p>更多例子</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; zipWith (\a b -&gt; (a * <span class="number">30</span> + <span class="number">3</span>) / b) [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>] [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">[<span class="number">153.0</span>,<span class="number">61.5</span>,<span class="number">31.0</span>,<span class="number">15.75</span>,<span class="number">6.6</span>]</span><br><span class="line">ghci&gt; <span class="built_in">map</span> (\(a,b)-&gt; a+b) [(<span class="number">1</span>,<span class="number">2</span>),(<span class="number">3</span>,<span class="number">4</span>)]</span><br><span class="line">[<span class="number">3</span>,<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
 <p><strong>fold up list <code>foldl</code></strong> </p>
 <blockquote>
 <p>Folds can be used to implement any function where you traverse a list once, element by element, and then return something based on that. Whenever you want to traverse a list to return something, chances are you want a fold. </p>
 </blockquote>
-<p>使用<code>foldl</code>对sum函数重新改写<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum' :: (<span class="type">Num</span> a) =&gt; [a] -&gt; a  </span><br><span class="line">sum' xs = foldl (\acc x -&gt; acc + x) <span class="number">0</span> xs</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>foldl</code>对sum函数重新改写</p>
+<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum' :: (<span class="type">Num</span> a) =&gt; [a] -&gt; a  </span><br><span class="line">sum' xs = foldl (\acc x -&gt; acc + x) <span class="number">0</span> xs</span><br></pre></td></tr></table></figure>
 <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; sum' <span class="string">[3,5,2,1]</span></span><br><span class="line"><span class="number">11</span></span><br></pre></td></tr></table></figure>
 <p>acc   x<br>0     3<br>3     5<br>8     2<br>10   1<br>11</p>
 <p>更简洁的写法</p>
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum<span class="comment">' :: (Num a) =&gt; [a] -&gt; a  </span></span><br><span class="line">sum<span class="comment">' = foldl (+) 0</span></span><br></pre></td></tr></table></figure>
 <p>其中可以改写为这样子的形式有一个原因就是在haskell中 <code>foo a = bar b a</code> 可以简写为 <code>foo = bar b</code><br>上例中就是 <code>sum&#39; xs = foldl (+) 0 xs</code> 的简写</p>
-<p>另外一个例子，使用 foldl来实现 elem 函数<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elem' :: (<span class="type">Eq</span> a) =&gt; a -&gt; [a] -&gt; <span class="type">Bool</span>  </span><br><span class="line">elem' y ys = foldl (\acc x -&gt; <span class="keyword">if</span> x == y <span class="keyword">then</span> <span class="type">True</span> <span class="keyword">else</span> acc) <span class="type">False</span> ys</span><br></pre></td></tr></table></figure></p>
+<p>另外一个例子，使用 foldl来实现 elem 函数</p>
+<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elem' :: (<span class="type">Eq</span> a) =&gt; a -&gt; [a] -&gt; <span class="type">Bool</span>  </span><br><span class="line">elem' y ys = foldl (\acc x -&gt; <span class="keyword">if</span> x == y <span class="keyword">then</span> <span class="type">True</span> <span class="keyword">else</span> acc) <span class="type">False</span> ys</span><br></pre></td></tr></table></figure>
 <p>acc的初始值是<code>False</code>，也就是不存在，如果x等于y就返回 True，不等于就保持acc</p>
-<p>fold是非常强大的，书中重新实现了许多基础函数<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">maximum<span class="comment">' :: (Ord a) =&gt; [a] -&gt; a  </span></span><br><span class="line">maximum<span class="comment">' = foldr1 (\x acc -&gt; if x &gt; acc then x else acc)  </span></span><br><span class="line">  </span><br><span class="line">reverse<span class="comment">' :: [a] -&gt; [a]  </span></span><br><span class="line">reverse<span class="comment">' = foldl (\acc x -&gt; x : acc) []  </span></span><br><span class="line">  </span><br><span class="line">product<span class="comment">' :: (Num a) =&gt; [a] -&gt; a  </span></span><br><span class="line">product<span class="comment">' = foldr1 (*)  </span></span><br><span class="line">  </span><br><span class="line">filter<span class="comment">' :: (a -&gt; Bool) -&gt; [a] -&gt; [a]  </span></span><br><span class="line">filter<span class="comment">' p = foldr (\x acc -&gt; if p x then x : acc else acc) []  </span></span><br><span class="line">  </span><br><span class="line">head<span class="comment">' :: [a] -&gt; a  </span></span><br><span class="line">head<span class="comment">' = foldr1 (\x _ -&gt; x)  </span></span><br><span class="line">  </span><br><span class="line">last<span class="comment">' :: [a] -&gt; a  </span></span><br><span class="line">last<span class="comment">' = foldl1 (\_ x -&gt; x)</span></span><br></pre></td></tr></table></figure></p>
+<p>fold是非常强大的，书中重新实现了许多基础函数</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">maximum<span class="comment">' :: (Ord a) =&gt; [a] -&gt; a  </span></span><br><span class="line">maximum<span class="comment">' = foldr1 (\x acc -&gt; if x &gt; acc then x else acc)  </span></span><br><span class="line">  </span><br><span class="line">reverse<span class="comment">' :: [a] -&gt; [a]  </span></span><br><span class="line">reverse<span class="comment">' = foldl (\acc x -&gt; x : acc) []  </span></span><br><span class="line">  </span><br><span class="line">product<span class="comment">' :: (Num a) =&gt; [a] -&gt; a  </span></span><br><span class="line">product<span class="comment">' = foldr1 (*)  </span></span><br><span class="line">  </span><br><span class="line">filter<span class="comment">' :: (a -&gt; Bool) -&gt; [a] -&gt; [a] </span></span><br><span class="line">filter<span class="comment">' p = foldr (\x acc -&gt; if p x then x : acc else acc) []  </span></span><br><span class="line">  </span><br><span class="line">head<span class="comment">' :: [a] -&gt; a  </span></span><br><span class="line">head<span class="comment">' = foldr1 (\x _ -&gt; x)  </span></span><br><span class="line">  </span><br><span class="line">last<span class="comment">' :: [a] -&gt; a  </span></span><br><span class="line">last<span class="comment">' = foldl1 (\_ x -&gt; x)</span></span><br></pre></td></tr></table></figure>
 <p>head的实现最好还是之前用的pattern match，这里只是为了举例</p>
 <p><code>scanl</code> 和 <code>scanr</code> 与 <code>foldl</code> 和<code>foldr</code>是相似的，只是scan会输出每一个阶段的累计值</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; scanl (+) <span class="number">0</span> [<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br><span class="line">[<span class="number">0</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">11</span>]  </span><br><span class="line">ghci&gt; scanr (+) <span class="number">0</span> [<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br><span class="line">[<span class="number">11</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br><span class="line">ghci&gt; scanl1 (\acc x -&gt; <span class="keyword">if</span> x &gt; acc then x <span class="keyword">else</span> acc) [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br><span class="line">[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">9</span>,<span class="number">9</span>]  </span><br><span class="line">ghci&gt; scanl (flip (:)) [] [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]  </span><br><span class="line">[[],[<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>],[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]]</span><br></pre></td></tr></table></figure>
-<p>需要多少个自然数才能使其开方的和大于1000<br> <code>length (takeWhile (&lt;1000) (scanl1 (+) (map sqrt [1..]))) + 1</code></p>
+<p>需要多少个自然数才能使其开方的和大于1000</p>
+<p><code>length (takeWhile (&lt;1000) (scanl1 (+) (map sqrt [1..]))) + 1</code></p>
 <p>如何理解呢？</p>
 <p>执行<code>takeWhile (&lt;1000) (scanl1 (+) (map sqrt [1..]))</code>得到的结果是</p>
 <figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1.0,2.41</span><span class="number">421356237309</span><span class="number">5,4.146264</span><span class="number">369941973</span>,<span class="number">6.146264369</span><span class="number">941973,8</span>.<span class="number">38233234744</span><span class="number">1762,10.83</span><span class="number">182209022494</span>,<span class="number">13.47757340</span><span class="number">128953,16.30</span><span class="number">60005260357</span><span class="number">2,19.30600</span><span class="number">052603572</span>,<span class="number">22.468278186</span><span class="number">2041,25.78</span><span class="number">49029765595</span>,<span class="number">29.249004591</span><span class="number">697254,32.85</span><span class="number">455586716124</span><span class="number">5,36.596213</span><span class="number">25393519,40</span>.<span class="number">469196600142</span><span class="number">61,44.469196</span><span class="number">60014261,48</span>.<span class="number">592302225760</span><span class="number">27,52.83494</span><span class="number">2912879555</span>,<span class="number">57.193841856</span><span class="number">42023,61.66</span><span class="number">597781141981</span>,<span class="number">66.248553506</span><span class="number">37564,70.93</span><span class="number">89692661990</span><span class="number">7,75.73480</span><span class="number">078951178,80</span>.<span class="number">63378027507</span><span class="number">814,85.63</span><span class="number">37802750781</span><span class="number">4,90.73279</span><span class="number">978867092</span>,<span class="number">95.928952211</span><span class="number">37755,101.220</span><span class="number">45483350674</span>,<span class="number">106.60561964</span><span class="number">064124,112.08</span><span class="number">28452156929</span>,<span class="number">117.65060957</span><span class="number">852292,123</span>.<span class="number">30746382801</span><span class="number">53,129.05202</span><span class="number">647455332</span>,<span class="number">134.88297836</span><span class="number">939861,140</span>.<span class="number">799058152498</span><span class="number">22,146.79905</span><span class="number">815249822,152</span>.<span class="number">88182068279</span><span class="number">644,159.04</span><span class="number">62346857654</span><span class="number">3,165.291232</span><span class="number">68416382,171</span>.<span class="number">61578800450</span><span class="number">06,178.01891</span><span class="number">224193344,184</span>.<span class="number">49965294034</span><span class="number">13,191.05709</span><span class="number">14646433,197</span>.<span class="number">69034104535</span><span class="number">41,204.39854</span><span class="number">497785348</span>,<span class="number">211.180874960</span><span class="number">97874,218.03</span><span class="number">652956137978</span>,<span class="number">224.96473279</span><span class="number">165528,231.96</span><span class="number">473279165528</span>,<span class="number">239.03580060</span><span class="number">352076,246</span>.<span class="number">177229032063</span><span class="number">6,253.38833</span><span class="number">158299158,26</span><span class="number">0.66844147</span><span class="number">22721,268</span>.<span class="number">01691070062</span><span class="number">16,275.43</span><span class="number">31091877172</span><span class="number">6,282.91</span><span class="number">642396126514</span>,<span class="number">290.46625</span><span class="number">839653586</span>,<span class="number">298.08203</span><span class="number">15023998,30</span><span class="number">5.763177250</span><span class="number">26837,313</span>.<span class="number">509143942683</span><span class="number">2,321.31</span><span class="number">93936185898</span><span class="number">6,329.193</span><span class="number">40149260165</span>,<span class="number">337.130655</span><span class="number">4257954,34</span><span class="number">5.130655425</span><span class="number">7954,353</span>.<span class="number">192913174094</span>,<span class="number">361.31695</span><span class="number">15787299,36</span><span class="number">9.50230435</span><span class="number">060234,377</span>.<span class="number">74851560183</span><span class="number">765,386</span>.<span class="number">055139464755</span><span class="number">7,394.42</span><span class="number">17397300965</span>,<span class="number">402.84788</span><span class="number">95032728,41</span><span class="number">1.333170877</span><span class="number">5114,419</span>.<span class="number">8771746228289</span><span class="number">3,428.47</span><span class="number">949988987153</span>,<span class="number">437.139753</span><span class="number">9277159,44</span><span class="number">5.85755181</span><span class="number">479726,45</span><span class="number">4.632516202</span><span class="number">1894,463</span>.<span class="number">46427706851</span><span class="number">72,472.35</span><span class="number">24714858328</span>,<span class="number">481.29674</span><span class="number">33958319,49</span><span class="number">0.29674339</span><span class="number">58319,499</span>.<span class="number">352128533969</span><span class="number">33,508.46</span><span class="number">25621131136</span>,<span class="number">517.62771</span><span class="number">35030253,52</span><span class="number">6.84725796</span><span class="number">03182,536</span>.<span class="number">1208764558139</span>,<span class="number">545.448255</span><span class="number">5089028,55</span><span class="number">4.82908702</span><span class="number">85497,564</span>.<span class="number">263068160606</span><span class="number">3,573.74</span><span class="number">99011411114</span>,<span class="number">583.28929</span><span class="number">31552809,59</span><span class="number">2.880956201</span><span class="number">9063,602</span>.<span class="number">52460696289</span><span class="number">93,612.219</span><span class="number">9666777319</span>,<span class="number">621.96676</span><span class="number">10225409,63</span><span class="number">1.76471999</span><span class="number">36737,641</span>.<span class="number">61357779546</span><span class="number">98,651.51</span><span class="number">30727320815</span>,<span class="number">661.46294</span><span class="number">71031477,67</span><span class="number">1.462947103</span><span class="number">1477,681</span>.<span class="number">51282272426</span><span class="number">86,691.61</span><span class="number">23276626307</span>,<span class="number">701.761219</span><span class="number">2277229,711</span>.<span class="number">959258254908</span><span class="number">5,722.206</span><span class="number">2090208681,73</span><span class="number">2.501839161</span><span class="number">8551,742</span>.<span class="number">84591959464</span><span class="number">36,753.238</span><span class="number">2244400569</span>,<span class="number">763.67853</span><span class="number">09489675,77</span><span class="number">4.1666194306</span><span class="number">69,784.70</span><span class="number">22731835218,79</span><span class="number">5.28527842</span><span class="number">77802,805</span>.<span class="number">9154242405149</span>,<span class="number">816.59250</span><span class="number">24925461,82</span><span class="number">7.31630778</span><span class="number">73097,838</span>.<span class="number">08663740157</span><span class="number">87,848.90</span><span class="number">32912279707</span>,<span class="number">859.76607</span><span class="number">17191709,87</span><span class="number">0.67478383</span><span class="number">38066,881</span>.<span class="number">629234983909</span><span class="number">9,892.62</span><span class="number">92349839099</span>,<span class="number">903.67459</span><span class="number">60010971,91</span><span class="number">4.765132507</span><span class="number">5066,925</span>.<span class="number">900661233166</span><span class="number">6,937.08</span><span class="number">10011206655</span>,<span class="number">948.30597</span><span class="number">32809874,95</span><span class="number">9.57540095</span><span class="number">0572,970</span>.<span class="number">889109449556</span><span class="number">7,982.246</span><span class="number">9261411572</span>,<span class="number">993.64868</span><span class="number">03921487</span>]</span><br></pre></td></tr></table></figure>
@@ -187,7 +329,8 @@ List字符串也是List，List的拼接可以使用 ++">
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; <span class="built_in">sqrt</span> $ <span class="number">3</span> + <span class="number">4</span> + <span class="number">9</span></span><br><span class="line"><span class="number">4.0</span></span><br><span class="line">ghci&gt; <span class="built_in">sqrt</span> (<span class="number">3</span> + <span class="number">4</span> + <span class="number">9</span>)</span><br><span class="line"><span class="number">4.0</span></span><br><span class="line">ghci&gt; <span class="built_in">sqrt</span> <span class="number">3</span> + <span class="number">4</span> + <span class="number">9</span></span><br><span class="line"><span class="number">14.732050807568877</span></span><br></pre></td></tr></table></figure>
 <p>再复杂一丢丢：<code>sum (filter (&gt; 10) (map (*2) [2..10]))</code> 要怎么改写呢？</p>
 <p>首先 <code>filter (&gt; 10) (map (*2) [2..10])</code> 可以改写为 <code>filter (&gt;10) $ map (*2) [2..10]</code><br>继而可以改写为 <code>sum $ filter (&gt; 10) $ map (*2) [2..10]</code></p>
-<h4 id="Function_composition">Function composition</h4><p>使用符号<code>.</code>来表示函数的组合，<code>f (g (x)) = (f.g) x</code>直接从例子中进行理解 <code>negate . (* 3)</code> 表示的是  乘于 3 让后变为负数<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; (negate . (* <span class="number">3</span>)) <span class="number">4</span></span><br><span class="line">-<span class="number">12</span></span><br><span class="line">ghci&gt; <span class="built_in">map</span> (negate . (* <span class="number">3</span>)) [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">[-<span class="number">3</span>,-<span class="number">6</span>,-<span class="number">9</span>]</span><br></pre></td></tr></table></figure></p>
+<h4 id="Function_composition">Function composition</h4><p>使用符号<code>.</code>来表示函数的组合，<code>f (g (x)) = (f.g) x</code>直接从例子中进行理解 <code>negate . (* 3)</code> 表示的是  乘于 3 让后变为负数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; (negate . (* <span class="number">3</span>)) <span class="number">4</span></span><br><span class="line">-<span class="number">12</span></span><br><span class="line">ghci&gt; <span class="built_in">map</span> (negate . (* <span class="number">3</span>)) [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">[-<span class="number">3</span>,-<span class="number">6</span>,-<span class="number">9</span>]</span><br></pre></td></tr></table></figure>
 <p>而组合不限于两个函数，可以多个组合 <code>f (g (z x)) = (f . g . z) x</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; <span class="built_in">map</span> (negate . sum . tail) [[<span class="number">1.</span><span class="number">.5</span>],[<span class="number">3.</span><span class="number">.6</span>],[<span class="number">1.</span><span class="number">.7</span>]]</span><br><span class="line">[-<span class="number">14</span>,-<span class="number">15</span>,-<span class="number">27</span>]</span><br></pre></td></tr></table></figure>
 <p>上面举的例子都是只有一个参数的，如果是多个参数呢？答案就是 partial</p>
@@ -195,153 +338,424 @@ List字符串也是List，List的拼接可以使用 ++">
 <p>那么这个函数组合到底对实际编程有什么用呢？看下面这个例子</p>
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oddSquareSum <span class="tag">:: Integer</span>  </span><br><span class="line">oddSquareSum = <span class="keyword">sum</span> (takeWhile (&lt;<span class="number">10000</span>) (filter odd (<span class="built_in">map</span> (^<span class="number">2</span>) <span class="preprocessor">[</span><span class="number">1.</span><span class="built_in">.</span><span class="preprocessor">]</span><span class="markup">)))</span></span><br></pre></td></tr></table></figure>
 <p>可以改写为</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oddSquareSum :: Integer  </span><br><span class="line">oddSquareSum = sum . takeWhile (&lt;<span class="number">10000</span>) . filter odd . <span class="built_in">map</span> (^<span class="number">2</span>) $ [<span class="number">1.</span>.]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oddSquareSum :: Integer  </span><br><span class="line"></span><br><span class="line">oddSquareSum = sum . takeWhile (&lt;<span class="number">10000</span>) . filter odd . <span class="built_in">map</span> (^<span class="number">2</span>) $ [<span class="number">1.</span>.]</span><br></pre></td></tr></table></figure>
 <p>如果为了更好的可读性， 可以使用<code>let</code>来进行可读性的改善</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">oddSquareSum :: Integer  </span><br><span class="line">oddSquareSum =</span><br><span class="line">  let oddSquares = filter odd . <span class="built_in">map</span> (^<span class="number">2</span>) $ [<span class="number">1.</span>.]</span><br><span class="line">    bellowLimit = takeWhile (&lt;<span class="number">10000</span>) oddSquares</span><br><span class="line">  in sum bellowLimit</span><br></pre></td></tr></table></figure>
 <h3 id="modules">modules</h3><h4 id="加载模块">加载模块</h4><p>加载模块的语法： <code>import &lt;module name&gt;</code></p>
-<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import Data.List</span><br><span class="line"></span><br><span class="line">numUniques :: (Eq a) =&gt; [a] -&gt; Int</span><br><span class="line">numUniques  = length . nub</span><br><span class="line">-<span class="ruby">- 与下面两种写法是等价的</span><br><span class="line"></span>-<span class="ruby">- numUniques xs = length . nub <span class="variable">$ </span>xs </span><br><span class="line"></span>-<span class="ruby">- numUniques xs = length (nub xs)</span></span><br></pre></td></tr></table></figure>
-<p>在命令行模式下想要使用模块可以使用 <code>:m + &lt;module name&gt;</code>，如果有多个模块用空格隔开 例如 <code>:m + Data.List</code></p>
-<p>只需要 import 其中的几个函数<br><figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">Data</span>.<span class="built_in">List</span> (nub, sort)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import Data.List</span><br><span class="line"></span><br><span class="line">numUniques :: (Eq a) =&gt; [a] -&gt; Int</span><br><span class="line">numUniques  = length . nub</span><br><span class="line">-<span class="ruby">- 与下面两种写法是等价的</span><br><span class="line"></span>-<span class="ruby">- numUniques xs = length . nub <span class="variable">$ </span>xs </span><br><span class="line"></span>-<span class="ruby">- nu mUniques xs = length (nub xs)</span></span><br></pre></td></tr></table></figure>
+<p>在命令行模式下想要使用模块可以使用 <code>:m + &lt;module name&gt;</code>，如果有多个模块用空格隔开 例如 <code>:m + Data. List</code> </p>
+<p>只需要 import 其中的几个函数</p>
+<figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">Data</span>.<span class="built_in">List</span> (nub, sort)</span><br></pre></td></tr></table></figure>
 <p>import 的时候排除某个函数</p>
 <figure class="highlight capnproto"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">Data</span>.<span class="built_in">List</span> hiding (nub)</span><br></pre></td></tr></table></figure>
-<p>如果模块之间出现同名函数，可以通过 <code>qualified</code>来指定<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="import"><span class="keyword">import</span> <span class="keyword">qualified</span> Data.Map  </span></span><br><span class="line"><span class="comment">-- 或者，命名空间太长，可以使用缩写</span></span><br><span class="line"><span class="import"><span class="keyword">import</span> <span class="keyword">qualified</span> Data.Map <span class="keyword">as</span> M</span></span><br></pre></td></tr></table></figure></p>
+<p>如果模块之间出现同名函数，可以通过 <code>qualified</code>来指定</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="import"><span class="keyword">import</span> <span class="keyword">qualified</span> Data.Map  </span></span><br><span class="line"><span class="comment">-- 或者，命名空间太长，可以使用缩写</span></span><br><span class="line"><span class="import"><span class="keyword">import</span> <span class="keyword">qualified</span> Data.Map <span class="keyword">as</span> M</span></span><br></pre></td></tr></table></figure>
 <p>如果想要使用 Data.Map的filter函数，就需要通过 <code>Data.Map.filter</code> 或者 <code>M.filter</code> 进行调用，而<code>filter</code> 则会使用我们熟悉的那个 <code>filter</code>,来自于 Prelude 模块，该模块会预加载。<br>想要查询函数可以使用 <a href="https://www.haskell.org/hoogle/" target="_blank" rel="external">hoogle</a></p>
 <h4 id="Data-List">Data.List</h4><p>Data.List中有一些很有用的函数<br><code>intersperse</code>,<code>intercalate</code>, <code>concat</code>  <code>concatMap</code>, <code>takeWhile</code>, <code>dropWhile</code>等等，下面列出一些对我有启发的函数：</p>
-<p>####<code>and</code> 和 <code>or</code><br><code>and $ map (==4) [2,3,4,5,6,1]</code>得到False 和 <code>or $ map (==4) [2,3,4,5,6,1]</code> 得到True</p>
-<p>####<code>any</code> 和 <code>all</code><br>例如 <code>any (==4) [1,2,3,4]</code> 得到True , <figure class="highlight"><figcaption><span>(`elem` ['A'..'Z']) "HEYGUYSwhatsup" ```得到 False</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;#### `transpose` &#10;&#10;`transpose`&#30340;&#29992;&#27861;&#23545;&#20110;&#25105;&#27604;&#36739;&#26032;&#22855; , &#30475;&#20070;&#20013;&#30340;&#20363;&#23376;</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; transpose [[0,3,5,9],[10,0,0,9],[8,5,1,-1]]<br>[[0,10,8],[3,0,5],[5,0,1],[9,9,-1]]<br>ghci&gt; map sum $ transpose [[0,3,5,9],[10,0,0,9],[8,5,1,-1]]<br>[18,8,6,17]<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="escape">`i</span>terate<span class="escape">`</span><br><span class="line"></span><span class="escape">`g</span>roup<span class="escape">`和</span><span class="escape">`s</span>ort`</span><br></pre></td></tr></table></figure></p>
-<p>ghci&gt; map (\l@(x:xs) -&gt; (x,length l)) . group . sort $ [1,1,1,1,2,2,2,2,3,3,2,2,2,5,6,7]<br>[(1,4),(2,7),(3,2),(5,1),(6,1),(7,1)]<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">记得<span class="string">`@`</span>的用法吗?  l<span class="variable">@(</span>x:xs) 表示 <span class="string">`l`</span> 代表 <span class="string">`(x:xs）`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">`tails`</span> 和 <span class="string">`inits`</span></span><br><span class="line"></span><br><span class="line">用tails实现字符串的search</span><br></pre></td></tr></table></figure></p>
-<p>search :: (Eq a) =&gt; [a] -&gt; [a] -&gt; Bool<br>search needle haystack =<br>    let nlen = length needle<br>    in  foldl (\acc x -&gt; if take nlen x == needle then True else acc) False (tails haystack)<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">首先 tails 执行得到 一个数组，例如 <span class="escape">`t</span>ails <span class="string">"abcde"</span><span class="escape">` </span>得到</span><br></pre></td></tr></table></figure></p>
-<p>[“abcde”,”bcde”,”cde”,”de”,”e”,””]<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">然后使用foldl进行累积。 上面的实现其实就是函数<span class="escape">`i</span>sInfixOf<span class="escape">`所</span>做的事情, 类似的字符串函数还有  <span class="escape">`i</span>sPrefixOf<span class="escape">` </span>和 <span class="escape">`i</span>sSuffixOf<span class="escape">`</span><br><span class="line"></span></span><br><span class="line"></span><br><span class="line"><span class="escape">`p</span>artition<span class="escape">` </span>, <span class="escape">`s</span>pan<span class="escape">` </span>和 <span class="escape">`b</span>reak`</span><br></pre></td></tr></table></figure></p>
-<p>hci&gt;  partition (<code>elem</code> [‘A’..’Z’]) “BOBsidneyMORGANeddy”<br>(“BOBMORGAN”,”sidneyeddy”)<br>ghci&gt; span (<code>elem</code> [‘A’..’Z’]) “BOBsidneyMORGANeddy”<br>(“BOB”,”sidneyMORGANeddy”)<br>ghci&gt; break (<code>elem</code> [‘a’..’z’]) “BOBsidneyMORGANeddy”<br>(“BOB”,”sidneyMORGANeddy”)<br>```</p>
-
+<h4 id="and_和_or"><code>and</code> 和 <code>or</code></h4><p><code>and $ map (==4) [2,3,4,5,6,1]</code>得到False 和 <code>or $ map (==4) [2,3,4,5,6,1]</code> 得到True</p>
+<h4 id="any_和_all"><code>any</code> 和 <code>all</code></h4><p>例如 <code>any (==4) [1,2,3,4]</code> 得到True, 而</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="atom">all</span> (<span class="string">`elem`</span> [<span class="string">'A'</span>..<span class="string">'Z'</span>]) <span class="string">"HEYGUYSwhatsup"</span></span><br></pre></td></tr></table></figure>
+<p>得到 False</p>
+<h4 id="transpose"><code>transpose</code></h4><p><code>transpose</code>的用法对于我比较新奇 , 看书中的例子</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; transpose [[<span class="number">0</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">9</span>],[<span class="number">8</span>,<span class="number">5</span>,<span class="number">1</span>,-<span class="number">1</span>]]</span><br><span class="line">[[<span class="number">0</span>,<span class="number">10</span>,<span class="number">8</span>],[<span class="number">3</span>,<span class="number">0</span>,<span class="number">5</span>],[<span class="number">5</span>,<span class="number">0</span>,<span class="number">1</span>],[<span class="number">9</span>,<span class="number">9</span>,-<span class="number">1</span>]]</span><br><span class="line">ghci&gt; <span class="built_in">map</span> sum $ transpose [[<span class="number">0</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">9</span>],[<span class="number">8</span>,<span class="number">5</span>,<span class="number">1</span>,-<span class="number">1</span>]]</span><br><span class="line">[<span class="number">18</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">17</span>]</span><br></pre></td></tr></table></figure>
+<p><code>iterate</code></p>
+<p><code>group</code>和<code>sort</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; <span class="built_in">map</span> (\l@(x:xs) -&gt; (x,length l)) . group . sort $ [<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">[(<span class="number">1</span>,<span class="number">4</span>),(<span class="number">2</span>,<span class="number">7</span>),(<span class="number">3</span>,<span class="number">2</span>),(<span class="number">5</span>,<span class="number">1</span>),(<span class="number">6</span>,<span class="number">1</span>),(<span class="number">7</span>,<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<p>记得<code>@</code>的用法吗?  l@(x:xs) 表示 <code>l</code> 代表 <code>(x:xs）</code></p>
+<p><code>tails</code> 和 <code>inits</code></p>
+<p>用tails实现字符串的search</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search :: (Eq a) =&gt; [a]<span class="function"> -&gt;</span> [a]<span class="function"> -&gt;</span> Bool  </span><br><span class="line">search needle haystack =   </span><br><span class="line">    <span class="keyword">let</span> nlen = length needle  </span><br><span class="line">    <span class="keyword">in</span>  foldl (<span class="string">\acc</span> x<span class="function"> -&gt;</span> <span class="keyword">if</span> take nlen x == needle <span class="keyword">then</span> True <span class="keyword">else</span> acc) False (tails haystack)</span><br></pre></td></tr></table></figure>
+<p>首先 tails 执行得到 一个数组，例如 <code>tails &quot;abcde&quot;</code> 得到</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"abcde"</span>,<span class="string">"bcde"</span>,<span class="string">"cde"</span>,<span class="string">"de"</span>,<span class="string">"e"</span>,<span class="string">""</span>]</span><br></pre></td></tr></table></figure>
+<p>然后使用foldl进行累积。 上面的实现其实就是函数<code>isInfixOf</code>所做的事情, 类似的字符串函数还有  <code>isPrefixOf</code> 和 <code>isSuffixOf</code></p>
+<p><code>partition</code> , <code>span</code> 和 <code>break</code></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hci&gt;  partition <span class="list">(`elem` [<span class="quoted">'A</span>'..<span class="quoted">'Z</span>'])</span> <span class="string">"BOBsidneyMORGANeddy"</span></span><br><span class="line"><span class="list">(<span class="string">"BOBMORGAN"</span>,<span class="string">"sidneyeddy"</span>)</span></span><br><span class="line">ghci&gt; span <span class="list">(`elem` [<span class="quoted">'A</span>'..<span class="quoted">'Z</span>'])</span> <span class="string">"BOBsidneyMORGANeddy"</span></span><br><span class="line"><span class="list">(<span class="string">"BOB"</span>,<span class="string">"sidneyMORGANeddy"</span>)</span></span><br><span class="line">ghci&gt; break <span class="list">(`elem` [<span class="quoted">'a</span>'..<span class="quoted">'z</span>'])</span> <span class="string">"BOBsidneyMORGANeddy"</span></span><br><span class="line"><span class="list">(<span class="string">"BOB"</span>,<span class="string">"sidneyMORGANeddy"</span>)</span></span><br></pre></td></tr></table></figure>
+</span>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://zhangmhao.github.io/2015/06/04/Haskell入门笔记/" data-id="ciepbvnz3000c1bw1xo6faz7z" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/haskell/">haskell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程语言/">编程语言</a></li></ul>
 
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/haskell/" rel="tag">#haskell</a>
+          
+            <a href="/tags/编程语言/" rel="tag">#编程语言</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/" rel="next">You don't konw js 之 Async & Performance 读书笔记</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
-    </a>
-  
-</nav>
+  </article>
 
-  
-</article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life-Style/">Life Style</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UI界面/">UI界面</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unix/">Unix</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/node-webkit/">node-webkit</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端开发/">前端开发</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习研究/">学习研究</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/心理学/">心理学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/性能监控/">性能监控</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/模塊化/">模塊化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书笔记/">读书笔记</a><span class="category-list-count">2</span></li></ul>
+
+    <div class="post-spread">
+      
     </div>
   </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AMD/">AMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMD/">CMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Com/">Com</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Day-Study/">Day Study</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/W3C/">W3C</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dom/">dom</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/haskell/">haskell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5/">html5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http协议/">http协议</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/restful/">restful</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端开发/">前端开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端性能优化/">前端性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端组件化/">前端组件化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/复杂系统/">复杂系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具开发/">工具开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间管理/">时间管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模塊化/">模塊化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活优化/">生活优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用戶交互/">用戶交互</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目文档/">项目文档</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+ </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AMD/" style="font-size: 10px;">AMD</a> <a href="/tags/CMD/" style="font-size: 10px;">CMD</a> <a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/Day-Study/" style="font-size: 16.67px;">Day Study</a> <a href="/tags/W3C/" style="font-size: 10px;">W3C</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/dom/" style="font-size: 13.33px;">dom</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/前端开发/" style="font-size: 13.33px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 16.67px;">前端性能优化</a> <a href="/tags/前端组件化/" style="font-size: 10px;">前端组件化</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/性能优化/" style="font-size: 16.67px;">性能优化</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/时间管理/" style="font-size: 10px;">时间管理</a> <a href="/tags/模塊化/" style="font-size: 10px;">模塊化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/用戶交互/" style="font-size: 10px;">用戶交互</a> <a href="/tags/编程语言/" style="font-size: 16.67px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/读书笔记/" style="font-size: 16.67px;">读书笔记</a> <a href="/tags/项目文档/" style="font-size: 10px;">项目文档</a>
-    </div>
-  </div>
+        
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">October 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">March 2013</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
         
-          <li>
-            <a href="/2015/06/04/Haskell入门笔记/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/05/You-don't-know-js--Async-and-Performance-读书笔记/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/12/Life-time-tracker表达的理念/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/31/关于Javascript以前忽略的性能问题/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/24/Min-和-Max方法的实现和用法/">(no title)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+          <div class="comments" id="comments">
+            
+          </div>
         
       </div>
-      <footer id="footer">
+
+      
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 Andrew Zhang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</footer>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Andrew Zhang" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Andrew Zhang</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">2.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集合的方式来理解List"><span class="nav-number">2.1.</span> <span class="nav-text">集合的方式来理解List</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元组_Tuples"><span class="nav-number">3.</span> <span class="nav-text">元组 Tuples</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type_And_TypeClasses"><span class="nav-number">4.</span> <span class="nav-text">Type And TypeClasses</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Type"><span class="nav-number">4.1.</span> <span class="nav-text">Type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Typeclasses"><span class="nav-number">4.2.</span> <span class="nav-text">Typeclasses</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Eq"><span class="nav-number">4.2.1.</span> <span class="nav-text">Eq</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ord"><span class="nav-number">4.2.2.</span> <span class="nav-text">Ord</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Show"><span class="nav-number">4.2.3.</span> <span class="nav-text">Show</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Read"><span class="nav-number">4.2.4.</span> <span class="nav-text">Read</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Syntax_in_Functions"><span class="nav-number">5.</span> <span class="nav-text">Syntax in Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pattern_Matching"><span class="nav-number">5.1.</span> <span class="nav-text">Pattern Matching</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gurard"><span class="nav-number">5.2.</span> <span class="nav-text">Gurard</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#let_<bindings>_in_<expression>"><span class="nav-number">5.3.</span> <span class="nav-text">let <bindings> in <expression></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#case"><span class="nav-number">5.4.</span> <span class="nav-text">case</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Higher_order_functions"><span class="nav-number">6.</span> <span class="nav-text">Higher order functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Curried_functions"><span class="nav-number">6.1.</span> <span class="nav-text">Curried functions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lambdas"><span class="nav-number">6.2.</span> <span class="nav-text">Lambdas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function_application_with_$"><span class="nav-number">6.3.</span> <span class="nav-text">Function application with $</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function_composition"><span class="nav-number">6.4.</span> <span class="nav-text">Function composition</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modules"><span class="nav-number">7.</span> <span class="nav-text">modules</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载模块"><span class="nav-number">7.1.</span> <span class="nav-text">加载模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-List"><span class="nav-number">7.2.</span> <span class="nav-text">Data.List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#and_和_or"><span class="nav-number">7.3.</span> <span class="nav-text">and 和 or</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#any_和_all"><span class="nav-number">7.4.</span> <span class="nav-text">any 和 all</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transpose"><span class="nav-number">7.5.</span> <span class="nav-text">transpose</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
     </div>
-    <nav id="mobile-nav">
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
   
-    <a href="/" class="mobile-nav-link">Home</a>
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andrew Zhang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-</nav>
+  
+    
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
 
-  </div>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
 </body>
 </html>
