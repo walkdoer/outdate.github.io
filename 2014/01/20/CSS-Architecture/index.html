@@ -1,15 +1,459 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS Architecture | Code Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这篇文章部分翻译自：CSS Architecture ，包括个人的一些见解和对例子的补充。
+
+Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification. 
+
+###作者提到优雅的CSS代码应该有的特点
+
+可预测(predictable">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Architecture">
+<meta property="og:url" content="http://zhangmhao.github.io/2014/01/20/CSS-Architecture/index.html">
+<meta property="og:site_name" content="Code Me">
+<meta property="og:description" content="这篇文章部分翻译自：CSS Architecture ，包括个人的一些见解和对例子的补充。
+
+Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification. 
+
+###作者提到优雅的CSS代码应该有的特点
+
+可预测(predictable">
+<meta property="og:updated_time" content="2015-09-22T13:45:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Architecture">
+<meta name="twitter:description" content="这篇文章部分翻译自：CSS Architecture ，包括个人的一些见解和对例子的补充。
+
+Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification. 
+
+###作者提到优雅的CSS代码应该有的特点
+
+可预测(predictable">
+  
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
 <body>
   <div id="container">
     <div class="left-col">
-    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Andrew Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nwjs/" style="font-size: 10px;">nwjs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/交互设计/" style="font-size: 10px;">交互设计</a> <a href="/tags/前端开发/" style="font-size: 10px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 17.5px;">前端性能优化</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/心理学/" style="font-size: 10px;">心理学</a> <a href="/tags/性能优化/" style="font-size: 12.5px;">性能优化</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/时间管理/" style="font-size: 12.5px;">时间管理</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/组件化/" style="font-size: 10px;">组件化</a> <a href="/tags/编程语言/" style="font-size: 15px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计文档/" style="font-size: 12.5px;">设计文档</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">探索这个太有趣的世界</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
     </div>
     <div class="mid-col">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-      <div class="body-wrap"><%- body %></div>
-      <%- partial('_partial/footer') %>
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Andrew Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Andrew Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-CSS-Architecture" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/01/20/CSS-Architecture/" class="article-date">
+  	<time datetime="2014-01-19T16:00:00.000Z" itemprop="datePublished">2014-01-20</time>
+</a>
     </div>
-    <%- partial('_partial/after-footer') %>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS Architecture
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这篇文章部分翻译自：<a href="http://engineering.appfolio.com/2012/11/16/css-architecture/" target="_blank" rel="external">CSS Architecture</a> ，包括个人的一些见解和对例子的补充。</p>
+<blockquote>
+<p>Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification. </p>
+</blockquote>
+<p>###作者提到优雅的CSS代码应该有的特点</p>
+<ul>
+<li><p><strong>可预测(predictable)</strong> 可预测意思是，CSS规则按照你预期的效果。单你更新一个CSS规则的时候，不会影响到你不想改变的模块，特别是大型站点动则几百个CSS文件，可预测就显得更加重要</p>
+</li>
+<li><p><strong>可重用(reusable)</strong> 抽象和解耦的好的CSS规则的好处是，当你创建新的组件时，可以复用已有的CSS规则，而不需要重新写一个新的CSS规则</p>
+</li>
+<li><p><strong>可维护(maintainable)</strong> 添加新组件或者新特性的时候，不会需要修改已有的CSS规则。如果添加一个新CSS规则，就会破坏其他模块的样式，这明显不是一份可维护的CSS代码</p>
+</li>
+<li><p><strong>可伸缩(scalable)</strong> 随着网站变大和复杂度变高，往往需要更多的人来维护，可伸缩意味着不管你是单人开发，还是团队开发，都可以管理好CSS规则，不会变成一盘意大利面。可伸缩还意味着学习曲线的平坦，新的开发人员可以尽快的掌握目前的代码。</p>
+</li>
+</ul>
+<h3 id="常見的幾種CSS寫法">常見的幾種CSS寫法</h3><p>有一個基礎的parent，然后使用到的組件再去擴展。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.widget</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid black</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value"> black</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">50%</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="id">#sidebar</span> <span class="class">.widget</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">body</span><span class="class">.homepage</span> <span class="class">.widget</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> white</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>這樣的寫法剛開始看起來應該是無害的，但是我們來根據上面的幾個特性來分析：</p>
+<p>首先不容易重用(reusable)和伸縮(scalable)，如果還有其他頁面要使用widget，那就要添加新的CSS規則來達到目的，例如</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">body</span><span class="class">.pageA</span> <span class="class">.widget</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> white</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">body</span><span class="class">.pageB</span> <span class="class">.widget</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>其次，這個代碼很難維護（maintainable），因為如果要重新設計widget的時候，所有相關的地方都有可能要修改，而且這些修改的地方不會像上面一樣聚在一起那麼好找。</p>
+<h4 id="過度複雜的CSS選擇器">過度複雜的CSS選擇器</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="id">#main-nav</span> <span class="tag">ul</span> <span class="tag">li</span> <span class="tag">ul</span> <span class="tag">li</span> <span class="tag">div</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"><span class="id">#content</span> <span class="tag">article</span> <span class="tag">h1</span><span class="pseudo">:first-child</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"><span class="id">#sidebar</span> &gt; <span class="tag">div</span> &gt; <span class="tag">h3</span> + <span class="tag">p</span> <span class="rules">&#123; &#125;</span></span><br></pre></td></tr></table></figure>
+<p>越複雜的選擇器代表你的CSS規則和HTML耦合得更深, 像上面的CSS規則相對應的HTML代碼一旦改變，CSS規則也得隨著要修改了。 雖然這種複雜的選擇器會讓你的HTML很簡潔，但是會讓你的CSS變得很複雜而且會有性能問題。</p>
+<ul>
+<li><strong>無法重用</strong>，一個HTML結構不同的組件就用不了這個CSS規則了</li>
+<li>無法預測，如果 <code>#sidebar &gt; div &gt; h3 + p { }</code> 規則對應的HTML結構中的<code>div</code> 改為 <code>section</code> ，那麼這條規則就無效了</li>
+<li>難維護，顯而易見</li>
+<li>無法伸縮</li>
+</ul>
+<p>在CSS和HTML這兩者的複雜度之間做權衡，而為了HTML的簡潔，不使用ID和CLASS，這樣的確可以讓HTML看起來簡潔，但是CSS卻會是非常複雜，這種為了HTML的簡潔性而付出的代價是得不償失的。對於個人而言，我偏向于將複雜度轉移到HTML，儘可能保持CSS的簡潔。</p>
+<h3 id="CSS类名起得太大路货">CSS类名起得太大路货</h3><p>HTML</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"widget"</span>&gt;</span><br><span class="line">  &lt;h3 <span class="type">class</span>=<span class="string">"title"</span>&gt;...&lt;/h3&gt;</span><br><span class="line">  &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"contents"</span>&gt;</span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br><span class="line">    In condimentum justo et est dapibus sit amet euismod ligula ornare.</span><br><span class="line">    Vivamus elementum accumsan dignissim.</span><br><span class="line">    &lt;button <span class="type">class</span>=<span class="string">"action"</span>&gt;Click Me!&lt;/button&gt;</span><br><span class="line">  &lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>CSS</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.widget</span> <span class="rules">&#123;&#125;</span></span><br><span class="line"><span class="class">.widget</span> <span class="class">.title</span> <span class="rules">&#123;&#125;</span></span><br><span class="line"><span class="class">.widget</span> <span class="class">.contents</span> <span class="rules">&#123;&#125;</span></span><br><span class="line"><span class="class">.widget</span> <span class="class">.action</span> <span class="rules">&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>這個CSS規則本意是為了避免 .title .contents .action只在.widget下面生效，而不影響其他模塊，但是這種太過“大路貨”的名字很容易被其他模塊破壞， 例如 下面這個規則就會破壊 .widget .title {} 這個規則</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.title</span> <span class="rules">&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>同時也有可能破壞其他模塊，例如上面的CSS規則就會破壞下面的CSS規則</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.sidebar</span> <span class="rules">&#123;&#125;</span></span><br><span class="line"><span class="class">.sidebar</span> <span class="class">.widget</span> <span class="class">.title</span> <span class="rules">&#123;&#125;</span></span><br><span class="line"><span class="class">.sidebar</span> <span class="class">.widget</span> <span class="class">.contents</span> <span class="rules">&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="总结">总结</h3><p>上面幾個bad practice都有一個類似的地方，就是將太多的责任負擔在了CSS之上。</p>
+<p>CSS不就是為了樣式而存在的嗎？把樣式的任務交給CSS應該是很自然的吧? CSS的確是為了樣式而存在，但是把HTML和樣式簡單的分離開來並不是真正的分離，如果像 “過度複雜的CSS選擇器” 中的例子，CSS還需要了解HTML結構，反而没有达到解耦的目的了。</p>
+<p>現階段HTML並不僅僅是內容，HTML也包含了結構。所以HTML和CSS一起合作作為展示層（Presentation Layer）是一個比較明智的做法。模板描述數據的展示形式，接着使用模板渲染渲染数据，最后构成显示层</p>
+<h3 id="如何解决上述问题">如何解决上述问题</h3><p>CSS尽可能少的和HTML结构耦合在一起,<br>缩小CSS定义的粒度，粒度越细，可复用性就越高<br>CSS规则不管应用在页面的那个位置，保证它们的表现都是相同的</p>
+<p>例如，一般情况下我们会这么去定义一个按钮</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.button</span><span class="rules">&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.sidebar</span> <span class="class">.button</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这样子其实是和HTML结构耦合在一起的，因为需要类似于这样子的结构才可以使用上面的CSS规则</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"sidebar"</span>&gt;</span><br><span class="line">    &lt;button <span class="type">class</span>=<span class="string">"button"</span>&gt;&lt;/button&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>那么应该怎么改进呢？看下面的代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.button</span><span class="rules">&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.full-width</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>缩小每一条CSS规则的粒度，然后将样式的组合交给HTML来控制,这样子CSS就不会和HTML结构耦合在一起,同时开发者看了class中用到的类名，就能够知道这个元素看起来会是什么样子，一目了然，就算是多人开发也不会有疑惑。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">button</span> class=“<span class="tag">button</span> full-<span class="attribute">width</span>”&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看出 .full-width 这个类，不管用在页面上的任意位置，它所起的作用都是一样的，而且由于粒度较细，很容易给其他组件复用，。例如现在有一个article需要full-width，同样只需要在class增加这个.full-width类即可，其他开发人员一看就知道这是个full-width这个类名，就知道这是一个满宽度的Article。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">article</span> <span class="attribute">class</span>=<span class="value">“other-class-name</span> <span class="attribute">full-width</span>”&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- content --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>看到这里你也许会有个疑问，这样子元素的class就有可能很复杂了，例如:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--一个大边框，背景为灰色，float right, 文字居中对齐的div--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"thick_border bg_gray fl_right al_center"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>而且如果网页需要100个这样子的DIV，那服务器端就需要渲染100个这样子的div，那岂不是多了很多文本，让网页变大了？</p>
+<p>是的，的确会这样子。但是由于有GZIP，根据GZIP的压缩原理，其实这种造成的影响不会特别大。况且，不要忘了，我们还有前端模板引擎。我们将这100个div的渲染任务交给前端来渲染。而从服务器加载的网页中只需保存有这个div的模板即可。</p>
+<h3 id="CSS_Best_Practice">CSS Best Practice</h3><h4 id="1-_分离关注点_SoC">1. 分离关注点 SoC</h4><p>平时用编程语言，例如c++，java，javascript编写程序时，SoC是一个很重要的原则，那么在CSS中也是同理。 在写CSS过程中，很多人都会遇到CSS难维护的问题，但是问题并不是出在CSS本身，而是我们使用的方式不对（具体看上面介绍的各种Bad Practice）。一个好的CSS模块有什么特性呢</p>
+<blockquote>
+<p>当其中一个模块发生改变时，不会影响到其他模块。</p>
+</blockquote>
+<p>这样有助于降低开发复杂度，提高可维护性。</p>
+<p>那么具体应该怎么做呢？</p>
+<p>例如：一般来说，定义一个CSS模块的时候，我们关注的是它的外观,而不是他们的位置和布局 (define how they look, but not their layout or position) . 当一个css模块的定义中出现诸如：background、font-size 和 position、 width、height、margin 这些混合在一起的时候，就要注意一下了, 可以试着把一个各种属性混合的类拆分为开来，分成布局类(position, width…)和外观类(background, font-size…)。 或者，也可以增加一个容器来负责布局。例如</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"category"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>大数据<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>前端开发<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>它的CSS是：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.category</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#CCC</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">1.5rem</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#EEE</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">list-style</span>:<span class="value">none</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> fixed</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>从category这个CSS模块可以看到， 布局（margin、position）和外观（color、font-size）是混合在一起的. 是时候把它们分离开来了，</p>
+<ul>
+<li>方法1：我们可以拆分成两个类</li>
+<li>方法2：增加一个容器</li>
+</ul>
+<p>方法1比较容易理解，这里就不举例子了。这里介绍一下方法2：</p>
+<p>首先改造一下CSS结构</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 增加多一个容器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"fixed M-10"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"category"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span>大数据<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span>前端开发<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后再改造一下CSS</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.category</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#CCC</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">1.5rem</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#EEE</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">list-style</span>:<span class="value">none</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.fixed</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value">fixed</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.M-10</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>改造之后，打碎了原有的CSS模块，现在分成了一个外观类 .category 和 两个布局类 <code>.fixed</code> <code>.M-10</code> , 与之前相比，由什么改变呢？<br>模块的粒度变小了，而且这些细粒度的模块都是可复用的<br>解开了外观和布局之间的耦合，现在category这个CSS模块可以用在页面的任意位置<br>如何检查关注点分离得好不好呢？换句话说：模块分离得清不清晰呢？这里有个经验：假设这个CSS模块未来会用在很多地方，能否做到让这个模块的代码不做任何修改就直接可用呢。</p>
+<h4 id="2-_命名空间_NameSpace">2. 命名空间 NameSpace</h4><p>在前面的Bad Practice介绍过：我们知道了CSS类名起得太大路货的各种坏处，父亲选择器无法100%的做到封装和阻止样式污染。而更好的解决办法就是使用命名空间。如果一个元素属于某一个可视组件，那么这个元素就应该使用该组件的类名作为自己的前缀。例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 容易造成样式的交叉污染 */</span></span><br><span class="line"><span class="class">.widget</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"><span class="class">.widget</span> <span class="class">.title</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 有效阻止样式的交叉污染 */</span></span><br><span class="line"><span class="class">.widget</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"><span class="class">.widget-title</span> <span class="rules">&#123; &#125;</span></span><br></pre></td></tr></table></figure>
+<p>命名空间保持了模块的自包含（self-contained），降低了样式定义出现交叉污染的可能性。</p>
+<h4 id="3-_创建一个新的CSS类来扩展模块">3. 创建一个新的CSS类来扩展模块</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 不好 */</span></span><br><span class="line"><span class="class">.widget</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"><span class="id">#sidebar</span> <span class="class">.widget</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 好 */</span></span><br><span class="line"><span class="class">.widget</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"><span class="class">.widget-sidebar</span> <span class="rules">&#123; &#125;</span></span><br></pre></td></tr></table></figure>
+<p>为什么说第一种不好呢？</p>
+<p>因为CSS和HTML结构耦合在一起了，这个扩展之后的CSS模块只能在特定的位置使用，例如本例中的#sidebar .widget，是无法在页面的其他HTML结构下复用这个CSS模块的。而第二种写法则可以在页面的任意位置复用。</p>
+<p>另外，观察例子中的两种写法，可以发现单独从class的名字 .widget-sidebar 就可以看出开发者的意图（这个widget是 widget-sidebar，与其他widget不一样）. 而在不好的方案中，如果你仅仅看HTML代码，你能够立马看出这个widget是和页面的其他widget是不同的吗？</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"sidebar"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"widget"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>仅仅从HTML你是无法知道这是一个扩展过的widget，你要等到看到这条CSS规则 <code>#sidebar .widget { }</code>才后知后觉： “檫，怪不得这个widget看起来就不是不一样”。所以创建一个新的CSS类来扩展模块的有助于HTML和CSS的解耦。</p>
+<h4 id="4-_组织好CSS的逻辑结构">4. 组织好CSS的逻辑结构</h4><p>Jonathan Snook在他的书 SMACSS 中提出一种组织CSS规则的方式：</p>
+<p>将CSS规则归类成 <code>Base</code>, <code>Layout</code>,<code>Modules</code>, <code>State</code> 4个类别</p>
+<ul>
+<li>Base: reset规则和一些默认样式</li>
+<li>Layout: 站点通用的布局，表格系统等</li>
+<li>Modules：可重用的视觉元素，这个类别包含了大部分的CSS规则</li>
+<li>State: 一些javascript使用到的状态标记位</li>
+</ul>
+<p>在CSS设计中，每一个视觉元素都是独立的，而这些视觉元素则是由若干个CSS规则构成的，这些规则就像是房子的砖块。不过我们在这里学术的称之为 Template，单独一个Template很少可以独立描述一个完整的视觉元素，我们通过组合多个Template来构成一个完整的视觉元素。这里比较抽象，举一个常见的例子：弹出框 Modal</p>
+<p>对话框有一个与站点风格统一的渐变的Header，在右上角有一个关闭按钮，可能是<code>position fixed</code>，也可能是垂直水平居中，而这些规则在站点中可能被一次次的复用，你不会想每一次都重新编写一次。所以这些规则就是Template，它们组合在一起构成了一个弹出框。</p>
+<h4 id="5-_class仅用来定义样式">5. class仅用来定义样式</h4><p>做过一些稍大型的项目的人都会经历过这样的事情：在一个html元素的class中找到“存在原因不明”的类名，你很想删之而后快，但你又害怕引起错误，因为这个“黑户” 很可能是在javascript文件中使用的一个选择器。这种事情一次次发生之后，你会发现你的HTML文件布满了这种对样式定义无意义的class。</p>
+<p>这种情况的发生是因为在前端开发中，class承担了太多的职责，定义html元素的样式，javascript中的选择器，用来做功能检测的标记位（<code>.on</code> <code>.disabled</code> <code>.checked</code> 看起来熟悉吗？）。承担的职责多了，就容易牵一发动全身。</p>
+<p>Philip Walton 介绍了一种方法：类名前缀，例如</p>
+<ul>
+<li>javascript中的选择器  ‘.js-’ ， 例如：.js-this-is-a-selector</li>
+<li>功能检测   ‘.fd-‘ ( feature-detection的缩写) ， 例如：.fd-on</li>
+</ul>
+<p>使用了前缀之后也就要求，样式class的名称不能以 .js- 和 .fd- 开头，没有使用前缀的类名就只能用来定义样式，不能有其他职责。这样子要移除无用的CSS样式定义就容易许多了，只要不带前缀便可以安全移除。</p>
+<h4 id="6-_使用有逻辑结构的类名">6. 使用有逻辑结构的类名</h4><p>Philip Walton 文中采用了 Nicolas Gallagher 的一个解决办法 About HTML semantics and front-end architecture</p>
+<p>我们来看看下面的CSS代码，观察这段代码有什么问题</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 一个模块 */</span></span><br><span class="line"><span class="class">.button</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改一个模块 (修改.button类) */</span></span><br><span class="line"><span class="class">.button-primary</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子类 (什么！这是button一个子类？为什么上面的写法是修改一个模块呢？) */</span></span><br><span class="line"><span class="class">.button-icon</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这是一个模块类名，还是一个布局的类名？ */</span></span><br><span class="line"><span class="class">.header</span> <span class="rules">&#123; &#125;</span></span><br></pre></td></tr></table></figure>
+<p>问题就是：根本不可能从类名上看出这个类的类型（模块，布局？），这样让开发过程中容易出现困惑。类名的命名规范使得你可以只看类名就知道这个类和其他类的关系，以及HTML中那些地方可以用到它。</p>
+<p>Philip Walton的解决方案：通过分隔符和前缀的方式来区分各种CSS规则</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Component Rules */</span></span><br><span class="line"><span class="class">.component-name</span></span><br><span class="line"><span class="class">.component-name--modifier-name</span></span><br><span class="line"><span class="class">.component-name__sub-object</span></span><br><span class="line"><span class="class">.component-name__sub-object--modifier-name</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Layout Rules */</span></span><br><span class="line"><span class="class">.l-layout-method</span></span><br><span class="line"><span class="class">.grid</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* State Rules */</span></span><br><span class="line"><span class="class">.is-state-type</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Non-styled JavaScript Hooks */</span></span><br><span class="line"><span class="class">.js-action-name</span></span><br><span class="line">按照这个方案，可以改写上面的例子</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 一个模块 */</span></span><br><span class="line"><span class="class">.button</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改.button类 */</span></span><br><span class="line"><span class="class">.button--primary</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子类  */</span></span><br><span class="line"><span class="class">.button__icon</span> <span class="rules">&#123; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 布局类 */</span></span><br><span class="line"><span class="class">.l-header</span> <span class="rules">&#123; &#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="7-_工具">7. 工具</h4><p>待补充…</p>
+<h2 id="总结-1">总结</h2><p>css不会只是视觉设计，不要抛弃编程中的各种最佳实践，OOP ,DRY ,open/close,SoC对于CSS是同样有效的</p>
+<p>CSS的各种最佳实践的愿景：</p>
+<ul>
+<li>快速开发，长期迭代</li>
+<li>团队可伸缩</li>
+<li>平坦的学习曲线，项目组只要增加开发人员就可提高开发速度，而不是降低。</li>
+<li>代码的重用</li>
+<li>代码的可重用可以保持UI的一致性，缩减界面开发时间。</li>
+</ul>
+<p>感兴趣的同学，推荐阅读一下下面几个解决方案：</p>
+<ul>
+<li>BEM <a href="http://bem.info/method/definitions/" target="_blank" rel="external">http://bem.info/method/definitions/</a></li>
+<li>SMACSS <a href="http://smacss.com/" target="_blank" rel="external">http://smacss.com/</a></li>
+</ul>
+<h2 id="参考">参考</h2><ul>
+<li>CSS Architecture </li>
+<li>About HTML semantics and front-end architecture </li>
+<li>Jonathan Snook  SMACSS </li>
+<li>A New Front-End Methodology: BEM</li>
+<li>30 CSS Best Practices for Beginners</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/02/10/如何测试后端API性能？/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          如何测试后端API的性能?
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/01/01/vim使用笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vim使用技巧集合</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Andrew Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
   </div>
 </body>
 </html>

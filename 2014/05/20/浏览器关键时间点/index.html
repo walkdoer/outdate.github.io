@@ -1,15 +1,396 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>什么是浏览器关键时间点？ | Code Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="注明: 图片引用自 W3C
+TTFB(Time to First Byte)指从客户端开始和服务端交互到服务端开始向客户端浏览器传输数据的时间（包括DNS、socket连接和请求响应时间），是能够反映服务端响应速度的重要指标 
+优化：优化DNS查询，使用CDN，提早Flush，添加周期头等
+TTDD(Time To Document Download)从服务器加载HTML文档的时间
+TTHE(Ti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是浏览器关键时间点？">
+<meta property="og:url" content="http://zhangmhao.github.io/2014/05/20/浏览器关键时间点/index.html">
+<meta property="og:site_name" content="Code Me">
+<meta property="og:description" content="注明: 图片引用自 W3C
+TTFB(Time to First Byte)指从客户端开始和服务端交互到服务端开始向客户端浏览器传输数据的时间（包括DNS、socket连接和请求响应时间），是能够反映服务端响应速度的重要指标 
+优化：优化DNS查询，使用CDN，提早Flush，添加周期头等
+TTDD(Time To Document Download)从服务器加载HTML文档的时间
+TTHE(Ti">
+<meta property="og:image" content="http://www.w3.org/TR/navigation-timing/timing-overview.png">
+<meta property="og:image" content="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/dom-navtiming.png">
+<meta property="og:image" content="https://developer.chrome.com/devtools/docs/network-files/dom-lines.png">
+<meta property="og:updated_time" content="2015-09-22T13:55:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是浏览器关键时间点？">
+<meta name="twitter:description" content="注明: 图片引用自 W3C
+TTFB(Time to First Byte)指从客户端开始和服务端交互到服务端开始向客户端浏览器传输数据的时间（包括DNS、socket连接和请求响应时间），是能够反映服务端响应速度的重要指标 
+优化：优化DNS查询，使用CDN，提早Flush，添加周期头等
+TTDD(Time To Document Download)从服务器加载HTML文档的时间
+TTHE(Ti">
+  
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
 <body>
   <div id="container">
     <div class="left-col">
-    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Andrew Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nwjs/" style="font-size: 10px;">nwjs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/交互设计/" style="font-size: 10px;">交互设计</a> <a href="/tags/前端开发/" style="font-size: 10px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 17.5px;">前端性能优化</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/心理学/" style="font-size: 10px;">心理学</a> <a href="/tags/性能优化/" style="font-size: 12.5px;">性能优化</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/时间管理/" style="font-size: 12.5px;">时间管理</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/组件化/" style="font-size: 10px;">组件化</a> <a href="/tags/编程语言/" style="font-size: 15px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计文档/" style="font-size: 12.5px;">设计文档</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">探索这个太有趣的世界</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
     </div>
     <div class="mid-col">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-      <div class="body-wrap"><%- body %></div>
-      <%- partial('_partial/footer') %>
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Andrew Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Andrew Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-浏览器关键时间点" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/20/浏览器关键时间点/" class="article-date">
+  	<time datetime="2014-05-19T16:00:00.000Z" itemprop="datePublished">2014-05-20</time>
+</a>
     </div>
-    <%- partial('_partial/after-footer') %>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      什么是浏览器关键时间点？
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能优化/">前端性能优化</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://www.w3.org/TR/navigation-timing/timing-overview.png" alt="enter image description here"></p>
+<p>注明: 图片引用自 <a href="http://www.w3.org/TR/navigation-timing/" target="_blank" rel="external">W3C</a></p>
+<h3 id="TTFB(Time_to_First_Byte)">TTFB(Time to First Byte)</h3><p>指从客户端开始和服务端交互到服务端开始向客户端浏览器传输数据的时间（包括DNS、socket连接和请求响应时间），是能够反映服务端响应速度的重要指标 </p>
+<p>优化：优化DNS查询，使用CDN，提早Flush，添加周期头等</p>
+<h3 id="TTDD(Time_To_Document_Download)">TTDD(Time To Document Download)</h3><p>从服务器加载HTML文档的时间</p>
+<h3 id="TTHE(Time_To_Head_End)">TTHE(Time To Head End)</h3><p>HTML文档头部解析完成所需要的时间 </p>
+<h3 id="TTSR(Time_To_Start_Render)">TTSR(Time To Start Render)</h3><p>定义：浏览器开始渲染的时间，从用户角度出发则可以定义为用户在页面上看到的第一个内容的时间。 即TTSR越短，用户越早浏览器中的内容，心理上的等待时间会越短。</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Time</span> To <span class="built_in">Start</span> Render: TTSR = TTFB + TTDD + TTHE</span><br></pre></td></tr></table></figure>
+<p>其中 <code>TTFB</code>, <code>TTDD</code>,<code>TTHE</code> 在前面提到过了，可以查看前面的介绍；</p>
+<p>通过以上公式可以看到<code>TTSR</code>时长主要受以下因素影响， 而且这些因素是开发人员可以控制的，可以通过优化来缩短 <code>TTSR</code> 时长；</p>
+<ol>
+<li>服务器响应时间</li>
+<li>HTML文档的大小</li>
+<li>Head中资源使用情况, 是否有脚本阻塞了页面的解析</li>
+</ol>
+<h3 id="与DOM相关的事件">与DOM相关的事件</h3><p><img src="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/dom-navtiming.png" alt="enter image description here"></p>
+<blockquote>
+<ul>
+<li>domLoading：这是整个过程开始的时间戳，浏览器开始解析 HTML 文档第一批收到的字节 document.</li>
+<li>domInteractive：标记浏览器完成解析并且所有 HTML 和 DOM 构建完毕的时间点。</li>
+<li>domContentLoaded：标记 DOM 准备就绪并且没有样式表阻碍 JavaScript 执行的时间点 - 意味着我们可以开始构建呈现树了。<ul>
+<li>很多 JavaScript 框架等待此事件发生后，才开始执行它们自己的逻辑。因此，浏览器会通过捕获 EventStart 和 EventEnd 时间戳，跟踪执行逻辑所需的时间。</li>
+</ul>
+</li>
+<li>domComplete： 顾名思义，所有的处理完成，网页上所有资源（图片等） 下载完成 - 即加载旋转图标停止旋转。</li>
+<li>loadEvent：作为每个网页加载的最后一步，浏览器会触发onLoad事件，以便触发附加的应用逻辑。所以onload事件会在 domInteractive、domContentLoaded 和 domComplete 之后触发</li>
+</ul>
+</blockquote>
+<p><code>DomContentLoaded</code> 通常标记 [DOM 和 CSSOM 都准备就绪] 的时间 , 通俗的讲就是：页面解析完成的时间，在高级浏览器里有对应的DOM事件 - <code>DOMContentLoaded</code>，Firefox官方的解析如下：</p>
+<blockquote>
+<p>Fired at the page’s Document object when parsing of the document is finished. By the time this event fires, the page’s DOM is ready, but the referenced stylesheets, images, and subframesmay not be done loading; use the “load” event to detect a fully-loaded page.</p>
+</blockquote>
+<p><code>TTSR</code>指标直接决定着用户对页面速度的体验，与此不同，DOM Ready指标并不直接影响感官体验，往往影响的是交互功能何时可用。为何影响的是交互呢？由于<code>DOMContentLoaded</code>事件触发时是所有DOM节点可以进行操作的时候，比如添加事件、增删改节点等，因此用Javascript实现的一些交互功能往往会在DOMContentLoaded事件中去初始化，也只有在<code>DOMContentLoaded</code>事件触发后这项功能才可用。  </p>
+<p><img src="https://developer.chrome.com/devtools/docs/network-files/dom-lines.png" alt="enter image description here"></p>
+<p>注明：图片来自google developer</p>
+<p>这里还要提及的是 <code>DomContentLoaded</code> , <code>DomComplete</code> 这两个时间的差别，网页的Dom内容加载并解析完成时会触发<code>DomContentLoaded</code>，而<code>DomComplete</code>是在网页的资源（css,image等）加载完成后才触发。英文文档原文如下：</p>
+<blockquote>
+<p> The DOMContentLoaded event is fired when all of the page’s DOM content has been loaded and parsed. The load event is fired once all of the document’s resources (images and CSS files, and so forth) have been fully loaded.</p>
+</blockquote>
+<h3 id="TTDR_(Time_To_Dom_Ready_)">TTDR (Time To Dom Ready )</h3><figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">TTDR </span>=<span class="string"> TTSR + TTDC + TTST</span></span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li><code>TTSR</code>(Time To Start Render)：浏览器开始渲染的时间</li>
+<li><code>TTDC</code>(Time To Dom Created)：DOM树创建所耗时间</li>
+<li><code>TTST</code>(Time To Script)：BODY中所有脚本加载和执行的时间</li>
+</ul>
+<p>通过以上公式可以看到Start Render主要受以下因素影响:</p>
+<ol>
+<li>DOM结构的复杂程度</li>
+<li>BODY中脚本运行时间</li>
+</ol>
+<p>通过对一些实际监控数据的分析得出，在一个通过正常方式加载脚本的页面中，脚本的加载和执行时间往往能占DOM Ready时间的50%左右，由此可见脚本的使用对DOM Ready指标的影响如何的显著！因此，对DOM Ready指标的优化也应该着重从js脚本的使用入手。 </p>
+<p>当然，随着硬件性能越来越高，脚本的执行时间对于页面加载速度的影响会越来越少；但是，如果有构建一个60fps的web应用，细节往往是非常重要的</p>
+<h3 id="TTI(time_to_interact)">TTI(time to interact)</h3><p>TTI(Time To Interact)指的是页面可交互的时间。页面中的交互包括很多方面，例如点击一个链接、点击一个搜索按钮都属于页面交互的范畴，但是对于衡量性能的TTI则主要指核心功能可以交互的时间。核心功能的定义则是随着页面的不同而不同，例如对于百度首页而言，最为关键的就是搜索框出现的时间、而对于一些购物网站的商品详情页最关键的是购买功能可用和描述出现的时间。而目前的实际情况，TTI大都等于DOM Ready时间，因为不论交互功能是否重要，相关的Javascript都会在DOM Ready后才进行初始化和绑定，而实际上TTI是可以更早的。  </p>
+<p>通过TTI的定义可以知道，TTI的长短对于用户体验的影响是十分重要的，它影响着用户对核心功能的使用。</p>
+<ol>
+<li>Start Render时间 - 只有内容开始渲染了，接下来才有可能提供可交互的界面，因此渲染时间的快与慢会直接影响TTI时间。</li>
+<li>核心功能相关HTML元素的显示时间 ， 决定着核心功能对用户可见的时间</li>
+<li>提供用户交互的JS脚本什么时候执行完成 ， 决定着核心Javascript功能可交互的时间</li>
+</ol>
+<p>在HTML5应用中，JS模板引擎的使用是非常普遍的，这个使用得好可以提高TTI时间，使用得不好，会比没有使用模板引擎而是通过后端模板引擎渲染的页面更慢。客户端使用JS模板引擎进行渲染的过程必须知会用户，然用户不至于见到一个空白页面，这个在我之前做过的一个项目，UC视频就是一个很好的反例。</p>
+<h3 id="参考：">参考：</h3><ol>
+<li><a href="http://www.cnblogs.com/onflying/archive/2013/04/23/3037789.html" target="_blank" rel="external">http://www.cnblogs.com/onflying/archive/2013/04/23/3037789.html</a> </li>
+<li><a href="http://www.w3.org/2010/webperf/" target="_blank" rel="external">http://www.w3.org/2010/webperf/</a>  </li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Navigation_timing" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Navigation_timing</a> </li>
+<li><a href="http://nunumick.me/blog/2011/02/23/web-page-speed-metrics.html" target="_blank" rel="external">http://nunumick.me/blog/2011/02/23/web-page-speed-metrics.html</a>  </li>
+<li><a href="http://zh.wikipedia.org/wiki/%E5%B8%A7%E7%8E%87" target="_blank" rel="external">http://zh.wikipedia.org/wiki/%E5%B8%A7%E7%8E%87</a>  </li>
+<li><a href="http://addyosmani.com/blog/performance-optimisation-with-timeline-profiles/" target="_blank" rel="external">http://addyosmani.com/blog/performance-optimisation-with-timeline-profiles/</a> </li>
+<li><a href="http://blog.chromium.org/2012/11/build-smoother-web-apps-with-chrome.html" target="_blank" rel="external">http://blog.chromium.org/2012/11/build-smoother-web-apps-with-chrome.html</a> </li>
+<li><a href="http://www.w3.org/TR/navigation-timing/" target="_blank" rel="external">http://www.w3.org/TR/navigation-timing/</a></li>
+<li><a href="https://developer.chrome.com/devtools/docs/network" target="_blank" rel="external">https://developer.chrome.com/devtools/docs/network</a></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/06/02/由橡皮鸭到Code-Review/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          由橡皮鸭到Code-Review
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/05/07/命令空間與模塊加載器的異同/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">命令空间与模块加载器的异同</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Andrew Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
   </div>
 </body>
 </html>

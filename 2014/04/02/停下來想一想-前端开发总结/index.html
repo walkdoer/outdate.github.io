@@ -1,15 +1,402 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>停下來想一想-前端开发总结 | Code Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="刚刚开始工作到现在已经快2年了，作为前端开发的新人，觉得这个行业有太多的东西要学习，无论是术，还是道，都足够我一段时间的学习。经过这一年半的前端开发，我学到了些什麽，目前的水平如何？在评估自己之前，我得问自己这样一个问题，什麽是前端开发？
+什麽是前端开发？个人的理解是一切与界面相关的都是前端，网站，webapp，手机App，车载系统，甚至是数据可眎化，这些看得见的东西都可以归类为前端。与实现语言，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="停下來想一想-前端开发总结">
+<meta property="og:url" content="http://zhangmhao.github.io/2014/04/02/停下來想一想-前端开发总结/index.html">
+<meta property="og:site_name" content="Code Me">
+<meta property="og:description" content="刚刚开始工作到现在已经快2年了，作为前端开发的新人，觉得这个行业有太多的东西要学习，无论是术，还是道，都足够我一段时间的学习。经过这一年半的前端开发，我学到了些什麽，目前的水平如何？在评估自己之前，我得问自己这样一个问题，什麽是前端开发？
+什麽是前端开发？个人的理解是一切与界面相关的都是前端，网站，webapp，手机App，车载系统，甚至是数据可眎化，这些看得见的东西都可以归类为前端。与实现语言，">
+<meta property="og:image" content="data:image,local://1396347670901">
+<meta property="og:updated_time" content="2015-09-22T13:53:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="停下來想一想-前端开发总结">
+<meta name="twitter:description" content="刚刚开始工作到现在已经快2年了，作为前端开发的新人，觉得这个行业有太多的东西要学习，无论是术，还是道，都足够我一段时间的学习。经过这一年半的前端开发，我学到了些什麽，目前的水平如何？在评估自己之前，我得问自己这样一个问题，什麽是前端开发？
+什麽是前端开发？个人的理解是一切与界面相关的都是前端，网站，webapp，手机App，车载系统，甚至是数据可眎化，这些看得见的东西都可以归类为前端。与实现语言，">
+  
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
 <body>
   <div id="container">
     <div class="left-col">
-    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Andrew Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nwjs/" style="font-size: 10px;">nwjs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/交互设计/" style="font-size: 10px;">交互设计</a> <a href="/tags/前端开发/" style="font-size: 10px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 17.5px;">前端性能优化</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/心理学/" style="font-size: 10px;">心理学</a> <a href="/tags/性能优化/" style="font-size: 12.5px;">性能优化</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/时间管理/" style="font-size: 12.5px;">时间管理</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/组件化/" style="font-size: 10px;">组件化</a> <a href="/tags/编程语言/" style="font-size: 15px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计文档/" style="font-size: 12.5px;">设计文档</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">探索这个太有趣的世界</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
     </div>
     <div class="mid-col">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-      <div class="body-wrap"><%- body %></div>
-      <%- partial('_partial/footer') %>
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Andrew Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Andrew Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-停下來想一想-前端开发总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/04/02/停下來想一想-前端开发总结/" class="article-date">
+  	<time datetime="2014-04-01T16:00:00.000Z" itemprop="datePublished">2014-04-02</time>
+</a>
     </div>
-    <%- partial('_partial/after-footer') %>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      停下來想一想-前端开发总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚刚开始工作到现在已经快2年了，作为前端开发的新人，觉得这个行业有太多的东西要学习，无论是术，还是道，都足够我一段时间的学习。经过这一年半的前端开发，我学到了些什麽，目前的水平如何？在评估自己之前，我得问自己这样一个问题，什麽是前端开发？</p>
+<h2 id="什麽是前端开发？">什麽是前端开发？</h2><p>个人的理解是一切与界面相关的都是前端，网站，webapp，手机App，车载系统，甚至是数据可眎化，这些看得见的东西都可以归类为前端。与实现语言，平台和设备无关。创造出高可用的人机交互界面是前端开发工程师的职责。如果将范围缩小到个人目前工作领域，我理解的前端开发就是使用Web标淮创建出高可用高性能的前端应用。<br>那为什麽我要做前端，而不是做数据库，不去做后端呢？这个问题我时至今日都不甚清楚，在问自己之前先问问自己另外一个问题，前端的价值在哪裡？</p>
+<h2 id="前端的价值">前端的价值</h2><p>前端的价值，最常见的答案也许是：</p>
+<ol>
+<li>交互界面的实现</li>
+<li>用户体验优化</li>
+<li>性能优化</li>
+</ol>
+<p>第一点是前端工程师的主要工作职责，而第2和第3点也只是在第一点基础上的优化。这3点有其价值，但更多的是属于前端工程师的工作职责，而非价值所在。前端价值是什麽？前端是一个有界面的应用或者系统裡距离用户最近的一个层，而前端工程师同样是团队中离用户最近的人。</p>
+<h4 id="对于团队的价值">对于团队的价值</h4><p>在团队中，前端工程师一般的工作就是，实现UE的设计稿，消费后端数据接口，起到衔接的作用。有了前端工程师，项目才得以并行开发，后端工程师专注于数据的处理，前端关注用户界面。效率得以提升。</p>
+<h4 id="对于产品的价值">对于产品的价值</h4><p>产品要做活，就得像一个健康的生物体一样代谢。前端可以促进这种代谢循环当然，这就要求前端工程师是在做产品，而不是在做切图仔，UI实现工这种较为简单的工作。前端工程师，产品工程师，用户界面工程师(User Interface Engineer)，交互设计师，不要用这些职称给自己设限。 建议阅读克军的一个PPT「<a href="http://hikejun.com/blog/2013/11/16/%E8%BF%98%E5%8E%9F%E2%80%9C%E6%B4%BB%E2%80%9D%E7%9A%84%E8%AE%BE%E8%AE%A1/" target="_blank" rel="external">还原“活”的设计</a>」</p>
+<p>这个是自己目前对前端价值目前的理解，水平有限，仅供参考</p>
+<p>理清楚了一些基础的问题，现在来对自己个人进行一些评估。首先列出前端工程师的知识网，然后看看自己已有的知识，找出自己欠缺的知识点。</p>
+<h2 id="前端工程师知识体系">前端工程师知识体系</h2><p>知识体系这裡参考朴灵的一个整理「<a href="https://github.com/JacksonTian/fks" target="_blank" rel="external">前端技能汇总</a>」</p>
+<h2 id="个人知识体系">个人知识体系</h2><p><img src="data:image,local://1396347670901" alt="Alt text"></p>
+<p>通过对比个人知识体系和业界知识体系，可以发现自己的差距。</p>
+<h4 id="需要更加深入">需要更加深入</h4><ul>
+<li>单元测试</li>
+<li>计算机基础知识</li>
+<li>交互设计</li>
+<li>产品思维</li>
+</ul>
+<h4 id="目前未接触">目前未接触</h4><ul>
+<li>前端技术<ul>
+<li>Responsive Design, Less</li>
+</ul>
+</li>
+</ul>
+<h4 id="值得学习的项目和技术">值得学习的项目和技术</h4><ul>
+<li>ECMAScript6</li>
+<li>Angular</li>
+<li>Sencha Touch</li>
+<li>Bootstrap</li>
+</ul>
+<p>今年会投入时间在计算机基础知识的积累，捡起丢下的知识。另外学习ECMAScript6和Ruby，在开源项目学习方面，学习Angular,Bootstrap,Sencha Touch。对自己的要求是不能停留在使用阶段，而是吸收其优点，来提高自己的框架设计能力（学习这些开源项目，然后应用一些想法到自己维护的框架Com中, 该框架仅用于个人学习之用）</p>
+<p>总之，感觉自己目前处于“术”的阶段，有术而无“道”。后面通过基础理论的学习，框架的编写。儘快练习出“道”</p>
+<h2 id="工程化思考">工程化思考</h2><p>前端在许多佈道者的努力下，越来越多的人使用更加高效的工作流，得以将时间用在更重要的事物之上。前端工程化也开始受到了开发者的重视。那么我们所指的前端开发工作内容有哪些呢？</p>
+<ul>
+<li>开发<ul>
+<li>设计（并非指UI设计，而是软件设计Software design）</li>
+<li>切图</li>
+<li>使用Web标淮(HTML,CSS,JS)实现界面交互</li>
+</ul>
+</li>
+<li>测试</li>
+<li>构建和部署</li>
+<li>维护和监控</li>
+</ul>
+<p>从上面的工作内容可以看出，其实前端开发与其他软件开发并没有太过明显的区别，而缺少工程化和对基础理论的不重视可能是目前前端困境最主要的原因。先介绍一下个人理解的前端工程化：</p>
+<ul>
+<li>编码规范，开发淮则（模块化，组件化）目的是代码的高质量和可维护</li>
+<li>开发框架</li>
+<li>自动化 目的是提高软件开发效率，避免人为错误<ul>
+<li>开发过程</li>
+<li>打包部署过程</li>
+</ul>
+</li>
+<li>测试（单元测试，集成测试）</li>
+<li>文档：降低维护成本（时间，人力）</li>
+</ul>
+<p>布鲁克斯在《人月神话：软件项目管理之道（The Mythical Man-Month）》提到</p>
+<blockquote>
+<p>将没有银子弹（silverbullet）可解决，开发软件的困难是内生的，只能渐进式的改善。整体环境没有改变以前，唯一可能的解，是依靠人的素质，培养优秀的工程师。</p>
+</blockquote>
+<p>但是在前端开发领域，优秀前端工程师比例相对较少，那么如何保证产品质量呢？可以通过规范的限制，开发框架和工具的辅助，让前端工程师写出高性能，高质量的代码，进而提高开发效率，保证软件质量。</p>
+<p>作为前端新人，以上只是我对前端工程化一些初级的想法。</p>
+<h3 id="那么目前前端领域有那些工具可以帮我们实现工程化呢？">那么目前前端领域有那些工具可以帮我们实现工程化呢？</h3><ul>
+<li>编码规范和开发淮则<br>每个团队都会有所不同，这个没有一个普世的标淮。</li>
+<li>开发框架 <ul>
+<li>模块化加载工具：seajs，requirejs</li>
+<li>开发框架：Angular，Backbone</li>
+</ul>
+</li>
+<li>自动化<ul>
+<li>海量基于Node.js的工具,没有的你自己就可以编写</li>
+<li>Yeoman 项目构建工具</li>
+<li>Grunt,Gulp</li>
+<li>Bower 前端依赖库自动化管理</li>
+</ul>
+</li>
+<li>测试<ul>
+<li>单元测试：QUnit, jasmine, mocha</li>
+<li>集成测试：PhantomJS, slimerJS</li>
+<li>持续集成：Travis</li>
+</ul>
+</li>
+</ul>
+<p>更多工具参考: <a href="http://html5ify.com/fks/" target="_blank" rel="external">Frontend Knowledge Structure</a></p>
+<p>期待自己身上有的特质：低调务实、精工细琢，戒骄戒躁，犬儒主义让开一边，用数据说话，用严谨科学的论据来支撑你的观点，看清一部分技术本质，避免盲目跟风。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/05/05/统计词频的一段shell脚本/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          通过shell来统计词频
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/26/w3c是什么/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">W3c是什么组织？</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Andrew Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
   </div>
 </body>
 </html>

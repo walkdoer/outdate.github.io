@@ -1,15 +1,350 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>组件化与复杂系统 | Code Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第一次接触复杂系统的概念是在一个TED讲座（复杂系统）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件化与复杂系统">
+<meta property="og:url" content="http://zhangmhao.github.io/2014/03/07/组件化与复杂系统/index.html">
+<meta property="og:site_name" content="Code Me">
+<meta property="og:description" content="第一次接触复杂系统的概念是在一个TED讲座（复杂系统）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的">
+<meta property="og:updated_time" content="2015-09-22T13:49:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="组件化与复杂系统">
+<meta name="twitter:description" content="第一次接触复杂系统的概念是在一个TED讲座（复杂系统）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的">
+  
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
 <body>
   <div id="container">
     <div class="left-col">
-    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Andrew Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nwjs/" style="font-size: 10px;">nwjs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/交互设计/" style="font-size: 10px;">交互设计</a> <a href="/tags/前端开发/" style="font-size: 10px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 17.5px;">前端性能优化</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/心理学/" style="font-size: 10px;">心理学</a> <a href="/tags/性能优化/" style="font-size: 12.5px;">性能优化</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/时间管理/" style="font-size: 12.5px;">时间管理</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/组件化/" style="font-size: 10px;">组件化</a> <a href="/tags/编程语言/" style="font-size: 15px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计文档/" style="font-size: 12.5px;">设计文档</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">探索这个太有趣的世界</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
     </div>
     <div class="mid-col">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-      <div class="body-wrap"><%- body %></div>
-      <%- partial('_partial/footer') %>
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Andrew Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Andrew Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-组件化与复杂系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/07/组件化与复杂系统/" class="article-date">
+  	<time datetime="2014-03-06T16:00:00.000Z" itemprop="datePublished">2014-03-07</time>
+</a>
     </div>
-    <%- partial('_partial/after-footer') %>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      组件化与复杂系统
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Com/">Com</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/复杂系统/">复杂系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/组件化/">组件化</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习研究/">学习研究</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一次接触复杂系统的概念是在一个TED讲座（<a href="evernote:///view/3937825/s36/10cba1c3-4db0-45ec-a534-f87040364ba8/10cba1c3-4db0-45ec-a534-f87040364ba8/" target="_blank" rel="external">复杂系统</a>）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的简单交互，可以形成整体的复杂智能。观察数字世界，计算机是由一个个的晶体管构成的，​​单一个晶体管只有两种状态：低电平和高电平，对应于0和1。但是由数亿个晶体管组成的微处理器却具有了相当的智能。如果你看过「三体」，你此时定会想起小说中出现的人列计算机。事实证明，无论是现实物理世界，还是数字世界都存在一定智能的复杂系统。</p>
+<h3 id="什么是复杂系统？">什么是复杂系统？</h3><p>在<a href="http://www.swarmagents.cn/complex/intro/articles.htm" target="_blank" rel="external">这篇文章</a>中是这样定义复杂系统「复杂系统是具有中等数目基于局部信息做出行动的智能性、自适应性主体的系统，复杂系统分为无组织，有组织两种」文中列出了「复杂系统具有的三个特征」</p>
+<h4 id="1-_中等大小数目的主体">1. 中等大小数目的主体</h4><h4 id="2-_智能性和自适应性">2. 智能性和自适应性</h4><p>系统内的元素遵循一定的规则，根据环境和收集到的信息来调整自身的状态和行为。通过系统主体的相对简单的智能，系统在整体上显示更高层次，更加复杂，更加协调职能的有序性</p>
+<h4 id="3-_局部信息，没有中央控制">3. 局部信息，没有中央控制</h4><p>系统中的任意一个个体无法知道系统所有个体的信息（状态和行为），每个个体可以从系统中较小集合中获取信息，处理局部信息，并进行决策。系统的整体行为是通过个体的协作，竞争等局部相互作用</p>
+<p>而在<code>汤伟君</code>和<code>邱美虹</code>的这篇论文中介绍了另外几个特性</p>
+<h4 id="多层次">多层次</h4><p>例如生物体的组成和运作,可以从器官、组织、细胞、基因等不同层次的面相来讨论</p>
+<h4 id="上向因果关系">上向因果关系</h4><p>上向因果关系指的是低层次性质对高层次性质的因果作用(范冬萍,2005)。高层次由低层次组合而产生,他不能脱离低层次事物而独立存在。系统由组件（component）构成，组件由子组件构成，子组件由子子组件构成等等，这就意味着每一个组件可能就是一个独立的系统。</p>
+<h4 id="突现,不可预测、不可化约、_非线性">突现,不可预测、不可化约、 非线性</h4><p>突现就是突然出现,不被预期的出现,无法有「先见之明」的预测,引用作者原文中的一段话</p>
+<blockquote>
+<p>整体论最通俗的表达为:「整体不等于部分之和」、「整体的行为并非个别组成分子所具有」(范冬萍&amp;张华夏,2005)。凡是复杂系统必具备此一特性,也就是「只有在整体(system-as-a-whole)运作的情境下才有意义」的特性(Lesh,2006)。也就是「高层次的事物整体所具有,而其组成成分所不具有,且事先不能由此加以预测的特性。」 例如生命之于生命的物理化学特性,心灵之于神经细胞的生理活动,就是一种突现(谢爱华, 2003)。<br>化约论的观点是,所有的现象都可由其个别组成份子的行为来解释,因此生命可以化约到基因,基因可以化约到DNA,DNA 可用物理化学来解释。<br>非线性指的是两个量之间不成正比关系</p>
+</blockquote>
+<h4 id="多重因果">多重因果</h4><blockquote>
+<p>在一个复杂系统里,层级和成分都很多,因此系统的行为,受到诸多因子的影响,而且主要是受到成分交互作用的影响。随着涉及面的增加,其计算量将以失控方式递增,造成非线性、难以预测的变化(Bosomaier &amp; Green, 1998)。</p>
+</blockquote>
+<h4 id="成分（系统主体）互动(关系)的重要性大于成分本身">成分（系统主体）互动(关系)的重要性大于成分本身</h4><blockquote>
+<p>Waldrop(1992) 指出「生命的本质在于分子的组织和互动,不在于分子」</p>
+</blockquote>
+<h4 id="动态的,不停止的">动态的,不停止的</h4><blockquote>
+<p>又譬如股市的升降,是来自各散客大户各自的互通暗盘消息、阅读金融资讯后,买或卖股票而造成股市市场的波动(上向因果),而市场的降或跌也会影响作用体(股民)们的买卖行为(下向因果)。下向因果的存在,阐明了复杂系统内的交互作用,不仅限于同一阶层内成分的互动,实际上也有跨阶层的互动</p>
+</blockquote>
+<h4 id="下向因果关系">下向因果关系</h4><blockquote>
+<p>这也是复杂系统的重要特性,但并非所有突现现象都有此一特性。所谓下向因果,指的是高层次具有低层次所不具有的性质,并对其组成部分(低层次)有支配作用</p>
+</blockquote>
+<h4 id="自我组织">自我组织</h4><blockquote>
+<p>自组织是部份复杂系统才具有的特性，成分会自动组织成一个体系,如劳力需求、商品、服务自动组织成市场结构, 而这个体系的存在强化了每一成分的连结和存续。</p>
+</blockquote>
+<p>正如作者所言，自组织起到了自我强化的作用，使得整体的能力强过于个体，而这个自我强化能力之一,便是正回馈</p>
+<h4 id="正回馈或报酬递增">正回馈或报酬递增</h4><blockquote>
+<p>正回馈的例子在自然界可能造成两大结果,一个是形成自我强化组,例如前面提到的化学反应连锁催化组。另一个效应则是搭配系统内各成分的互动,使得初始状况的小变动,可以导致之后系统的巨大改变,即众所周知的蝴蝶效应(Gleick,1987)。在一个自组织系统里,有可能会受到不起眼的关键分子的影响,而大幅改变了原有的组织型态。例如汽车取代马车之后,所引起的人类经济体系转变,包括行业的兴衰、能源需求、运输能力等都发生了重大改变(Waldrop, 1992)。</p>
+</blockquote>
+<p>看完了这篇文章的介绍，有几个问题</p>
+<ul>
+<li>系统主体的智能对复杂系统有何影响？<br>一个复杂系统中的主体如果是人类等有高智能生物，复杂系统会因为个体的不稳定，不确定而变得更加复杂，而相对简单的智能，例如系统主体为晶体管的微处理器，蚂蚁等，则没有那样复杂。所以系统主体的智能水平可以决定一个复杂系统的复杂层次。</li>
+<li>为何竞争和协作可以形成更高层次，更加复杂的智能？<br>根据上面的介绍，原因就是「突现（涌现）」，突现使得系统整体具有个体所不具有的特性</li>
+<li>复杂系统和非复杂系统（简单系统）的差别？</li>
+</ul>
+<h3 id="参考文献">参考文献</h3><ol>
+<li><a href="http://zh.wikipedia.org/wiki/%E6%99%B6%E4%BD%93%E7%AE%A1" target="_blank" rel="external">晶体管维基百科</a></li>
+<li><a href="http://zh.wikipedia.org/wiki/%E6%99%BA%E8%83%BD" target="_blank" rel="external">智能维基百科</a></li>
+<li>汤伟君* 邱美虹复杂系统、突现及其对科学教育的启示(2007)</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/03/24/javascript内存优化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          javascript内存优化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/06/Performance-Timing/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何使用Performance-Timing进行性能统计？</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Andrew Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
   </div>
 </body>
 </html>

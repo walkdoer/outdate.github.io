@@ -1,15 +1,338 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>响应时间应该多长才算快？ | Code Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近被一個問題困擾許久，在移動端中，Response Times究竟在什麼樣的範圍是用戶可以接受的？網上有一篇文章Response Times: The 3 important Limits被許多性能優化的文章引用.文中指出了這樣的幾個數據:
+
+0.1s 馬上響應，也就意味著不需要任何反饋。用戶認為系統的輸出是由自己造成的，而不是計算機。感覺像是直接是在直接操作界面上的東​​西(direct ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应时间应该多长才算快？">
+<meta property="og:url" content="http://zhangmhao.github.io/2014/02/12/有關響應時間的問題/index.html">
+<meta property="og:site_name" content="Code Me">
+<meta property="og:description" content="最近被一個問題困擾許久，在移動端中，Response Times究竟在什麼樣的範圍是用戶可以接受的？網上有一篇文章Response Times: The 3 important Limits被許多性能優化的文章引用.文中指出了這樣的幾個數據:
+
+0.1s 馬上響應，也就意味著不需要任何反饋。用戶認為系統的輸出是由自己造成的，而不是計算機。感覺像是直接是在直接操作界面上的東​​西(direct ma">
+<meta property="og:updated_time" content="2015-09-22T13:46:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应时间应该多长才算快？">
+<meta name="twitter:description" content="最近被一個問題困擾許久，在移動端中，Response Times究竟在什麼樣的範圍是用戶可以接受的？網上有一篇文章Response Times: The 3 important Limits被許多性能優化的文章引用.文中指出了這樣的幾個數據:
+
+0.1s 馬上響應，也就意味著不需要任何反饋。用戶認為系統的輸出是由自己造成的，而不是計算機。感覺像是直接是在直接操作界面上的東​​西(direct ma">
+  
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
 <body>
   <div id="container">
     <div class="left-col">
-    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Andrew Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nwjs/" style="font-size: 10px;">nwjs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/交互设计/" style="font-size: 10px;">交互设计</a> <a href="/tags/前端开发/" style="font-size: 10px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 17.5px;">前端性能优化</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/心理学/" style="font-size: 10px;">心理学</a> <a href="/tags/性能优化/" style="font-size: 12.5px;">性能优化</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/时间管理/" style="font-size: 12.5px;">时间管理</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/组件化/" style="font-size: 10px;">组件化</a> <a href="/tags/编程语言/" style="font-size: 15px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计文档/" style="font-size: 12.5px;">设计文档</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">探索这个太有趣的世界</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
     </div>
     <div class="mid-col">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-      <div class="body-wrap"><%- body %></div>
-      <%- partial('_partial/footer') %>
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Andrew Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Andrew Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-有關響應時間的問題" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/02/12/有關響應時間的問題/" class="article-date">
+  	<time datetime="2014-02-11T16:00:00.000Z" itemprop="datePublished">2014-02-12</time>
+</a>
     </div>
-    <%- partial('_partial/after-footer') %>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      响应时间应该多长才算快？
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/交互设计/">交互设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能优化/">前端性能优化</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近被一個問題困擾許久，在移動端中，Response Times究竟在什麼樣的範圍是用戶可以接受的？網上有一篇文章<a href="http://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="external">Response Times: The 3 important Limits</a>被許多性能優化的文章引用.文中指出了這樣的幾個數據:</p>
+<ul>
+<li>0.1s 馬上響應，也就意味著不需要任何反饋。用戶認為系統的輸出是由自己造成的，而不是計算機。感覺像是直接是在直接操作界面上的東​​西(direct manipulation 是提高用戶參與度和控制力的關鍵技術，更多請參考：<a href="http://www.nngroup.com/courses/hci/" target="_blank" rel="external">User Interface Principles Every Designer Must Know, Applying human-computer interaction (HCI) lessons to inform and defend UX decisions</a>)。例如：有一個表格，用戶可以點擊表頭進行排序，如果用戶點擊表頭之後能夠在0.1s完成排序，用戶覺得是自己在操作表格，否則，用戶則感覺是自己通知計算機去排序。</li>
+<li>1.0s 用戶可以察覺到延遲, 但是還不至於打斷用戶的思緒（flow of thought）。 0.2s~1s的處理時間讓用戶察覺到了延遲，並且意識到計算機在工作，而不是立馬響應用戶的操作。例如：如果表格排序需要1s才能夠完成，用戶可以感覺到體驗沒那麼流暢，會有卡頓的感覺。而如果超過1s，則需要給用戶處理中的反饋了，否則“卡頓”就變成為“卡死”了，</li>
+<li>10s 超過這個時間點，用戶就會失去耐心和關注度； 超過10s時用戶會想要離開當前任務而等待計算機完成之後再回來，所以需要處理進度（處理中，已完成等）的提示。如果缺少進度提示，則用戶無從知道當前的任務的狀態，就容易給用戶留下任務卡死的感覺。任何超過10s的任務都必須要有進度提示，並且可以讓用戶取消該任務。</li>
+</ul>
+<p>響應時間自然是越快越好，如果無法達到理想的響應速度(100ms)，進度提示（進度條，菊花轉等）就是必須的了,進度提示的好處是：</p>
+<ul>
+<li>讓用戶知道系統沒有出錯，還在為她/他處理問題中。</li>
+<li>如果是完成進度提示的（例如進度條），用戶就可以知道還剩下多少</li>
+<li>給用戶一些視覺反饋，讓等待的過程沒有那麼痛苦，好歹有些可以看的。</li>
+</ul>
+<p>為什麼速度那麼重要？在這篇文章中<a href="http://www.nngroup.com/articles/website-response-times/" target="_blank" rel="external">website response times</a>中提到了兩點：</p>
+<p>Human Limitations(人類本身的限制): 人類的短期記憶和注意力無法長時間集中<br>Human aspirations(人性渴望): 渴望控制自己的命運，而不是屈服於計算機，例外，如果一個公司提供的服務響應速度過慢，給人的留下的印像是傲慢和無能（請腦補國內幾個國有企業的系統或網站）。</p>
+<p>文中還提到了另外一點就是在一個“過往經驗對品牌的影響(Brand as Experience)”的調查中，用戶對一個網站的印像中，響應速度是很重要的一項，所以快速的響應速度對一個網站的“名聲”是相當重要的</p>
+<p>100ms的微小提升都會對網站的<a href="http://www.nngroup.com/articles/conversion-rates/" target="_blank" rel="external">轉換率(Conversion Rates)</a>有一定的提升</p>
+<p>###參考</p>
+<ol>
+<li><a href="http://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="external">Response Times: The 3 Important Limits</a></li>
+<li><a href="http://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/" target="_blank" rel="external">Powers of 10: Time Scales in User Experience</a></li>
+<li><a href="http://www.nngroup.com/articles/website-response-times/" target="_blank" rel="external">Website Response Times by JAKOB NIELSEN on June 21, 2010</a></li>
+<li><a href="http://www.nngroup.com/courses/fundamentals/" target="_blank" rel="external">Top Web UX Design Guidelines</a></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/03/06/Performance-Timing/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          如何使用Performance-Timing进行性能统计？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/10/如何测试后端API性能？/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何测试后端API的性能?</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Andrew Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
   </div>
 </body>
 </html>

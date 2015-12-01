@@ -1,15 +1,332 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>切面编程 | Code Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天在实现COM的事件功能过程遇到了一个问题，由于子节点不能直接和父节点之外的节点通信，类似于Router，Logger的横切需求该如何实现呢？
+面向切面编程的定义将程序逻辑分成一个个的逻辑块，也就是关注点，而有部分关注点称之为横切关注点，指的是一些具有横越多个模块的行为，使用传统的软件开发方法不能够达到有效的模块化的一类特殊关注点。软件系统，可看作由一组关注点组成。其中，直接的业务关注点，是直切">
+<meta property="og:type" content="article">
+<meta property="og:title" content="切面编程">
+<meta property="og:url" content="http://zhangmhao.github.io/2014/03/25/切面编程/index.html">
+<meta property="og:site_name" content="Code Me">
+<meta property="og:description" content="今天在实现COM的事件功能过程遇到了一个问题，由于子节点不能直接和父节点之外的节点通信，类似于Router，Logger的横切需求该如何实现呢？
+面向切面编程的定义将程序逻辑分成一个个的逻辑块，也就是关注点，而有部分关注点称之为横切关注点，指的是一些具有横越多个模块的行为，使用传统的软件开发方法不能够达到有效的模块化的一类特殊关注点。软件系统，可看作由一组关注点组成。其中，直接的业务关注点，是直切">
+<meta property="og:updated_time" content="2015-09-22T13:51:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="切面编程">
+<meta name="twitter:description" content="今天在实现COM的事件功能过程遇到了一个问题，由于子节点不能直接和父节点之外的节点通信，类似于Router，Logger的横切需求该如何实现呢？
+面向切面编程的定义将程序逻辑分成一个个的逻辑块，也就是关注点，而有部分关注点称之为横切关注点，指的是一些具有横越多个模块的行为，使用传统的软件开发方法不能够达到有效的模块化的一类特殊关注点。软件系统，可看作由一组关注点组成。其中，直接的业务关注点，是直切">
+  
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
 <body>
   <div id="container">
     <div class="left-col">
-    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Andrew Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nwjs/" style="font-size: 10px;">nwjs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/交互设计/" style="font-size: 10px;">交互设计</a> <a href="/tags/前端开发/" style="font-size: 10px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 17.5px;">前端性能优化</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/心理学/" style="font-size: 10px;">心理学</a> <a href="/tags/性能优化/" style="font-size: 12.5px;">性能优化</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/时间管理/" style="font-size: 12.5px;">时间管理</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/组件化/" style="font-size: 10px;">组件化</a> <a href="/tags/编程语言/" style="font-size: 15px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计文档/" style="font-size: 12.5px;">设计文档</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">探索这个太有趣的世界</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
     </div>
     <div class="mid-col">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-      <div class="body-wrap"><%- body %></div>
-      <%- partial('_partial/footer') %>
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Andrew Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Andrew Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-切面编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/25/切面编程/" class="article-date">
+  	<time datetime="2014-03-24T16:00:00.000Z" itemprop="datePublished">2014-03-25</time>
+</a>
     </div>
-    <%- partial('_partial/after-footer') %>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      切面编程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/编程理论/">编程理论</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在实现COM的事件功能过程遇到了一个问题，由于子节点不能直接和父节点之外的节点通信，类似于Router，Logger的横切需求该如何实现呢？</p>
+<h3 id="面向切面编程的定义">面向切面编程的定义</h3><p>将程序逻辑分成一个个的逻辑块，也就是关注点，而有部分关注点称之为横切关注点，指的是一些具有横越多个模块的行为，使用传统的软件开发方法不能够达到有效的模块化的一类特殊关注点。软件系统，可看作由一组关注点组成。其中，直接的业务关注点，是直切关注点。而为直切关注点提供服务的，就是横切关注点，例如日志、安全、持久化;</p>
+<h3 id="一个需求之前的实现：">一个需求之前的实现：</h3><ol>
+<li>点击列表项，触发router事件</li>
+<li>根节点监听route事件，然后调用Router进行Dispatch</li>
+</ol>
+<p>但是由于Com框架的改进，决定不使用依赖于Dom节点的事件冒泡机制，导致节点之间无法跨级沟通。所以之前的实现对于现在的Com来讲是无效的。<br>Router是一种横切关注点，单又不合适用继承机制来实现</p>
+<p>最简单的方式就是，单例, 然后在所有需要的地方引入依赖。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = &#123;</span><br><span class="line">    route: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/*更多的代码*/</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//在需要的地方mixin router，然后该组件就具有了router的功能</span></span><br><span class="line"><span class="keyword">var</span> application = <span class="keyword">new</span> Application(&#123;</span><br><span class="line">    <span class="comment">/*Application config*/</span></span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="string">'click li'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.path;</span><br><span class="line">            <span class="comment">//路由dispatch</span></span><br><span class="line">            router.route()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>使用javascript <code>mixin</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = &#123;</span><br><span class="line">    route: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/*更多的代码*/</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//在需要的地方mixin router，然后该组件就具有了router的功能</span></span><br><span class="line"><span class="keyword">var</span> application = <span class="keyword">new</span> Application(&#123;</span><br><span class="line">    <span class="comment">/*Application config*/</span></span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="string">'click li'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.path;</span><br><span class="line">            <span class="comment">//路由dispatch</span></span><br><span class="line">            app.route(path);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).mixin(router);</span><br></pre></td></tr></table></figure>
+<p>这两种方桉是可行的。那么还有其他的方法吗？</p>
+<p>而对于Com来讲，Router是一个功能组件，同时也是一个所有节点都会可能会需要到的功能。如果按照mixin的方式，或者单例的做法，无论如何都是在要在每一个都是要显示声明依赖。维护成本比较高。那么可以使用类似于注册一个组件的方式，然后在内部就可以通过注册的ID来取得所需的组件。这样子维护成本就降低了，起码不用在修改组件名层的时候一处处的修改引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = <span class="comment">/*Router的功能*/</span></span><br><span class="line"><span class="keyword">var</span> application = <span class="keyword">new</span> Application(&#123;</span><br><span class="line">    <span class="comment">/*Application config*/</span></span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="string">'click li'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.path;</span><br><span class="line">            <span class="comment">//路由dispatch</span></span><br><span class="line">            app.route(path);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).cross(<span class="string">'Router'</span>, router);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*下面的代码是Application中的某一个组件 Cell的定义*/</span></span><br><span class="line">Cell = Com.extend(&#123;</span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="comment">//点击触发Router跳转</span></span><br><span class="line">        <span class="string">'click'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.id;</span><br><span class="line">            <span class="comment">//同样通过cross接口拿到Router组件，然后直接使用</span></span><br><span class="line">            <span class="keyword">this</span>.cross(<span class="string">'Router'</span>).route(<span class="string">'Cell/'</span> + id);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>这种东西有无通过Aspect来实现，需要继续思考。</strong></p>
+<h3 id="todo">todo</h3><ul>
+<li>学习dojo的aspect，阅读源码</li>
+</ul>
+<p>###参考</p>
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming" target="_blank" rel="external">http://en.wikipedia.org/wiki/Aspect-oriented_programming</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Modularity_(programming" target="_blank" rel="external">http://en.wikipedia.org/wiki/Modularity_(programming</a>)</li>
+<li><a href="http://www.infoq.com/cn/articles/zwb-dojo-aop" target="_blank" rel="external">dojo1.7功能介绍：面向方面编程（AOP）功能与原理</a></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/03/26/w3c是什么/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          W3c是什么组织？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/24/javascript内存优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript内存优化</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Andrew Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
   </div>
 </body>
 </html>

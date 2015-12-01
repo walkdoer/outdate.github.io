@@ -1,15 +1,1108 @@
-<%- partial('_partial/head') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Code Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code Me">
+<meta property="og:url" content="http://zhangmhao.github.io/page/3/index.html">
+<meta property="og:site_name" content="Code Me">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Code Me">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="Code Me" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
 <body>
   <div id="container">
     <div class="left-col">
-    <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Andrew Zhang</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Com/" style="font-size: 10px;">Com</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/haskell/" style="font-size: 10px;">haskell</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/http协议/" style="font-size: 10px;">http协议</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nwjs/" style="font-size: 10px;">nwjs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/restful/" style="font-size: 10px;">restful</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/交互设计/" style="font-size: 10px;">交互设计</a> <a href="/tags/前端开发/" style="font-size: 10px;">前端开发</a> <a href="/tags/前端性能优化/" style="font-size: 17.5px;">前端性能优化</a> <a href="/tags/回调/" style="font-size: 10px;">回调</a> <a href="/tags/复杂系统/" style="font-size: 10px;">复杂系统</a> <a href="/tags/工具开发/" style="font-size: 10px;">工具开发</a> <a href="/tags/心理学/" style="font-size: 10px;">心理学</a> <a href="/tags/性能优化/" style="font-size: 12.5px;">性能优化</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/时间管理/" style="font-size: 12.5px;">时间管理</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/生活优化/" style="font-size: 10px;">生活优化</a> <a href="/tags/组件化/" style="font-size: 10px;">组件化</a> <a href="/tags/编程语言/" style="font-size: 15px;">编程语言</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计文档/" style="font-size: 12.5px;">设计文档</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">探索这个太有趣的世界</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
     </div>
     <div class="mid-col">
-      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-      <div class="body-wrap"><%- body %></div>
-      <%- partial('_partial/footer') %>
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Andrew Zhang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.gravatar.com/avatar/fb8601449879167556af06aa6a895cd4?s=300" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Andrew Zhang</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/github.com/zhangmhao" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-html5-Drag-and-drop" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/06/html5-Drag-and-drop/" class="article-date">
+  	<time datetime="2014-05-05T16:00:00.000Z" itemprop="datePublished">2014-05-06</time>
+</a>
     </div>
-    <%- partial('_partial/after-footer') %>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/06/html5-Drag-and-drop/">Drag 和 Drop接口的使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Draggable_Attribute">Draggable Attribute</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">draggable</span>=<span class="value">"true"</span> <span class="attribute">ondragstart</span>=<span class="value">"event.dataTransfer.setData('text/plain', 'This text may be dragged')"</span>&gt;</span></span><br><span class="line">  This text <span class="tag">&lt;<span class="title">strong</span>&gt;</span>may<span class="tag">&lt;/<span class="title">strong</span>&gt;</span> be dragged.</span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>The draggable attribute is set to true, so this element becomes draggable. If this attribute was omitted or set to false, the element would not be dragged and instead the text would be selected. </p>
+<h3 id="ondragstart">ondragstart</h3><h3 id="Setting_the_drag_feedback_image">Setting the drag feedback image</h3><h3 id="dragEffect">dragEffect</h3><p>dropEffect的取值</p>
+<ul>
+<li>copy: A copy of the source item is made at the new location.</li>
+<li>move: An item is moved to a new location.</li>
+<li>link: A link is established to the source at the new location.</li>
+<li>none: The item may not be dropped.</li>
+</ul>
+<h3 id="effectAllowed">effectAllowed</h3><p>Specifies the effects that are allowed for this drag. You may set this in the dragstart event to set the desired effects for the source, and within the dragenter and dragover events to set the desired effects for the target. The value is not used for other events.</p>
+<h3 id="setData和getData">setData和getData</h3><p>The getData method takes one argument, the type of data to retrieve. It will return the string value that was set when the setData was called at the beginning of the drag operation. An empty string will be returned if data of that type does not exist</p>
+<h3 id="Specifying_Drop_Targets">Specifying Drop Targets</h3><p>If you want to allow a drop, you must prevent the default handling by cancelling the event. You can do this either by returning false from an attribute-defined event listener, or by calling the event’s event.preventDefault method.</p>
+<p>涉及到的事件類型：</p>
+<ul>
+<li>dragstart</li>
+<li>drag</li>
+<li>dragenter 進入drop區域</li>
+<li>dragover</li>
+<li>dragleave</li>
+<li>drop</li>
+<li>dragend : Once the drag is complete, a dragend event is fired at the source of the drag (the same element that received the dragstart event)</li>
+</ul>
+<h4 id="處理drop事件">處理drop事件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onDrop</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//通過getData取得drag要傳輸的數據</span></span><br><span class="line">  <span class="keyword">var</span> data = event.dataTransfer.getData(<span class="string">"text/plain"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//注意，這裡event.target是要drop的目標對象，而不是被drag的對象</span></span><br><span class="line">  event.target.textContent = data;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//防止瀏覽器執行默認的操作，例如drag一個A鏈接，瀏覽器會打開這個A鏈接</span></span><br><span class="line">  event.preventDefault();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Drop_Effect">Drop Effect</h3><p>可以結合dragenter, dragleave, dragend, drop等事件來實現負責的drop效果</p>
+<h3 id="例子">例子</h3><ul>
+<li><a href="http://jsfiddle.net/cL3SY/4/" target="_blank" rel="external">例子1</a></li>
+<li><a href="http://jsfiddle.net/pfKqQ/2/" target="_blank" rel="external">例子2</a></li>
+<li><a href="http://html5demos.com/drag" target="_blank" rel="external">html5 demos上的drag例子</a></li>
+</ul>
+<h3 id="参考">参考</h3><ol>
+<li><a href="https://developer.mozilla.org/en-US/docs/DragDrop/Recommended_Drag_Types" target="_blank" rel="external">MDN-Drag-drop Rcommended Drag Types</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer" target="_blank" rel="external">DataTransfer</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/DragDrop/Drag_and_Drop" target="_blank" rel="external">Drag and drop basics</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/dnd/basics/" target="_blank" rel="external">09.2010 Native HTML5 Drag and Drop By Eric Bidelman</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/html/">html</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-统计词频的一段shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/05/统计词频的一段shell脚本/" class="article-date">
+  	<time datetime="2014-05-04T16:00:00.000Z" itemprop="datePublished">2014-05-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/05/统计词频的一段shell脚本/">通过shell来统计词频</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> test.txt | <span class="built_in">tr</span> <span class="string">' '</span> <span class="string">'\n'</span> | <span class="built_in">tr</span> -<span class="keyword">d</span> <span class="string">'[:punct:]'</span>   \</span><br><span class="line">| <span class="built_in">tr</span> <span class="string">'[:upper:]'</span> <span class="string">'[:lower:]'</span> | <span class="built_in">sort</span> | uniq -<span class="keyword">c</span>    \</span><br><span class="line">| <span class="built_in">sort</span> -nr | tail -<span class="keyword">n</span>+<span class="number">10</span> | head -<span class="number">30</span>               \</span><br><span class="line">| column -<span class="keyword">c</span> <span class="number">60</span></span><br></pre></td></tr></table></figure>
+<p>来自于 <a href="https://medium.com/message/705b87339971" target="_blank" rel="external">The Great Works of Software</a>的一段小代码，刚刚开始学习shell，对个人有启发性.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Unix/">Unix</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-停下來想一想-前端开发总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/04/02/停下來想一想-前端开发总结/" class="article-date">
+  	<time datetime="2014-04-01T16:00:00.000Z" itemprop="datePublished">2014-04-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/02/停下來想一想-前端开发总结/">停下來想一想-前端开发总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚刚开始工作到现在已经快2年了，作为前端开发的新人，觉得这个行业有太多的东西要学习，无论是术，还是道，都足够我一段时间的学习。经过这一年半的前端开发，我学到了些什麽，目前的水平如何？在评估自己之前，我得问自己这样一个问题，什麽是前端开发？</p>
+<h2 id="什麽是前端开发？">什麽是前端开发？</h2><p>个人的理解是一切与界面相关的都是前端，网站，webapp，手机App，车载系统，甚至是数据可眎化，这些看得见的东西都可以归类为前端。与实现语言，平台和设备无关。创造出高可用的人机交互界面是前端开发工程师的职责。如果将范围缩小到个人目前工作领域，我理解的前端开发就是使用Web标淮创建出高可用高性能的前端应用。<br>那为什麽我要做前端，而不是做数据库，不去做后端呢？这个问题我时至今日都不甚清楚，在问自己之前先问问自己另外一个问题，前端的价值在哪裡？</p>
+<h2 id="前端的价值">前端的价值</h2><p>前端的价值，最常见的答案也许是：</p>
+<ol>
+<li>交互界面的实现</li>
+<li>用户体验优化</li>
+<li>性能优化</li>
+</ol>
+<p>第一点是前端工程师的主要工作职责，而第2和第3点也只是在第一点基础上的优化。这3点有其价值，但更多的是属于前端工程师的工作职责，而非价值所在。前端价值是什麽？前端是一个有界面的应用或者系统裡距离用户最近的一个层，而前端工程师同样是团队中离用户最近的人。</p>
+<h4 id="对于团队的价值">对于团队的价值</h4><p>在团队中，前端工程师一般的工作就是，实现UE的设计稿，消费后端数据接口，起到衔接的作用。有了前端工程师，项目才得以并行开发，后端工程师专注于数据的处理，前端关注用户界面。效率得以提升。</p>
+<h4 id="对于产品的价值">对于产品的价值</h4><p>产品要做活，就得像一个健康的生物体一样代谢。前端可以促进这种代谢循环当然，这就要求前端工程师是在做产品，而不是在做切图仔，UI实现工这种较为简单的工作。前端工程师，产品工程师，用户界面工程师(User Interface Engineer)，交互设计师，不要用这些职称给自己设限。 建议阅读克军的一个PPT「<a href="http://hikejun.com/blog/2013/11/16/%E8%BF%98%E5%8E%9F%E2%80%9C%E6%B4%BB%E2%80%9D%E7%9A%84%E8%AE%BE%E8%AE%A1/" target="_blank" rel="external">还原“活”的设计</a>」</p>
+<p>这个是自己目前对前端价值目前的理解，水平有限，仅供参考</p>
+<p>理清楚了一些基础的问题，现在来对自己个人进行一些评估。首先列出前端工程师的知识网，然后看看自己已有的知识，找出自己欠缺的知识点。</p>
+<h2 id="前端工程师知识体系">前端工程师知识体系</h2><p>知识体系这裡参考朴灵的一个整理「<a href="https://github.com/JacksonTian/fks" target="_blank" rel="external">前端技能汇总</a>」</p>
+<h2 id="个人知识体系">个人知识体系</h2><p><img src="data:image,local://1396347670901" alt="Alt text"></p>
+<p>通过对比个人知识体系和业界知识体系，可以发现自己的差距。</p>
+<h4 id="需要更加深入">需要更加深入</h4><ul>
+<li>单元测试</li>
+<li>计算机基础知识</li>
+<li>交互设计</li>
+<li>产品思维</li>
+</ul>
+<h4 id="目前未接触">目前未接触</h4><ul>
+<li>前端技术<ul>
+<li>Responsive Design, Less</li>
+</ul>
+</li>
+</ul>
+<h4 id="值得学习的项目和技术">值得学习的项目和技术</h4><ul>
+<li>ECMAScript6</li>
+<li>Angular</li>
+<li>Sencha Touch</li>
+<li>Bootstrap</li>
+</ul>
+<p>今年会投入时间在计算机基础知识的积累，捡起丢下的知识。另外学习ECMAScript6和Ruby，在开源项目学习方面，学习Angular,Bootstrap,Sencha Touch。对自己的要求是不能停留在使用阶段，而是吸收其优点，来提高自己的框架设计能力（学习这些开源项目，然后应用一些想法到自己维护的框架Com中, 该框架仅用于个人学习之用）</p>
+<p>总之，感觉自己目前处于“术”的阶段，有术而无“道”。后面通过基础理论的学习，框架的编写。儘快练习出“道”</p>
+<h2 id="工程化思考">工程化思考</h2><p>前端在许多佈道者的努力下，越来越多的人使用更加高效的工作流，得以将时间用在更重要的事物之上。前端工程化也开始受到了开发者的重视。那么我们所指的前端开发工作内容有哪些呢？</p>
+<ul>
+<li>开发<ul>
+<li>设计（并非指UI设计，而是软件设计Software design）</li>
+<li>切图</li>
+<li>使用Web标淮(HTML,CSS,JS)实现界面交互</li>
+</ul>
+</li>
+<li>测试</li>
+<li>构建和部署</li>
+<li>维护和监控</li>
+</ul>
+<p>从上面的工作内容可以看出，其实前端开发与其他软件开发并没有太过明显的区别，而缺少工程化和对基础理论的不重视可能是目前前端困境最主要的原因。先介绍一下个人理解的前端工程化：</p>
+<ul>
+<li>编码规范，开发淮则（模块化，组件化）目的是代码的高质量和可维护</li>
+<li>开发框架</li>
+<li>自动化 目的是提高软件开发效率，避免人为错误<ul>
+<li>开发过程</li>
+<li>打包部署过程</li>
+</ul>
+</li>
+<li>测试（单元测试，集成测试）</li>
+<li>文档：降低维护成本（时间，人力）</li>
+</ul>
+<p>布鲁克斯在《人月神话：软件项目管理之道（The Mythical Man-Month）》提到</p>
+<blockquote>
+<p>将没有银子弹（silverbullet）可解决，开发软件的困难是内生的，只能渐进式的改善。整体环境没有改变以前，唯一可能的解，是依靠人的素质，培养优秀的工程师。</p>
+</blockquote>
+<p>但是在前端开发领域，优秀前端工程师比例相对较少，那么如何保证产品质量呢？可以通过规范的限制，开发框架和工具的辅助，让前端工程师写出高性能，高质量的代码，进而提高开发效率，保证软件质量。</p>
+<p>作为前端新人，以上只是我对前端工程化一些初级的想法。</p>
+<h3 id="那么目前前端领域有那些工具可以帮我们实现工程化呢？">那么目前前端领域有那些工具可以帮我们实现工程化呢？</h3><ul>
+<li>编码规范和开发淮则<br>每个团队都会有所不同，这个没有一个普世的标淮。</li>
+<li>开发框架 <ul>
+<li>模块化加载工具：seajs，requirejs</li>
+<li>开发框架：Angular，Backbone</li>
+</ul>
+</li>
+<li>自动化<ul>
+<li>海量基于Node.js的工具,没有的你自己就可以编写</li>
+<li>Yeoman 项目构建工具</li>
+<li>Grunt,Gulp</li>
+<li>Bower 前端依赖库自动化管理</li>
+</ul>
+</li>
+<li>测试<ul>
+<li>单元测试：QUnit, jasmine, mocha</li>
+<li>集成测试：PhantomJS, slimerJS</li>
+<li>持续集成：Travis</li>
+</ul>
+</li>
+</ul>
+<p>更多工具参考: <a href="http://html5ify.com/fks/" target="_blank" rel="external">Frontend Knowledge Structure</a></p>
+<p>期待自己身上有的特质：低调务实、精工细琢，戒骄戒躁，犬儒主义让开一边，用数据说话，用严谨科学的论据来支撑你的观点，看清一部分技术本质，避免盲目跟风。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-w3c是什么" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/26/w3c是什么/" class="article-date">
+  	<time datetime="2014-03-25T16:00:00.000Z" itemprop="datePublished">2014-03-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/26/w3c是什么/">W3c是什么组织？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="这篇笔记是观看视频：Fluent_2013:_Lea_Verou,_Everything_You_Always_Wanted_to_Know_About_Web_Standards_之后的摘录">这篇笔记是观看视频：<a href="http://www.tudou.com/programs/view/E6NZ6retifQ/" target="_blank" rel="external">Fluent 2013: Lea Verou, Everything You Always Wanted to Know About Web Standards</a> 之后的摘录</h2><h4 id="W3C是做什么的？">W3C是做什么的？</h4><ul>
+<li>规范并不是由W3C编写的，而是由工作组（Working Groups）编写</li>
+<li>W3C制定规范制作的流程</li>
+<li>协调各项进程，监督进度，安排会议（W3Conf, TPAC ）</li>
+<li>制作工具和推广(Tool And Education)</li>
+</ul>
+<h4 id="什么是W3C工作组？">什么是W3C工作组？</h4><h5 id="人员组成：">人员组成：</h5><ul>
+<li>浏览器厂商</li>
+<li>网站</li>
+<li>其他公司（例如HP,Adobe)</li>
+</ul>
+<p>例如css工作组，88％的是其他公司的人员，专家：5％，w3c工作人员: 6%</p>
+<h4 id="工作组如何编写规范？">工作组如何编写规范？</h4><p>组员通过邮件组​​，IRC，Bug Tracker来进行工作，每一个工作组会有规范编辑(Spec Editor)，规范的编写<br>由这些编辑人员来进行编写规范。</p>
+<p>常见名词：</p>
+<ul>
+<li>成熟度等级(Maturity Levels)</li>
+<li>工作草案(Working Draft)</li>
+<li>候选推荐(Candidate Recommendation)</li>
+</ul>
+<h4 id="如何成为一个标准？">如何成为一个标准？</h4><p>你有了一个想法，将想法提交给工作组，提议提交之后会有3种结果Rejected， Accepted，Forgotten<br>如果通过了​​，之后就会有进入”编辑草案（Editor’s draft）”阶段，这个时候还不能称之为规范(Spec)，<br>整个工作组的成员会审核这一份草案，然后就会得到一份First Public Working Draft (FPWD)，<br>这个的发布意味着规范已经开始成熟，但还不够稳定，浏览器厂商一般不会实现。然后就不停的迭代，<br>在某个时间点发布Last Call Working Draft，最后就进入Candidate Recommendation(CR),这个时候<br>代表规范已经非常成熟了，浏览器厂商会开始实现这些规范。<br>“提议推荐阶段”（Proposeed Recommendation）(PR),<br>接着最后的阶段就是“正式推荐”（Recommendation）</p>
+<h4 id="我怎么跟上脚步？">我怎么跟上脚步？</h4><ul>
+<li>加入邮件组，获取最新消息</li>
+<li>阅读W3C站点</li>
+<li>阅读webplatform.org</li>
+<li><a href="http://uptodate.frontendrescue.org/" target="_blank" rel="external">HOW TO KEEP UP TO DATE ON FRONT-END TECHNOLOGIES</a></li>
+</ul>
+<h4 id="其他信息">其他信息</h4><ul>
+<li>W3C一直都是保持免费的，这个和其他标准化组织ISO不同</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-切面编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/25/切面编程/" class="article-date">
+  	<time datetime="2014-03-24T16:00:00.000Z" itemprop="datePublished">2014-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/25/切面编程/">切面编程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在实现COM的事件功能过程遇到了一个问题，由于子节点不能直接和父节点之外的节点通信，类似于Router，Logger的横切需求该如何实现呢？</p>
+<h3 id="面向切面编程的定义">面向切面编程的定义</h3><p>将程序逻辑分成一个个的逻辑块，也就是关注点，而有部分关注点称之为横切关注点，指的是一些具有横越多个模块的行为，使用传统的软件开发方法不能够达到有效的模块化的一类特殊关注点。软件系统，可看作由一组关注点组成。其中，直接的业务关注点，是直切关注点。而为直切关注点提供服务的，就是横切关注点，例如日志、安全、持久化;</p>
+<h3 id="一个需求之前的实现：">一个需求之前的实现：</h3><ol>
+<li>点击列表项，触发router事件</li>
+<li>根节点监听route事件，然后调用Router进行Dispatch</li>
+</ol>
+<p>但是由于Com框架的改进，决定不使用依赖于Dom节点的事件冒泡机制，导致节点之间无法跨级沟通。所以之前的实现对于现在的Com来讲是无效的。<br>Router是一种横切关注点，单又不合适用继承机制来实现</p>
+<p>最简单的方式就是，单例, 然后在所有需要的地方引入依赖。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = &#123;</span><br><span class="line">    route: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/*更多的代码*/</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//在需要的地方mixin router，然后该组件就具有了router的功能</span></span><br><span class="line"><span class="keyword">var</span> application = <span class="keyword">new</span> Application(&#123;</span><br><span class="line">    <span class="comment">/*Application config*/</span></span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="string">'click li'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.path;</span><br><span class="line">            <span class="comment">//路由dispatch</span></span><br><span class="line">            router.route()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>使用javascript <code>mixin</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = &#123;</span><br><span class="line">    route: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/*更多的代码*/</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//在需要的地方mixin router，然后该组件就具有了router的功能</span></span><br><span class="line"><span class="keyword">var</span> application = <span class="keyword">new</span> Application(&#123;</span><br><span class="line">    <span class="comment">/*Application config*/</span></span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="string">'click li'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.path;</span><br><span class="line">            <span class="comment">//路由dispatch</span></span><br><span class="line">            app.route(path);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).mixin(router);</span><br></pre></td></tr></table></figure>
+<p>这两种方桉是可行的。那么还有其他的方法吗？</p>
+<p>而对于Com来讲，Router是一个功能组件，同时也是一个所有节点都会可能会需要到的功能。如果按照mixin的方式，或者单例的做法，无论如何都是在要在每一个都是要显示声明依赖。维护成本比较高。那么可以使用类似于注册一个组件的方式，然后在内部就可以通过注册的ID来取得所需的组件。这样子维护成本就降低了，起码不用在修改组件名层的时候一处处的修改引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> router = <span class="comment">/*Router的功能*/</span></span><br><span class="line"><span class="keyword">var</span> application = <span class="keyword">new</span> Application(&#123;</span><br><span class="line">    <span class="comment">/*Application config*/</span></span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="string">'click li'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.path;</span><br><span class="line">            <span class="comment">//路由dispatch</span></span><br><span class="line">            app.route(path);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).cross(<span class="string">'Router'</span>, router);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/*下面的代码是Application中的某一个组件 Cell的定义*/</span></span><br><span class="line">Cell = Com.extend(&#123;</span><br><span class="line">    uiEvents: &#123;</span><br><span class="line">        <span class="comment">//点击触发Router跳转</span></span><br><span class="line">        <span class="string">'click'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> path = evt.currentTarget.data.id;</span><br><span class="line">            <span class="comment">//同样通过cross接口拿到Router组件，然后直接使用</span></span><br><span class="line">            <span class="keyword">this</span>.cross(<span class="string">'Router'</span>).route(<span class="string">'Cell/'</span> + id);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>这种东西有无通过Aspect来实现，需要继续思考。</strong></p>
+<h3 id="todo">todo</h3><ul>
+<li>学习dojo的aspect，阅读源码</li>
+</ul>
+<p>###参考</p>
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming" target="_blank" rel="external">http://en.wikipedia.org/wiki/Aspect-oriented_programming</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Modularity_(programming" target="_blank" rel="external">http://en.wikipedia.org/wiki/Modularity_(programming</a>)</li>
+<li><a href="http://www.infoq.com/cn/articles/zwb-dojo-aop" target="_blank" rel="external">dojo1.7功能介绍：面向方面编程（AOP）功能与原理</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/编程理论/">编程理论</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-javascript内存优化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/24/javascript内存优化/" class="article-date">
+  	<time datetime="2014-03-23T16:00:00.000Z" itemprop="datePublished">2014-03-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/24/javascript内存优化/">javascript内存优化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在阅读「<a href="http://lifemap.in/javascript-memory-optimize/" target="_blank" rel="external">javascript内存优化</a>」文章时候几个收获，是在目前的编码中没有仔细考虑到的</p>
+<h3 id="手工解除变量引用，特别是全局变量（因为全局变量不会被回收，应该儘可能避免使用全局变量）">手工解除变量引用，特别是全局变量（因为全局变量不会被回收，应该儘可能避免使用全局变量）</h3><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> <span class="built_in">data</span> = &#123; <span class="comment">/* some big data */</span> &#125;;</span><br><span class="line"><span class="comment">// blah blah blah</span></span><br><span class="line"><span class="built_in">data</span> = <span class="built_in">null</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="回调函数的一种专业介绍">回调函数的一种专业介绍</h3><p>回调函数一种后续传递风格(Continuation Passing Style,CPS)的技术，这种风格的程序编写将函数的业务重点从返回值转移到回调函数中去。而且其相比闭包的好处也不少</p>
+<ul>
+<li>如果传入的参数是基础类型（如字符串、数值），回调函数中传入的形参就会是複製值，业务代码使用完毕以后，更容易被回收；</li>
+<li>通过回调，我们除了可以完成同步的请求外，还可以用在异步编程中，这也就是现在非常流行的一种编写风格；</li>
+<li>回调函数自身通常也是临时的匿名函数，一旦请求函数执行完毕，回调函数自身的引用就会被解除，自身也得到回收。</li>
+</ul>
+<h3 id="循环事件绑定两种闭包传入参数方式,_对于大数据出离">循环事件绑定两种闭包传入参数方式, 对于大数据出离</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Case 1</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="line">  btns[i].onclick = (<span class="function"><span class="keyword">function</span>(<span class="params">index</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">      output.innerText += <span class="string">'Clicked '</span> + events[index];</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Case 2</span></span><br><span class="line"><span class="comment">/**</span><br><span class="line">第二个方桉传入的参数是当前循环下标，而后者是直接传入相应的事件对象。事实上，后者更适合在大量数据应用的时候，因为在 JavaScript 的函数式编程中，函数调用时传入的参数是基本类型对象，那麽在函数体内得到的形参会是一个複製值，这样这个值就被当作一个局部变量定义在函数体的作用域内，在完成事件绑定之后就可以对events变量进行手工解除引用，以减轻外层作用域中的内存佔用了。而且当某个元素被删除时，相应的事件监听函数、事件对象、闭包函数也随之被销毁回收。</span><br><span class="line">*/</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="line">  btns[i].onclick = (<span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">      output.innerText += <span class="string">'Clicked '</span> + event;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(events[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="闭包的另外一种视角">闭包的另外一种视角</h3><p>让外层作用域访问内层作用域的技术便是闭包(Closure)。实现的技术原理：通过高阶函数的应用</p>
+<h3 id="内存检查工具">内存检查工具</h3><ul>
+<li>chrome开发工具：Profiles</li>
+<li>在 Node.js 中，我们可以使用 node-heapdump 和 node-memwatch 模块进行内存检查。</li>
+</ul>
+<h3 id="参考">参考</h3><ol>
+<li><a href="http://lifemap.in/javascript-memory-optimize/" target="_blank" rel="external">javascript内存优化</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能优化/">前端性能优化</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-组件化与复杂系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/07/组件化与复杂系统/" class="article-date">
+  	<time datetime="2014-03-06T16:00:00.000Z" itemprop="datePublished">2014-03-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/07/组件化与复杂系统/">组件化与复杂系统</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一次接触复杂系统的概念是在一个TED讲座（<a href="evernote:///view/3937825/s36/10cba1c3-4db0-45ec-a534-f87040364ba8/10cba1c3-4db0-45ec-a534-f87040364ba8/" target="_blank" rel="external">复杂系统</a>）中，马上就被这个美妙的东西捕获了。作者在演讲中讲「Complexity is the result of simple rules of interaction」，局部的简单逻辑形成整体的智能。 第一个问题：为什么个体之间的简单交互能够形成整体的智能呢？  观察自然界，动物界中的鸟群，鱼群，这两种动物并没有高级的智能，但是群体通过多个节点之间的简单交互，可以形成整体的复杂智能。观察数字世界，计算机是由一个个的晶体管构成的，​​单一个晶体管只有两种状态：低电平和高电平，对应于0和1。但是由数亿个晶体管组成的微处理器却具有了相当的智能。如果你看过「三体」，你此时定会想起小说中出现的人列计算机。事实证明，无论是现实物理世界，还是数字世界都存在一定智能的复杂系统。</p>
+<h3 id="什么是复杂系统？">什么是复杂系统？</h3><p>在<a href="http://www.swarmagents.cn/complex/intro/articles.htm" target="_blank" rel="external">这篇文章</a>中是这样定义复杂系统「复杂系统是具有中等数目基于局部信息做出行动的智能性、自适应性主体的系统，复杂系统分为无组织，有组织两种」文中列出了「复杂系统具有的三个特征」</p>
+<h4 id="1-_中等大小数目的主体">1. 中等大小数目的主体</h4><h4 id="2-_智能性和自适应性">2. 智能性和自适应性</h4><p>系统内的元素遵循一定的规则，根据环境和收集到的信息来调整自身的状态和行为。通过系统主体的相对简单的智能，系统在整体上显示更高层次，更加复杂，更加协调职能的有序性</p>
+<h4 id="3-_局部信息，没有中央控制">3. 局部信息，没有中央控制</h4><p>系统中的任意一个个体无法知道系统所有个体的信息（状态和行为），每个个体可以从系统中较小集合中获取信息，处理局部信息，并进行决策。系统的整体行为是通过个体的协作，竞争等局部相互作用</p>
+<p>而在<code>汤伟君</code>和<code>邱美虹</code>的这篇论文中介绍了另外几个特性</p>
+<h4 id="多层次">多层次</h4><p>例如生物体的组成和运作,可以从器官、组织、细胞、基因等不同层次的面相来讨论</p>
+<h4 id="上向因果关系">上向因果关系</h4><p>上向因果关系指的是低层次性质对高层次性质的因果作用(范冬萍,2005)。高层次由低层次组合而产生,他不能脱离低层次事物而独立存在。系统由组件（component）构成，组件由子组件构成，子组件由子子组件构成等等，这就意味着每一个组件可能就是一个独立的系统。</p>
+<h4 id="突现,不可预测、不可化约、_非线性">突现,不可预测、不可化约、 非线性</h4><p>突现就是突然出现,不被预期的出现,无法有「先见之明」的预测,引用作者原文中的一段话</p>
+<blockquote>
+<p>整体论最通俗的表达为:「整体不等于部分之和」、「整体的行为并非个别组成分子所具有」(范冬萍&amp;张华夏,2005)。凡是复杂系统必具备此一特性,也就是「只有在整体(system-as-a-whole)运作的情境下才有意义」的特性(Lesh,2006)。也就是「高层次的事物整体所具有,而其组成成分所不具有,且事先不能由此加以预测的特性。」 例如生命之于生命的物理化学特性,心灵之于神经细胞的生理活动,就是一种突现(谢爱华, 2003)。<br>化约论的观点是,所有的现象都可由其个别组成份子的行为来解释,因此生命可以化约到基因,基因可以化约到DNA,DNA 可用物理化学来解释。<br>非线性指的是两个量之间不成正比关系</p>
+</blockquote>
+<h4 id="多重因果">多重因果</h4><blockquote>
+<p>在一个复杂系统里,层级和成分都很多,因此系统的行为,受到诸多因子的影响,而且主要是受到成分交互作用的影响。随着涉及面的增加,其计算量将以失控方式递增,造成非线性、难以预测的变化(Bosomaier &amp; Green, 1998)。</p>
+</blockquote>
+<h4 id="成分（系统主体）互动(关系)的重要性大于成分本身">成分（系统主体）互动(关系)的重要性大于成分本身</h4><blockquote>
+<p>Waldrop(1992) 指出「生命的本质在于分子的组织和互动,不在于分子」</p>
+</blockquote>
+<h4 id="动态的,不停止的">动态的,不停止的</h4><blockquote>
+<p>又譬如股市的升降,是来自各散客大户各自的互通暗盘消息、阅读金融资讯后,买或卖股票而造成股市市场的波动(上向因果),而市场的降或跌也会影响作用体(股民)们的买卖行为(下向因果)。下向因果的存在,阐明了复杂系统内的交互作用,不仅限于同一阶层内成分的互动,实际上也有跨阶层的互动</p>
+</blockquote>
+<h4 id="下向因果关系">下向因果关系</h4><blockquote>
+<p>这也是复杂系统的重要特性,但并非所有突现现象都有此一特性。所谓下向因果,指的是高层次具有低层次所不具有的性质,并对其组成部分(低层次)有支配作用</p>
+</blockquote>
+<h4 id="自我组织">自我组织</h4><blockquote>
+<p>自组织是部份复杂系统才具有的特性，成分会自动组织成一个体系,如劳力需求、商品、服务自动组织成市场结构, 而这个体系的存在强化了每一成分的连结和存续。</p>
+</blockquote>
+<p>正如作者所言，自组织起到了自我强化的作用，使得整体的能力强过于个体，而这个自我强化能力之一,便是正回馈</p>
+<h4 id="正回馈或报酬递增">正回馈或报酬递增</h4><blockquote>
+<p>正回馈的例子在自然界可能造成两大结果,一个是形成自我强化组,例如前面提到的化学反应连锁催化组。另一个效应则是搭配系统内各成分的互动,使得初始状况的小变动,可以导致之后系统的巨大改变,即众所周知的蝴蝶效应(Gleick,1987)。在一个自组织系统里,有可能会受到不起眼的关键分子的影响,而大幅改变了原有的组织型态。例如汽车取代马车之后,所引起的人类经济体系转变,包括行业的兴衰、能源需求、运输能力等都发生了重大改变(Waldrop, 1992)。</p>
+</blockquote>
+<p>看完了这篇文章的介绍，有几个问题</p>
+<ul>
+<li>系统主体的智能对复杂系统有何影响？<br>一个复杂系统中的主体如果是人类等有高智能生物，复杂系统会因为个体的不稳定，不确定而变得更加复杂，而相对简单的智能，例如系统主体为晶体管的微处理器，蚂蚁等，则没有那样复杂。所以系统主体的智能水平可以决定一个复杂系统的复杂层次。</li>
+<li>为何竞争和协作可以形成更高层次，更加复杂的智能？<br>根据上面的介绍，原因就是「突现（涌现）」，突现使得系统整体具有个体所不具有的特性</li>
+<li>复杂系统和非复杂系统（简单系统）的差别？</li>
+</ul>
+<h3 id="参考文献">参考文献</h3><ol>
+<li><a href="http://zh.wikipedia.org/wiki/%E6%99%B6%E4%BD%93%E7%AE%A1" target="_blank" rel="external">晶体管维基百科</a></li>
+<li><a href="http://zh.wikipedia.org/wiki/%E6%99%BA%E8%83%BD" target="_blank" rel="external">智能维基百科</a></li>
+<li>汤伟君* 邱美虹复杂系统、突现及其对科学教育的启示(2007)</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Com/">Com</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/复杂系统/">复杂系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/组件化/">组件化</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习研究/">学习研究</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Performance-Timing" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/06/Performance-Timing/" class="article-date">
+  	<time datetime="2014-03-05T16:00:00.000Z" itemprop="datePublished">2014-03-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/06/Performance-Timing/">如何使用Performance-Timing进行性能统计？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="几个名词">几个名词</h3><h4 id="window-performance-navigation">window.performance.navigation</h4><p>这个属性存储了2个标记<code>redirectCount</code> （页面跳转的次数）和<code>type</code>（页面访问途径类型），其中<code>type</code>有以下几种取值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TYPE_BACK_FORWARD: <span class="number">2</span></span><br><span class="line">TYPE_NAVIGATE: <span class="number">0</span></span><br><span class="line">TYPE_RELOAD: <span class="number">1</span></span><br><span class="line">TYPE_RESERVED: <span class="number">255</span></span><br></pre></td></tr></table></figure>
+<h4 id="window-performance-timing">window.performance.timing</h4><p>包含了页面请求经历的各个时间点，<a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming" target="_blank" rel="external">查看MDN上面的文档</a> 例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fetchstart: 浏览器准备发起HTTP请求去拉取文档，这个时刻之后浏览器会去检查是否有缓存</span><br><span class="line">domainLookupStart: DNS Lookup开始，如果用的是持久连接或者访问本地缓存，该时间点等同于fectchStart</span><br><span class="line">domainLookupEnd: DNS Lookup结束</span><br><span class="line">connectStart: 发起TCP链接，如果使用持久连接，该时间点等同于fetchstart</span><br><span class="line">connectEnd: TCP连接结束，如果使用持久连接，该时间点等同于fetchstart</span><br><span class="line">requestStart: 发起请求向服务器获取文档</span><br><span class="line">responseStart: Time to first Byte</span><br><span class="line">responseEnd: 接收完Response或者连接断开</span><br><span class="line">domLoading: 浏览器解析器开始工作Document.readyState 变为loading</span><br><span class="line">domInteractive: 解析完主文档Document.readyState 变为interactive</span><br><span class="line">domContentLoadeded:</span><br><span class="line">domComplete: 浏览器解析完主文档 Document.readyState变为 complete</span><br><span class="line">loadEventStart: 浏览器触发load事件</span><br><span class="line">loadEventEnd: load事件的处理函数执行结束</span><br></pre></td></tr></table></figure>
+<h3 id="用法举例">用法举例</h3><h4 id="DNS_Lookup时间">DNS Lookup时间</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = perfData.domainLookupEnd - perfData.domainLookupStart;</span><br></pre></td></tr></table></figure>
+<h4 id="Tcp">Tcp</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tcp = perfData.connectEnd - perfData.connectStart</span><br></pre></td></tr></table></figure>
+<h4 id="页面加载总时间">页面加载总时间</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> perfData = <span class="built_in">window</span>.performance.timing;</span><br><span class="line"><span class="keyword">var</span> pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;</span><br></pre></td></tr></table></figure>
+<h4 id="数据传输时间">数据传输时间</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//仅仅是数据下载的时间</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> requestTime</span> = perfData.responseEnd - perfData.requestStart;</span><br></pre></td></tr></table></figure>
+<h4 id="网络传输时间：包括Redirect，DNS_Lookup，建立连接">网络传输时间：包括Redirect，DNS Lookup，建立连接</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> requestTime = perfData<span class="class">.responseStart</span> - perfData.navigationStart</span><br></pre></td></tr></table></figure>
+<h4 id="首字节时间_Time_To_First_Byte">首字节时间 Time To First Byte</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> ttfb</span> = perfData.responseStart - perfData.navigationStart;</span><br></pre></td></tr></table></figure>
+<h4 id="可交互时间TTI">可交互时间TTI</h4><p>TTI(Time To Interact)指的是页面可交互的时间。页面中的交互包括很多方面，例如点击一个链接、点击一个搜索按钮都属于页面交互的范畴，但是对于衡量性能的TTI则主要指核心功能可以交互的时间。核心功能的定义则是随着页面的不同而不同，例如对于百度首页而言，最为关键的就是搜索框出现的时间、而对于一些购物网站的商品详情页最关键的是购买功能可用和描述出现的时间。而目前的实际情况，TTI大都等于DOM Ready时间，因为不论交互功能是否重要，相关的Javascript都会在DOM Ready后才进行初始化和绑定，而实际上TTI是可以更早的。</p>
+<p>如果界面交互不依赖于javascript,例如纯html页面，可交互时间等于</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> tti</span> = perfData.domInteractive - perfData.navigationStart;</span><br></pre></td></tr></table></figure>
+<p>如果界面交互依赖于javascript，可交互时间则没有一个很好的基准，因为不同的应用对可交互的定义并不一样</p>
+<p>如果要求不严格，近似的估计可以是</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> tti</span> = perfData.domComplete - perfData.navigationStart;</span><br><span class="line">或者</span><br><span class="line"><span class="variable"><span class="keyword">var</span> tti</span> = perfData.domContentLoaded - perfData.navigationStart;</span><br></pre></td></tr></table></figure>
+<p>更细节的可以是根据业务的场景来判断用户界面什么时候可以交互; 例如一个富文本编辑器的可交互时间，取决于主js文件什么时候完成编辑器的初始化；</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> tti</span> = 编辑器完成初始化的时间点 - perfData.navigationStart;</span><br></pre></td></tr></table></figure>
+<h4 id="页面完全加载">页面完全加载</h4><p>为什么用 loadEventEnd这个时间点表示页面加载完成呢？</p>
+<blockquote>
+<p>The DOMContentLoaded event is fired when all of the page’s DOM content has been loaded and parsed. The load event is fired once all of the document’s resources (images and CSS files, and so forth) have been fully loaded.</p>
+</blockquote>
+<p><code>DOMContentLoaded</code>代表的是DOM解析完成并加载，而 <code>load</code> 事件 是页面引用的所有资源文件都加载完成. 所以 load 一般是最后才触发的.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">perfData</span><span class="class">.loadEventEnd</span> <span class="tag">-</span> <span class="tag">perfData</span><span class="class">.navigationStart</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="如何测试Ajax请求的时间呢？">如何测试Ajax请求的时间呢？</h3><p>由于<code>performerce.timing</code>不能用于ajax请求，而是通过<code>mark</code> 和 <code>measure</code>的方式来求得的，用到了两个接口</p>
+<ul>
+<li><code>performance.mark</code></li>
+<li><code>performance.measure</code></li>
+<li><code>performance.getEntriesByType</code></li>
+</ul>
+<p>如下例所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标记请求的开始</span></span><br><span class="line"><span class="built_in">window</span>.performance.mark(<span class="string">'mark_start_xhr'</span>);</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="keyword">this</span>.url.newReport,</span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">resp</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//标记请求结束</span></span><br><span class="line">        <span class="built_in">window</span>.performance.mark(<span class="string">'mark_end_xhr'</span>);</span><br><span class="line">        <span class="comment">//求值</span></span><br><span class="line">        <span class="built_in">window</span>.performance.measure(<span class="string">'measure_xhr'</span>, <span class="string">'mark_start_xhr'</span>, <span class="string">'mark_end_xhr'</span>);</span><br><span class="line">        <span class="keyword">var</span> items = <span class="built_in">window</span>.performance.getEntriesByType(<span class="string">'measure'</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(items);</span><br><span class="line">        doSomething(resp)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="参考：">参考：</h3><ol>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming" target="_blank" rel="external">Performace timing Api</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/webperformance/basics/" target="_blank" rel="external">Measuring Page Load Speed​​​​ with Navigation Timing</a></li>
+<li><a href="http://www.w3.org/TR/navigation-timing/" target="_blank" rel="external">w3c navigation timing</a></li>
+<li><a href="http://www.w3.org/TR/html5/syntax.html#the-end" target="_blank" rel="external">DOMContentLoaded Event From W3c</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/DOMContentLoaded" target="_blank" rel="external">DomContentLoaded EventFrom MDN</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/webperformance/usertiming/" target="_blank" rel="external">http://www.html5rocks.com/en/tutorials/webperformance/usertiming/</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能优化/">前端性能优化</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-有關響應時間的問題" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/02/12/有關響應時間的問題/" class="article-date">
+  	<time datetime="2014-02-11T16:00:00.000Z" itemprop="datePublished">2014-02-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/12/有關響應時間的問題/">响应时间应该多长才算快？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近被一個問題困擾許久，在移動端中，Response Times究竟在什麼樣的範圍是用戶可以接受的？網上有一篇文章<a href="http://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="external">Response Times: The 3 important Limits</a>被許多性能優化的文章引用.文中指出了這樣的幾個數據:</p>
+<ul>
+<li>0.1s 馬上響應，也就意味著不需要任何反饋。用戶認為系統的輸出是由自己造成的，而不是計算機。感覺像是直接是在直接操作界面上的東​​西(direct manipulation 是提高用戶參與度和控制力的關鍵技術，更多請參考：<a href="http://www.nngroup.com/courses/hci/" target="_blank" rel="external">User Interface Principles Every Designer Must Know, Applying human-computer interaction (HCI) lessons to inform and defend UX decisions</a>)。例如：有一個表格，用戶可以點擊表頭進行排序，如果用戶點擊表頭之後能夠在0.1s完成排序，用戶覺得是自己在操作表格，否則，用戶則感覺是自己通知計算機去排序。</li>
+<li>1.0s 用戶可以察覺到延遲, 但是還不至於打斷用戶的思緒（flow of thought）。 0.2s~1s的處理時間讓用戶察覺到了延遲，並且意識到計算機在工作，而不是立馬響應用戶的操作。例如：如果表格排序需要1s才能夠完成，用戶可以感覺到體驗沒那麼流暢，會有卡頓的感覺。而如果超過1s，則需要給用戶處理中的反饋了，否則“卡頓”就變成為“卡死”了，</li>
+<li>10s 超過這個時間點，用戶就會失去耐心和關注度； 超過10s時用戶會想要離開當前任務而等待計算機完成之後再回來，所以需要處理進度（處理中，已完成等）的提示。如果缺少進度提示，則用戶無從知道當前的任務的狀態，就容易給用戶留下任務卡死的感覺。任何超過10s的任務都必須要有進度提示，並且可以讓用戶取消該任務。</li>
+</ul>
+<p>響應時間自然是越快越好，如果無法達到理想的響應速度(100ms)，進度提示（進度條，菊花轉等）就是必須的了,進度提示的好處是：</p>
+<ul>
+<li>讓用戶知道系統沒有出錯，還在為她/他處理問題中。</li>
+<li>如果是完成進度提示的（例如進度條），用戶就可以知道還剩下多少</li>
+<li>給用戶一些視覺反饋，讓等待的過程沒有那麼痛苦，好歹有些可以看的。</li>
+</ul>
+<p>為什麼速度那麼重要？在這篇文章中<a href="http://www.nngroup.com/articles/website-response-times/" target="_blank" rel="external">website response times</a>中提到了兩點：</p>
+<p>Human Limitations(人類本身的限制): 人類的短期記憶和注意力無法長時間集中<br>Human aspirations(人性渴望): 渴望控制自己的命運，而不是屈服於計算機，例外，如果一個公司提供的服務響應速度過慢，給人的留下的印像是傲慢和無能（請腦補國內幾個國有企業的系統或網站）。</p>
+<p>文中還提到了另外一點就是在一個“過往經驗對品牌的影響(Brand as Experience)”的調查中，用戶對一個網站的印像中，響應速度是很重要的一項，所以快速的響應速度對一個網站的“名聲”是相當重要的</p>
+<p>100ms的微小提升都會對網站的<a href="http://www.nngroup.com/articles/conversion-rates/" target="_blank" rel="external">轉換率(Conversion Rates)</a>有一定的提升</p>
+<p>###參考</p>
+<ol>
+<li><a href="http://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="external">Response Times: The 3 Important Limits</a></li>
+<li><a href="http://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/" target="_blank" rel="external">Powers of 10: Time Scales in User Experience</a></li>
+<li><a href="http://www.nngroup.com/articles/website-response-times/" target="_blank" rel="external">Website Response Times by JAKOB NIELSEN on June 21, 2010</a></li>
+<li><a href="http://www.nngroup.com/courses/fundamentals/" target="_blank" rel="external">Top Web UX Design Guidelines</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/交互设计/">交互设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端性能优化/">前端性能优化</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-如何测试后端API性能？" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/02/10/如何测试后端API性能？/" class="article-date">
+  	<time datetime="2014-02-09T16:00:00.000Z" itemprop="datePublished">2014-02-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/10/如何测试后端API性能？/">如何测试后端API的性能?</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目前流行的Web APP，数据一般都是异步加载的，后端提供API给前端，假如这个APP的HTML，JS，CSS，Image等静态资源都已经进行了足够的优化，那么剩下会影响加载速度的就是后端API了，后端API加载时间长，用户可交互的时间点就会越靠后。</p>
+<p>那么什么样的API才算是性能良好的API呢？</p>
+<p>站在用户的角度，等待的时间必定是越短越好，在PC端 200-1000ms内数据就返回，对于用户来讲是一个比较好的用户体验，但是对于移动端网络来讲，用户如果处于2G/3G网络，这个时间有点过于苛刻。</p>
+<p>那么，移动端的性能要求怎样才算是合理呢？这个可能需要一个用户调研，但是目前暂时没有资源做这一块。所以，暂时只能做好所有的优化，将一些可能存在的优化点进行解决。然后再进行多一次测试，对比优化前和优化后的数据，差距多大。</p>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">加载总时间 </span>=<span class="string"> DNS解析 + 连接时间 + 首字节返回时间 + 下载时间</span></span><br></pre></td></tr></table></figure>
+<p><code>首字节时间</code>(发起连接到服务器返回首字节的时间)<code>T1 = 网络来回传输时间 +  服务器处理时间</code>；所以其相关因素有：网络传输速度，服务器性能</p>
+<p>而<strong><code>下载时间</code></strong>的相关因素：网络传输速度，返回内容大小；</p>
+<p>所以从加载总时间可以看出：返回内容大小，服务器性能，DNS解析时间。这个是可以优化的点。</p>
+<p>优化有那么方面可以着手呢？</p>
+<ul>
+<li>如果全集群部署依旧出现解析时间较长的，就需要使用CDN了</li>
+<li>服务器性能</li>
+<li>检查API返回结果是否进行压缩，如果已经有压缩，是否还有优化方法能够减少返回结果的大小</li>
+</ul>
+<h3 id="参考">参考</h3><p><a href="http://www.oschina.net/translate/testing-the-api-backend-of-your-mobile-solution" target="_blank" rel="external">http://www.oschina.net/translate/testing-the-api-backend-of-your-mobile-solution</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/">api</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/前端开发/">前端开发</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Andrew Zhang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
   </div>
 </body>
 </html>
